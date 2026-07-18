@@ -1,0 +1,33 @@
+[build]
+publish = "out"
+command = "npm run build"
+
+[[headers]]
+for = "/_next/static/*"
+
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+from = "/"
+to = "/tr"
+status = 302
+force = false
+
+  [redirects.conditions]
+  Language = ["tr"]
+
+[[redirects]]
+from = "/"
+to = "/en"
+status = 302
+force = false
+
+  [redirects.conditions]
+  Language = ["en"]
+
+[[redirects]]
+from = "/"
+to = "/tr"
+status = 302
+force = false

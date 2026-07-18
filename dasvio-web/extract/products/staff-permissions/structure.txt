@@ -1,0 +1,51 @@
+staff-permissions — <main> iskeleti (tr/products/staff-permissions.html; EN sayfa DOM'u birebir aynı, sadece şablon string'leri İngilizce)
+
+main.flex-1
+├─ section  pt-36 lg:pt-40 pb-16 lg:pb-24 relative overflow-hidden        [HERO]
+│   ├─ div.absolute  radial-gradient tint: #3b82f6 (opacity 0.1)
+│   └─ div.container-page.relative
+│       ├─ (Reveal) div.max-w-4xl.mx-auto.text-center
+│       │   ├─ h1  "Personel & Yetki Yönetimi"        <-- eyebrow/kategori etiketi YOK, CTA butonu YOK
+│       │   └─ p   açıklama (mt-7, max-w-[680px])
+│       ├─ (Reveal, delay 250ms) div.mt-14.lg:mt-20   çerçeveli statik görsel: img /images/pos/dasvio_qsr.png (alt "Dasvio POS")
+│       └─ (Reveal, delay 400ms) div.mt-10.flex.flex-wrap  7 çip: Yetki matrisi / POS PIN / Yönetici onayı / Vardiya / İşlem geçmişi / Şube erişimi / Saat kısıtlaması (nokta rengi #3b82f6)
+│
+├─ section  py-20 lg:py-28                                                [YETENEKLER]
+│   └─ div.container-page
+│       ├─ eyebrow "Yetenekler" + h2 "Personel & Yetki Yönetimi ile gelen her şey, uçtan uca."
+│       └─ div.mt-12.grid.grid-cols-1.sm:grid-cols-2.lg:grid-cols-4  — 8 kart (delay 0..700ms, --tint:#3b82f6)
+│           ├─ h3 "Detaylı yetki matrisi"            (görsel: rol × izin matrisi, shield ikonu)
+│           ├─ h3 "POS PIN giriş & hızlı oturum"     (görsel: parmak izi + PIN noktaları + 1-9 tuş takımı)
+│           ├─ h3 "Personel yönetimi & davet"        (görsel: 3 personel satırı + kesikli "Personel Davet Et")
+│           ├─ h3 "Yönetici onay akışları (JIT)"     (görsel: amber onay kartı, İade/Void/İndirim/Kasa çipleri)
+│           ├─ h3 "Şube bazlı erişim kontrolü"       (görsel: Kadıköy/Beşiktaş Erişim, Ataşehir/Bakırköy Kilitli)
+│           ├─ h3 "Vardiya planı & mesai takibi"     (görsel: Sabah/Öğle/Akşam vardiya barları)
+│           ├─ h3 "Tam işlem geçmişi (Audit Trail)"  (görsel: 4 olay satırı, saatli)
+│           └─ h3 "Saat bazlı erişim kısıtlaması"    (görsel: 24 saat hücresi 09-22 aktif + kırmızı kilit uyarısı)
+│
+├─ section  py-20 lg:py-28 bg-bg-subtle                                   [WHY varyantı — quote YOK]
+│   └─ div.container-page > grid lg:grid-cols-[1fr_1.2fr]
+│       ├─ eyebrow "Neden Dasvio?" + h2 "Ekibinizin zaten kullandığı panele entegre."
+│       └─ ul 4 check maddesi (check rengi #3b82f6) + CTA "Kişiselleştirilmiş demo al" -> /tr/contact
+│
+├─ section  py-20 lg:py-28                                                [DİĞER ÜRÜNLER]
+│   └─ div.container-page
+│       ├─ eyebrow "Keşfetmeye devam et" + h2 "Dasvio platformunun geri kalanı." + link "Tüm ürünler" -> /tr#features
+│       └─ grid sm:grid-cols-2 lg:grid-cols-3 — 3 kart:
+│           ├─ h3 "QR Menü"              -> /tr/products/qr-menu       (--tint:#ffffff)
+│           ├─ h3 "Dasvio POS"           -> /tr/products/pos           (--tint:#06b6d4)
+│           └─ h3 "Çoklu Şube Yönetimi"  -> /tr/products/multi-branch  (--tint:#f43f5e)
+│
+└─ section  py-12 border-t border-border-subtle bg-bg-subtle              [STAT BANDI — paylaşılan şablon]
+    └─ 3 sütun: "7/24 Türkçe destek hattı" | "14 gün Ortalama kurulum süresi" | "%99.9 Uptime garantisi"
+
+ŞABLON SAPMALARI / NOTLAR
+- Hero'da kategori eyebrow'u yok (incelenen diğer ürün sayfalarında da yok — h1 doğrudan gelir, h1'de mt-7 sadece boşluk).
+- Hero'da CTA butonu yok; sayfadaki tek CTA "Neden Dasvio?" bölümündeki demo butonu.
+- 01-06 numaralı adım bölümü YOK (multi-branch'te 01-07 adımlar var; bu sayfada hiç yok).
+- Hero mockup'ı özel DOM mockup DEĞİL — POS sayfasıyla aynı statik görsel (/images/pos/dasvio_qsr.png, head'de preload).
+- Çipler hero mockup'ının ALTINDA (mt-10), 7 adet.
+- Yetenek grid'i lg:grid-cols-4 ve 8 kart — 4'lü grid + 8 kart bu sayfaya özgü olabilir (kart sayısı ürüne göre değişiyor).
+- Client-side simülasyon bileşeni YOK (RSC payload'da yalnızca Navbar + boundary'ler; hasSimulation gerekmez).
+- TR/EN: main içinde ürün-özgü tüm metinler her iki locale'de aynı Türkçe; yalnızca paylaşılan şablon string'leri farklı (detay content.json > trTitle_vs_enTitle).
+- EN yetenek başlığı ürün adını Türkçe gömer: "Everything Personel & Yetki Yönetimi ships with, end to end."

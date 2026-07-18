@@ -1,0 +1,60 @@
+revenue-centers — <main> iskeleti (tr/ ve en/ DOM yapısı birebir aynı; yalnız şablon metinleri çevrili)
+
+main.flex-1
+├─ section  "pt-36 lg:pt-40 pb-16 lg:pb-24 relative overflow-hidden"        [HERO — centered showcase varyantı]
+│   ├─ div  radial glow: opacity-[0.1], background:radial-gradient(ellipse 70% 50% at 50% 0%, #f43f5e, transparent 65%)
+│   └─ div.container-page.relative
+│       ├─ Reveal(delay 0)   > div.max-w-4xl.mx-auto.text-center
+│       │    ├─ h1  "Revenue Centers"   (mt-7 text-[44px] sm:[68px] lg:[88px] xl:[104px] font-light)
+│       │    └─ p   hero açıklaması (İngilizce, mt-7 max-w-[680px])
+│       ├─ Reveal(delay 250) > div "mt-14 lg:mt-20 rounded-lg border border-white/10 bg-zinc-950 overflow-hidden"
+│       │    (box-shadow: 0 60px 120px #f43f5e1f) > div.w-full > HERO MOCKUP (haftalık gelir kartı: €42,580, 7 bar, 3 stat)
+│       └─ Reveal(delay 400) > div "mt-10 flex flex-wrap gap-2 justify-center"  — 3 çip:
+│            Channel split · Tax rules · Routing  (çip: border-white/10 bg-white/[0.03] px-4 py-2 + nokta #f43f5e)
+│
+├─ section  "py-20 lg:py-28"                                                [CAPABILITIES]
+│   └─ div.container-page
+│       ├─ Reveal > div.max-w-2xl
+│       │    ├─ div eyebrow "Yetenekler" / "Capabilities"
+│       │    └─ h2 "Revenue Centers ile gelen her şey, uçtan uca." / EN
+│       └─ div "mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5" — 4 kart (Reveal delay 0/100/200/300)
+│            kart: div "rounded-xl bg-black border border-white/10 p-3 lg:p-4 ..." (--tint:#f43f5e)
+│              ├─ div "rounded-lg bg-zinc-950 border border-white/5 p-1 h-[200px] ..." > GÖRSEL
+│              ├─ h3  1) "Per-channel rules"  2) "Independent reporting"  3) "Routing & printing"  4) "Operating hours"
+│              └─ p   kart gövdesi (İngilizce)
+│
+├─ section  "py-20 lg:py-28 bg-bg-subtle"                                   [WHY — "Neden Dasvio?" checklist varyantı]
+│   └─ div.container-page > div "grid lg:grid-cols-[1fr_1.2fr] gap-12 items-start"
+│       ├─ Reveal > div > eyebrow "Neden Dasvio?" / "Why teams switch" + h2 "Ekibinizin zaten kullandığı panele entegre." / EN
+│       └─ Reveal(150) > ul.space-y-4 — 4 madde (lucide check, color:#f43f5e)
+│            └─ div.mt-10 > a CTA "Kişiselleştirilmiş demo al" / "Book a personalized demo" → /{locale}/contact
+│
+├─ section  "py-20 lg:py-28"                                                [OTHER PRODUCTS]
+│   └─ div.container-page
+│       ├─ div "flex items-end justify-between gap-6 flex-wrap"
+│       │    ├─ Reveal > div.max-w-xl > eyebrow "Keşfetmeye devam et" + h2 "Dasvio platformunun geri kalanı."
+│       │    └─ a "Tüm ürünler" → /{locale}#features
+│       └─ div "mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-3" — 3 kart (Reveal 0/100/200):
+│            1) /products/qr-menu       (--tint:#ffffff)  h3 "QR Menü"
+│            2) /products/pos           (--tint:#06b6d4)  h3 "Dasvio POS"
+│            3) /products/multi-branch  (--tint:#f43f5e)  h3 "Çoklu Şube Yönetimi"
+│            (kart başlık + açıklamaları EN sayfada da Türkçe; yalnız "Keşfet"→"Explore")
+│
+└─ section  "py-12 border-t border-border-subtle bg-bg-subtle"              [STATS BAND]
+    └─ 3 kolon: 7/24 Türkçe destek hattı · 14 gün Ortalama kurulum süresi · %99.9 Uptime garantisi (EN çevrili)
+
+ŞABLON SAPMALARI (diğer ürün sayfalarına göre):
+- Hero "centered showcase" varyantı (pos, qr-menu, combo-builder ile aynı aile). İki kolonlu hero kullanan
+  sayfalardan (regional-pricing, signage, branch-overrides...) farklı olarak:
+  · Eyebrow/kategori etiketi ve "← Kategori" geri-linki YOK → content.json'da category: null.
+  · Hero CTA butonları YOK ("Ücretsiz Demo Al" / "Fiyatlandırma" çifti bu sayfada yok).
+  · Gradient ayraç çizgisi (h-px w-24) YOK.
+  · Çipler nötr stilde (border-white/10 bg-white/[0.03] px-4 py-2, text-[13px]); iki kolonlu sayfalardaki
+    tint'li çip stili (border-color:#hex40 / background:#hex0d, px-3 py-1.5, text-[12.5px]) DEĞİL.
+  · Mockup, h1'in altında tam genişlik panelde (box-shadow 0 60px 120px #f43f5e1f).
+- 01-06 numaralı "steps" bölümü YOK.
+- Alıntı (quote/blockquote) bölümü YOK; "Neden Dasvio?" checklist varyantı var (regional-pricing quote kullanıyor).
+- Client-side simülasyon bileşeni YOK (RSC payload'daki client bileşenler yalnız Navbar, Image, Reveal, IconMark, default).
+- Yetenek grid'i standart 4'lü (lg:grid-cols-4), kart tint'i --tint:#f43f5e.
+- DİKKAT: Ürün-özgü tüm metinler (h1, açıklama, çipler, yetenek kartları, mockup metinleri) her iki locale'de de
+  İNGİLİZCE — TR sayfasında bile. Çeviri yalnız ortak şablon string'lerinde.

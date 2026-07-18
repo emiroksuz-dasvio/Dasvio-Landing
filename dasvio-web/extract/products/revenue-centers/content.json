@@ -1,0 +1,104 @@
+{
+  "slug": "revenue-centers",
+  "tint": "#f43f5e",
+  "category": null,
+  "categoryNote": "Hero'da eyebrow/kategori etiketi YOK. Sayfa 'centered showcase' hero varyantını kullanıyor (pos, qr-menu, combo-builder ile aynı): ortalanmış dev h1, altında açıklama, büyük mockup paneli, en altta çip satırı. İki kolonlu hero'daki '← Kategori' geri-linki bu şablonda yok.",
+  "title": "Revenue Centers",
+  "description": "Split dine-in, takeaway, delivery, bar and any other channel into its own revenue center — each with its own tax rules, printer routing, reporting and operating hours. Clean numbers, clean operations.",
+  "tags": ["Channel split", "Tax rules", "Routing"],
+  "heroCtas": [],
+  "heroCtasNote": "Hero'da CTA butonu YOK (centered showcase varyantında hero CTA'sız; demo CTA'sı yalnızca 'Neden Dasvio?' bölümünde).",
+  "steps": [],
+  "stepsNote": "01-06 numaralı adım bölümü bu sayfada YOK.",
+  "capabilitiesEyebrow": { "tr": "Yetenekler", "en": "Capabilities" },
+  "capabilitiesHeading": {
+    "tr": "Revenue Centers ile gelen her şey, uçtan uca.",
+    "en": "Everything Revenue Centers ships with, end to end."
+  },
+  "capabilities": [
+    {
+      "title": "Per-channel rules",
+      "body": "Each revenue center gets its own tax rate, service charge, gratuity and operating-hour configuration."
+    },
+    {
+      "title": "Independent reporting",
+      "body": "View revenue, ticket size, peak hours per center. Compare side by side or roll up to the branch total."
+    },
+    {
+      "title": "Routing & printing",
+      "body": "Route items to the right kitchen station and printer based on the revenue center the order came from."
+    },
+    {
+      "title": "Operating hours",
+      "body": "Open dine-in 11–22, delivery 11–02. Each channel has its own schedule, all in one place."
+    }
+  ],
+  "why": {
+    "variant": "why",
+    "note": "Quote/blockquote varyantı DEĞİL; 'Neden Dasvio?' checklist varyantı (bg-bg-subtle, sol başlık + sağ 4 maddelik check listesi + demo CTA).",
+    "eyebrow": { "tr": "Neden Dasvio?", "en": "Why teams switch" },
+    "heading": {
+      "tr": "Ekibinizin zaten kullandığı panele entegre.",
+      "en": "Built into the same panel your team already uses."
+    },
+    "bullets": {
+      "tr": [
+        "Marka bağımlılığı yok — mevcut donanımınızla çalışır",
+        "Ortalama 14 günde canlıya al, tek şubeden zincirlere kadar",
+        "7/24 Türkçe destek hattı, her planda dahil",
+        "GİB uyumlu, KVKK uyumlu — ek modül gerektirmez"
+      ],
+      "en": [
+        "No vendor lock-in — works alongside your existing setup",
+        "14 days average go-live across single locations and chains",
+        "24/7 native-language support included on every plan",
+        "GDPR & GİB-compliant out of the box, no add-ons required"
+      ]
+    },
+    "cta": {
+      "label": { "tr": "Kişiselleştirilmiş demo al", "en": "Book a personalized demo" },
+      "href": "/{locale}/contact"
+    }
+  },
+  "otherProducts": ["qr-menu", "pos", "multi-branch"],
+  "otherProductsSection": {
+    "eyebrow": { "tr": "Keşfetmeye devam et", "en": "Also explore" },
+    "heading": { "tr": "Dasvio platformunun geri kalanı.", "en": "The rest of the Dasvio platform." },
+    "allProductsLink": { "label": { "tr": "Tüm ürünler", "en": "All products" }, "href": "/{locale}#features" },
+    "cardCta": { "tr": "Keşfet", "en": "Explore" },
+    "note": "Kart başlıkları ve açıklamaları HER İKİ locale'de de aynı Türkçe metin (QR Menü / Dasvio POS / Çoklu Şube Yönetimi)."
+  },
+  "statsBand": {
+    "tr": [
+      { "value": "7/24", "label": "Türkçe destek hattı" },
+      { "value": "14 gün", "label": "Ortalama kurulum süresi" },
+      { "value": "%99.9", "label": "Uptime garantisi" }
+    ],
+    "en": [
+      { "value": "24/7", "label": "Support hotline" },
+      { "value": "14 days", "label": "Average setup time" },
+      { "value": "99.9%", "label": "Uptime guarantee" }
+    ]
+  },
+  "trTitle_vs_enTitle": {
+    "note": "Ürün-özgü içerik (h1 'Revenue Centers', hero açıklaması, hero çipleri, hero mockup metinleri, 4 yetenek kartının başlık+gövdesi, kart görsel metinleri) iki locale'de BİREBİR AYNI ve İNGİLİZCE — TR sayfasında da İngilizce. Genel kuralın ('içerik iki locale'de aynı Türkçe') istisnası: içerik aynı ama Türkçe değil, İngilizce. TR/EN arasında farklı olan string'ler yalnızca ortak şablon metinleri (aşağıda).",
+    "differences": [
+      { "field": "capabilitiesEyebrow", "tr": "Yetenekler", "en": "Capabilities" },
+      { "field": "capabilitiesHeading", "tr": "Revenue Centers ile gelen her şey, uçtan uca.", "en": "Everything Revenue Centers ships with, end to end." },
+      { "field": "why.eyebrow", "tr": "Neden Dasvio?", "en": "Why teams switch" },
+      { "field": "why.heading", "tr": "Ekibinizin zaten kullandığı panele entegre.", "en": "Built into the same panel your team already uses." },
+      { "field": "why.bullets[0]", "tr": "Marka bağımlılığı yok — mevcut donanımınızla çalışır", "en": "No vendor lock-in — works alongside your existing setup" },
+      { "field": "why.bullets[1]", "tr": "Ortalama 14 günde canlıya al, tek şubeden zincirlere kadar", "en": "14 days average go-live across single locations and chains" },
+      { "field": "why.bullets[2]", "tr": "7/24 Türkçe destek hattı, her planda dahil", "en": "24/7 native-language support included on every plan" },
+      { "field": "why.bullets[3]", "tr": "GİB uyumlu, KVKK uyumlu — ek modül gerektirmez", "en": "GDPR & GİB-compliant out of the box, no add-ons required" },
+      { "field": "why.cta", "tr": "Kişiselleştirilmiş demo al", "en": "Book a personalized demo" },
+      { "field": "otherProducts.eyebrow", "tr": "Keşfetmeye devam et", "en": "Also explore" },
+      { "field": "otherProducts.heading", "tr": "Dasvio platformunun geri kalanı.", "en": "The rest of the Dasvio platform." },
+      { "field": "otherProducts.allProductsLink", "tr": "Tüm ürünler", "en": "All products" },
+      { "field": "otherProducts.cardCta", "tr": "Keşfet", "en": "Explore" },
+      { "field": "statsBand[0]", "tr": "7/24 / Türkçe destek hattı", "en": "24/7 / Support hotline" },
+      { "field": "statsBand[1]", "tr": "14 gün / Ortalama kurulum süresi", "en": "14 days / Average setup time" },
+      { "field": "statsBand[2]", "tr": "%99.9 / Uptime garantisi", "en": "99.9% / Uptime guarantee" }
+    ]
+  }
+}

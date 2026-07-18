@@ -1,0 +1,428 @@
+{
+  "nav": {
+    "products": "Ürünler",
+    "solutions": "Çözümler",
+    "pricing": "Fiyatlandırma",
+    "resources": "Kaynaklar",
+    "login": "Giriş Yap",
+    "demo": "Demo Al",
+    "menu": {
+      "qrMenu": "QR Menü",
+      "qrMenuDesc": "Çok dilli dijital menü, AI çeviri, masa bazlı sipariş",
+      "pos": "POS Yönetimi",
+      "posDesc": "Cihaz, yazıcı, gelir merkezi tek panelden",
+      "multiBranch": "Çok Şubeli Yönetim",
+      "multiBranchDesc": "Master menü, fiyat tier, şube override",
+      "integrations": "Platform Entegrasyonları",
+      "integrationsDesc": "Getir, Trendyol, Yemeksepeti, Qapera",
+      "analytics": "Analitik & Raporlama",
+      "analyticsDesc": "Satış, ürün, ödeme, heatmap dashboardları",
+      "signage": "Digital Signage",
+      "signageDesc": "Ekran, playlist, müşteri ekranı yönetimi"
+    }
+  },
+  "hero": {
+    "eyebrow": "Restoran yönetiminde yeni standart",
+    "title": "Tek panelden",
+    "titleAccent": "tüm restoranınız",
+    "subtitle": "QR menü, POS, çok şube yönetimi, platform entegrasyonları ve analitik — restoran operasyonunuzun tamamı Dasvio ile tek yerde.",
+    "ctaPrimary": "Ücretsiz Demo Al",
+    "ctaSecondary": "Özellikleri Keşfet",
+    "trustBadge": "Türkiye'nin önde gelen 2.000+ restoranı tarafından kullanılıyor"
+  },
+  "stats": {
+    "title": "Sektörün öncüsü işletmelerin tercihi",
+    "items": [
+      { "value": "2.000+", "label": "Aktif restoran" },
+      { "value": "12.000+", "label": "Yönetilen şube" },
+      { "value": "14", "label": "Desteklenen dil" },
+      { "value": "8+", "label": "Platform entegrasyonu" }
+    ]
+  },
+  "problem": {
+    "eyebrow": "PROBLEM",
+    "title": "Restoran işletmek her geçen gün daha karmaşık.",
+    "body": "Farklı şubeler, ayrı POS sistemleri, onlarca yemek platformu, çok dilli müşteriler, vardiya yönetimi, fiyat değişiklikleri... Bunların hepsini ayrı ayrı yönetmek artık sürdürülebilir değil. Dasvio, restoranın tüm operasyonunu tek bir kontrol noktasında birleştirir."
+  },
+  "features": {
+    "eyebrow": "ÖZELLİKLER",
+    "title": "Restoranınız için ihtiyacınız olan her şey",
+    "subtitle": "QR menüden POS'a, çok şubeden analitiğe — modüler ama bütünsel bir platform.",
+    "items": [
+      {
+        "icon": "pos",
+        "title": "POS Yönetimi",
+        "description": "Cihaz yönetimi, fiş yazdırma, gelir merkezleri ve işletme saatleri — tamamı panelden.",
+        "tags": ["Çoklu cihaz", "Yazıcı yönetimi", "Gelir merkezi"]
+      },
+      {
+        "icon": "branch",
+        "title": "Çok Şubeli Yönetim",
+        "description": "Merkezi master menü, şube bazlı override, bölgesel fiyat grupları ve toplu zam aracı.",
+        "tags": ["Master menü", "Store group", "Fiyat tier"]
+      },
+      {
+        "icon": "qr",
+        "title": "QR Menü",
+        "description": "Çok dilli, AI çevirili dijital menü. Tema, spotlight, masa bazlı sipariş akışı dahil.",
+        "tags": ["AI çeviri", "Tema yönetimi", "Masa bazlı"]
+      },
+      {
+        "icon": "plug",
+        "title": "Platform Entegrasyonları",
+        "description": "Getir, Trendyol, Yemeksepeti, Qapera ve daha fazlası — tek panelden yönet, eşleştir, fiyatla.",
+        "tags": ["Getir", "Trendyol", "Yemeksepeti"]
+      },
+      {
+        "icon": "chart",
+        "title": "Gerçek Zamanlı Analitik",
+        "description": "Satış, ürün performansı, saatlik heatmap, ödeme dağılımı ve iptal/ikram analizleri.",
+        "tags": ["Heatmap", "Ürün analizi", "Canlı dashboard"]
+      },
+      {
+        "icon": "screen",
+        "title": "Digital Signage",
+        "description": "Restoran ekranları, müşteri ekranı, playlist ve zamanlama yönetimi tek noktadan.",
+        "tags": ["Playlist", "Cihaz yönetimi", "Müşteri ekranı"]
+      }
+    ]
+  },
+  "logos": {
+    "title": "Türkiye'nin önde gelen restoran zincirleri Dasvio kullanıyor"
+  },
+  "personas": {
+    "eyebrow": "HERKES İÇİN",
+    "title": "Restoran ekibinin her seviyesi için tasarlandı",
+    "subtitle": "Sahipten operasyon müdürüne, kasiyerden bölge yöneticisine — herkesin işini kolaylaştırır.",
+    "items": [
+      {
+        "role": "Restoran Sahibi",
+        "headline": "Tüm işletmenizi avucunuzun içinde tutun",
+        "points": [
+          "Tüm şubelerin canlı satışını tek ekranda görün",
+          "Hangi şube, hangi ürün, hangi saatte para kazandırıyor anlayın",
+          "Büyüme kararlarını veri ile alın"
+        ]
+      },
+      {
+        "role": "Operasyon Müdürü",
+        "headline": "Karmaşıklığı tek panele indirin",
+        "points": [
+          "Şubeler arası fiyat ve menü kontrolü dakikalar içinde",
+          "Personel, vardiya, yetki yönetimi tek yerden",
+          "Platform yorumları, claim'ler ve katalog senkronizasyonu otomatik"
+        ]
+      },
+      {
+        "role": "Personel",
+        "headline": "Hızlı, sezgisel, kullanması zevkli",
+        "points": [
+          "POS'ta yeni başlayan personel 10 dakikada öğrenir",
+          "QR menü sayesinde sipariş alma süresi yarıya iner",
+          "Mobil cihazdan ürün uygunluğunu anında değiştirin"
+        ]
+      }
+    ]
+  },
+  "qrMenu": {
+    "eyebrow": "QR MENÜ",
+    "title": "Müşterinize 14 dilde, dakikalar içinde menünüzü açın",
+    "subtitle": "Dasvio AI, mevcut menünüzü 14 dile çevirir. Siz sadece menüyü oluşturursunuz, geri kalanını biz hallederiz.",
+    "features": [
+      "14 dilde otomatik AI çevirisi",
+      "Tema, renk ve tipografi yönetimi panelden",
+      "Spotlight, kampanya ve kombo gösterimi",
+      "Masa bazlı QR akışı ve sipariş takibi",
+      "Ürün varyantı, modifier ve ekstra seçenek desteği",
+      "PWA — telefondan native uygulama gibi açılır"
+    ],
+    "cta": "QR Menü demosu iste"
+  },
+  "multiBranch": {
+    "eyebrow": "ÇOK ŞUBELİ YÖNETİM",
+    "title": "1 şubeden 1000 şubeye, aynı kolaylıkla",
+    "subtitle": "Master menü oluşturun, şubelere atayın. İstediğiniz şubede fiyatı, varyantı veya uygunluğu override edin.",
+    "features": [
+      "Merkezi master menü ve katalog yönetimi",
+      "Şube-menü atama matrisi ve toplu atama",
+      "Bölgesel fiyat grupları ve store group yapısı",
+      "Şube bazlı ürün, varyant ve fiyat override",
+      "Spreadsheet mantığında fiyat matrisi ve toplu zam aracı",
+      "Menü zamanlama ve klonlama"
+    ],
+    "cta": "Çok şubeli demosu iste"
+  },
+  "integrations": {
+    "eyebrow": "ENTEGRASYONLAR",
+    "title": "Yemek platformlarıyla artık savaşmıyorsunuz",
+    "subtitle": "Getir, Trendyol, Yemeksepeti ve daha fazlası — tüm platformları Dasvio panelinden yönetin. Katalog eşleştirmesini bir kez yapın, hepsi senkronize.",
+    "platforms": [
+      "Getir Yemek",
+      "Trendyol Yemek",
+      "Yemeksepeti",
+      "Qapera",
+      "e-Adisyon (GİB)"
+    ],
+    "features": [
+      "Tek panelden tüm platformları aç/kapat",
+      "Ürün, kategori, varyant ve modifier eşleştirme",
+      "Platform yorumlarına panelden cevap",
+      "Trendyol claim'leri (iade/iptal) yönetimi",
+      "Platform fiyatlarını toplu güncelleme",
+      "Restoran yoğunluğu, kurye, teslimat süresi kontrolü"
+    ],
+    "cta": "Entegrasyonları görüntüle"
+  },
+  "analytics": {
+    "eyebrow": "ANALİTİK",
+    "title": "Her şeyi ölç, doğru kararı al",
+    "subtitle": "Restoranınızı bir veri ürünü gibi yönetin. Hangi ürün, hangi saatte, hangi şubede, hangi kanaldan ne kadar kazanıyor — hepsi tek bakışta.",
+    "metrics": [
+      { "label": "Saatlik satış heatmap", "value": "Pazartesi 12-14 arası %38 yoğunluk" },
+      { "label": "En çok satan ürün", "value": "Tavuk dürüm — günde 142 adet" },
+      { "label": "Ödeme dağılımı", "value": "Kart %62 • Nakit %23 • Online %15" },
+      { "label": "İkram oranı", "value": "Toplam satışın %2.1'i" }
+    ],
+    "cta": "Analitik demosu iste"
+  },
+  "testimonials": {
+    "eyebrow": "MÜŞTERİ HİKAYELERİ",
+    "title": "Restoran sahipleri ne diyor?",
+    "items": [
+      {
+        "quote": "12 şubemizi yönetmek eskiden 3 farklı yazılım gerektiriyordu. Dasvio'ya geçtikten sonra tüm operasyonumuz tek panelden yönetiliyor. Aylık 40 saat ek vakit kazandık.",
+        "name": "Mehmet Yılmaz",
+        "role": "Genel Müdür",
+        "company": "Anatolia Kebap Zinciri"
+      },
+      {
+        "quote": "QR menünün 14 dilde çevrilmesi turist yoğun lokasyonlarımızda satışı %22 artırdı. Üstelik AI çevirisi, manuel düzenleme şansını da bize bırakıyor.",
+        "name": "Selin Aktaş",
+        "role": "Kurucu",
+        "company": "Coastal Bistro"
+      },
+      {
+        "quote": "Yemek platformlarındaki menü eşleştirmesi bizim için en büyük baş ağrısıydı. Dasvio bir kez kurduktan sonra her şey senkron çalışıyor.",
+        "name": "Ahmet Kaya",
+        "role": "Operasyon Direktörü",
+        "company": "Big Burger Group"
+      }
+    ]
+  },
+  "sectors": {
+    "eyebrow": "SEKTÖRLER",
+    "title": "Restoran ekosisteminin her köşesi için",
+    "subtitle": "Tek bir lokantadan uluslararası zincirlere, kafeden cloud kitchen'a — Dasvio her ölçeğe ve formata uyum sağlar.",
+    "items": [
+      {
+        "icon": "utensils",
+        "title": "Fine Dining",
+        "desc": "Lüks lokantalar ve gourmet mekânlar için QR menü, masa yönetimi ve detaylı analitik."
+      },
+      {
+        "icon": "coffee",
+        "title": "Kafe & Bakery",
+        "desc": "Kahve dükkanları, fırınlar ve patisserie'ler için sade POS ve hızlı sipariş akışı."
+      },
+      {
+        "icon": "pizza",
+        "title": "Fast Food & QSR",
+        "desc": "Yoğun ciro yönetimi, kombolar, drive-thru ve mobil sipariş entegrasyonları."
+      },
+      {
+        "icon": "wine",
+        "title": "Bar & Pub",
+        "desc": "Açık masa yönetimi, hesap bölme, içki menüsü ve etkinlik takvimi tek sistemde."
+      },
+      {
+        "icon": "bed",
+        "title": "Otel & Resort",
+        "desc": "Restoran + bar + oda servisi tek bir panelden. PMS entegrasyonu hazır."
+      },
+      {
+        "icon": "truck",
+        "title": "Cloud Kitchen",
+        "desc": "Tek mutfak, çoklu marka. Getir, Trendyol, Yemeksepeti aynı anda yönetim."
+      },
+      {
+        "icon": "building",
+        "title": "Zincir & Franchise",
+        "desc": "Master menü, bölgesel fiyat ve şube performans karşılaştırması — ölçeklenebilir altyapı."
+      },
+      {
+        "icon": "store",
+        "title": "Bistro & Brasserie",
+        "desc": "Orta ölçekli işletmeler için dengeli özellik seti ve dakikalar içinde kurulum."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "HAKKIMIZDA",
+    "title": "Restoran operasyonunu yeniden tasarladık",
+    "body": "Dasvio, restoran sahiplerinin her gün yüzleştiği parçalı sistemler, dağınık veriler ve gereksiz manuel işlerden yola çıkarak doğdu. Tek bir kontrol noktası, tüm operasyon, hızlı kurulum — restoran teknolojisinin nasıl olması gerektiğine dair net bir cevap.",
+    "pillars": [
+      {
+        "title": "2.000+ aktif restoran",
+        "desc": "Tek şubeden uluslararası zincire kadar her ölçekte güveniyor."
+      },
+      {
+        "title": "Türkiye'de geliştirildi",
+        "desc": "GİB uyumu, yerel platformlar ve Türkçe destek — sektörü içeriden bilen ekip."
+      },
+      {
+        "title": "7/24 yanınızda",
+        "desc": "Türkçe destek hattı, 14 gün ortalama kurulum, %99.9 uptime garantisi."
+      }
+    ],
+    "cta": "Dasvio hakkında daha fazlası"
+  },
+  "pricing": {
+    "eyebrow": "FİYATLANDIRMA",
+    "title": "İşletmenizin boyutuna göre planlayın",
+    "subtitle": "Tek şubeden uluslararası zincirlere kadar her ölçeğe uygun plan.",
+    "billingMonthly": "Aylık",
+    "billingAnnual": "Yıllık",
+    "billingAnnualSave": "2 ay bedava",
+    "plans": [
+      {
+        "name": "Starter",
+        "tagline": "Tek şubeli işletmeler için",
+        "price": "₺1.490",
+        "period": "/ ay",
+        "cta": "Başla",
+        "features": [
+          "QR Menü (1 şube)",
+          "Temel POS",
+          "1 platform entegrasyonu",
+          "Temel analitik",
+          "E-posta destek"
+        ]
+      },
+      {
+        "name": "Pro",
+        "tagline": "2-10 şubeli işletmeler için",
+        "price": "₺3.990",
+        "period": "/ ay",
+        "highlight": true,
+        "cta": "En çok tercih edilen",
+        "features": [
+          "QR Menü (10 şubeye kadar)",
+          "POS + gelir merkezleri",
+          "Tüm platform entegrasyonları",
+          "Çok şubeli master menü",
+          "Gelişmiş analitik",
+          "Öncelikli destek"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "tagline": "10+ şubeli zincirler için",
+        "price": "Özel",
+        "period": "",
+        "cta": "İletişime geç",
+        "features": [
+          "Sınırsız şube",
+          "Bölgesel fiyat tier'ları",
+          "Özel entegrasyonlar",
+          "Digital signage",
+          "Adanmış başarı yöneticisi",
+          "SLA garantisi"
+        ]
+      }
+    ]
+  },
+  "demoForm": {
+    "eyebrow": "DEMO",
+    "title": "15 dakikada Dasvio'yu canlı görün",
+    "subtitle": "Restoranınızın ihtiyacına özel kişiselleştirilmiş bir demo planlayalım.",
+    "fields": {
+      "name": "Ad Soyad",
+      "company": "Restoran / Şirket",
+      "branches": "Şube sayısı",
+      "country": "Ülke",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "message": "Mesaj (opsiyonel)"
+    },
+    "branchesOptions": ["1", "2-5", "6-20", "20+"],
+    "submit": "Demo Talep Et",
+    "privacy": "Formu göndererek KVKK kapsamında verilerinizin işlenmesini kabul edersiniz."
+  },
+  "trust": {
+    "items": [
+      { "value": "7/24", "label": "Türkçe destek hattı" },
+      { "value": "14 gün", "label": "Ortalama kurulum süresi" },
+      { "value": "%99.9", "label": "Uptime garantisi" }
+    ]
+  },
+  "footer": {
+    "tagline": "Restoran operasyonunun yeni standardı.",
+    "cta": {
+      "eyebrow": "Restoran yönetiminde yeni standart",
+      "headline": "Tüm operasyonunuzu tek panele taşıyın",
+      "primary": "Ücretsiz Demo Al",
+      "secondary": "Fiyatları Keşfet",
+      "stats": [
+        { "label": "7/24 Destek", "value": "Hemen yanınızda" },
+        { "label": "Binlerce işlem", "value": "Hızlı ödeme akışı" },
+        { "label": "Mobil uyumlu", "value": "Her cihazda sorunsuz" }
+      ]
+    },
+    "contact": {
+      "eyebrow": "Bize ulaşın",
+      "title": "Hızlı demo ve detaylı teklif için hazırız.",
+      "body": "Uzman ekibimiz ortalama 2 saat içinde geri döner.",
+      "cta": "İletişime geç",
+      "badge": "Yerel destek, 7/24 hizmet"
+    },
+    "social": "Sosyal ağlar",
+    "columns": {
+      "products": {
+        "title": "Ürünler",
+        "links": [
+          "QR Menü",
+          "POS",
+          "Çok Şubeli Yönetim",
+          "Digital Signage",
+          "Analitik",
+          "Personel & Yetki"
+        ]
+      },
+      "solutions": {
+        "title": "Çözümler",
+        "links": [
+          "Restoran",
+          "Kafe",
+          "Fast Food",
+          "Bar",
+          "Otel & Resort",
+          "Zincir"
+        ]
+      },
+      "company": {
+        "title": "Şirket",
+        "links": [
+          "Hakkımızda",
+          "Kariyer",
+          "Basın",
+          "İletişim"
+        ]
+      },
+      "resources": {
+        "title": "Kaynaklar",
+        "links": [
+          "Blog",
+          "Müşteri Hikayeleri",
+          "Yardım Merkezi",
+          "API Dokümanı",
+          "Durum Sayfası"
+        ]
+      }
+    },
+    "legal": {
+      "rights": "Tüm hakları saklıdır.",
+      "links": ["KVKK", "Kullanım Şartları", "Gizlilik Politikası", "Çerezler"],
+      "allPolicies": "Tüm politikalar"
+    }
+  }
+}

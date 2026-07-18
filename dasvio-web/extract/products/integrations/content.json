@@ -1,0 +1,92 @@
+{
+  "slug": "integrations",
+  "accent": "#f59e0b",
+  "category": "Integrations",
+  "categoryNote": "Hero eyebrow is a back-link '← Integrations' to /{lang}#features; label is English on BOTH locales.",
+  "title": "Platform Integrations",
+  "description": "Getir, Trendyol, Yemeksepeti, Qapera and more — map your catalog once and every platform stays in sync. Bulk pricing, review inbox, claims handling and live status control, all from one panel.",
+  "tags": ["Getir", "Trendyol", "Yemeksepeti"],
+  "heroCtas": [
+    {
+      "variant": "primary",
+      "href": "/{lang}/contact",
+      "label_tr": "Ücretsiz Demo Al",
+      "label_en": "Get a free demo"
+    },
+    {
+      "variant": "secondary",
+      "href": "/{lang}/pricing",
+      "label_tr": "Fiyatlandırma",
+      "label_en": "Pricing",
+      "trailingIcon": "arrow-right"
+    }
+  ],
+  "steps": [],
+  "stepsNote": "No numbered 01-06 steps section on this page.",
+  "capabilitiesHeading": {
+    "eyebrow_tr": "Yetenekler",
+    "eyebrow_en": "Capabilities",
+    "h2_tr": "Platform Integrations ile gelen her şey, uçtan uca.",
+    "h2_en": "Everything Platform Integrations ships with, end to end."
+  },
+  "capabilities": [
+    {
+      "title": "Catalog mapping, once",
+      "body": "Map products, categories and modifiers to platform equivalents once. Everything stays in sync going forward.",
+      "visual": "IntegrationsCatalogMap"
+    },
+    {
+      "title": "Bulk platform pricing",
+      "body": "Update prices across Getir, Trendyol and Yemeksepeti in a single sheet view. Per-platform markups supported.",
+      "visual": "IntegrationsPricingSheet"
+    },
+    {
+      "title": "Reviews & claims inbox",
+      "body": "Reply to platform reviews from one inbox. Approve, reject or escalate Trendyol claims directly from Dasvio.",
+      "visual": "IntegrationsReviewBubbles"
+    },
+    {
+      "title": "Live status control",
+      "body": "Toggle restaurant busyness, courier status or open/close on every platform from a single button.",
+      "visual": "IntegrationsStatusToggles"
+    }
+  ],
+  "quote": {
+    "variant": "quote",
+    "variantNote": "This page uses the QUOTE section (figure/blockquote with tinted quote-glyph icon), NOT the 'why' section (pos/qr-menu have 'Ekibinizin zaten kullandığı panele entegre.' instead).",
+    "textParts": [
+      "We finally have a single panel for everything ",
+      "platform integrations",
+      " touches. Our team onboards in a morning, not a week."
+    ],
+    "textPartsNote": "All three parts are plain text nodes inside <blockquote>, separated only by JSX comment markers (<!-- -->); the middle (product-name) part is NOT wrapped in any span.",
+    "attribution": "Restaurant operator, multi-branch chain · Türkiye",
+    "iconTintBackground": "#f59e0b20",
+    "iconColor": "#f59e0b"
+  },
+  "otherProducts": ["qr-menu", "pos", "multi-branch"],
+  "otherProductsNote": "Card tints in order: #ffffff (QR Menü), #06b6d4 (Dasvio POS), #f43f5e (Çoklu Şube Yönetimi). Card titles/descriptions are TURKISH on BOTH locales; only the 'Keşfet'/'Explore' label and hrefs are localized.",
+  "trTitle_vs_enTitle": {
+    "productSpecificStringsIdenticalAcrossLocales": true,
+    "IMPORTANT_languageAnomaly": "All product-specific copy (h1 'Platform Integrations', hero description, capability titles/bodies, quote text and attribution, hero eyebrow 'Integrations') is ENGLISH on the TR page as well — TR and EN are byte-identical for these strings. This deviates from the expectation that shared content is Turkish (pos/qr-menu TR pages are Turkish; analytics/heatmaps share this English anomaly). Review-bubble mock texts ('Hızlı teslimat', 'Lezzetli yemek', 'Mükemmel hizmet') are Turkish on both locales.",
+    "templateStringsLocalized": {
+      "capabilitiesEyebrow": ["Yetenekler", "Capabilities"],
+      "capabilitiesH2": ["Platform Integrations ile gelen her şey, uçtan uca.", "Everything Platform Integrations ships with, end to end."],
+      "primaryCta": ["Ücretsiz Demo Al", "Get a free demo"],
+      "secondaryCta": ["Fiyatlandırma", "Pricing"],
+      "exploreEyebrow": ["Keşfetmeye devam et", "Also explore"],
+      "exploreH2": ["Dasvio platformunun geri kalanı.", "The rest of the Dasvio platform."],
+      "allProductsLink": ["Tüm ürünler", "All products"],
+      "productCardCta": ["Keşfet", "Explore"],
+      "stats": [
+        ["7/24", "24/7"],
+        ["Türkçe destek hattı", "Support hotline"],
+        ["14 gün", "14 days"],
+        ["Ortalama kurulum süresi", "Average setup time"],
+        ["%99.9", "99.9%"],
+        ["Uptime garantisi", "Uptime guarantee"]
+      ]
+    },
+    "deployVsOldSourceDiff": "Deployed PricingSheet visual table header is 'Product / Base / TY / GT' (English); old source FeatureSubVisuals.PricingSheet had 'Ürün / Taban'. Deploy is authoritative."
+  }
+}

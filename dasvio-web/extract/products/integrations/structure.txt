@@ -1,0 +1,53 @@
+<main> iskeleti — /tr/products/integrations.html & /en/products/integrations.html (yapı birebir aynı; accent #f59e0b)
+
+section 1 — HERO (split varyant)  [pt-36 lg:pt-40 pb-16 lg:pb-24 relative overflow-hidden]
+  div.absolute.inset-0.opacity-[0.08]  style: radial-gradient(circle at 30% 50%, #f59e0b, transparent 45%)
+  container-page > grid lg:grid-cols-2 gap-10 lg:gap-12 items-stretch
+    [Reveal direction=right, delay 0]  → SOL: hero mockup paneli
+      div.relative.h-full > glow (inset-4, animate-pulse-glow, bg #f59e0b) + panel (min-h-[480px] rounded-2xl bg-zinc-950, bg-grid) > IntegrationsHero orbit-hub görseli (dasvio hub + 6 platform rozeti: Getir/Trendyol/Yemeksepeti/Migros/Qapera/e-Adisyon)
+    [Reveal up, delay 150ms]  → SAĞ: metin kolonu
+      a  "← Integrations"  → /{lang}#features   (eyebrow = geri-link)
+      h1 "Platform Integrations"   [text-[40px] sm:52 lg:64 xl:76, font-light, leading-[1.0], tracking-[-0.025em]]
+      div gradyan ayraç  (h-px w-24, linear-gradient to right #f59e0b → transparent)
+      p  açıklama (EN metin, iki locale'de aynı)
+      çipler ×3: Getir / Trendyol / Yemeksepeti  (border #f59e0b40, bg #f59e0b0d, nokta #f59e0b)
+      CTA'lar: primary → /{lang}/contact ("Ücretsiz Demo Al"/"Get a free demo"); secondary → /{lang}/pricing ("Fiyatlandırma"/"Pricing" + arrow-right)
+
+section 2 — YETENEKLER  [py-20 lg:py-28]
+  eyebrow "Yetenekler"/"Capabilities"
+  h2 "Platform Integrations ile gelen her şey, uçtan uca." / "Everything Platform Integrations ships with, end to end."
+  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 — 4 kart (Reveal delay 0/100/200/300ms)
+  kart şablonu: rounded-xl bg-black border-white/10 p-3 lg:p-4, --tint:#f59e0b; ekran: rounded-lg bg-zinc-950 border-white/5 p-1 h-[200px]
+    h3 "Catalog mapping, once"      + p   (görsel: IntegrationsCatalogMap — eşleme satırları)
+    h3 "Bulk platform pricing"      + p   (görsel: IntegrationsPricingSheet — Product/Base/TY/GT tablosu)
+    h3 "Reviews & claims inbox"     + p   (görsel: IntegrationsReviewBubbles — 3 yorum balonu, 5/4/5 yıldız)
+    h3 "Live status control"        + p   (görsel: IntegrationsStatusToggles — 3 toggle satırı)
+
+section 3 — QUOTE (alıntı varyantı)  [py-20 lg:py-32 relative overflow-hidden]
+  div.absolute.inset-0.opacity-[0.08]  style: radial-gradient(ellipse at center, #f59e0b, transparent 60%)
+  [Reveal] figure.max-w-4xl.mx-auto.text-center
+    ikon rozeti size-12 rounded-2xl (bg #f59e0b20) > çift-tırnak glyph svg (fill currentColor, color #f59e0b)
+    blockquote — 3 düz metin parçası (ortadaki "platform integrations" span'sız, JSX yorum ayraçlı):
+      "We finally have a single panel for everything " + "platform integrations" + " touches. Our team onboards in a morning, not a week."
+    figcaption "Restaurant operator, multi-branch chain · Türkiye"
+
+section 4 — DİĞER ÜRÜNLER  [py-20 lg:py-28]
+  eyebrow "Keşfetmeye devam et"/"Also explore"; h2 "Dasvio platformunun geri kalanı."/"The rest of the Dasvio platform."
+  sağda link "Tüm ürünler"/"All products" → /{lang}#features
+  grid sm:grid-cols-2 lg:grid-cols-3 gap-3 — 3 kart (arrow-up-right ikonlu):
+    /{lang}/products/qr-menu       "QR Menü"                --tint:#ffffff
+    /{lang}/products/pos           "Dasvio POS"             --tint:#06b6d4
+    /{lang}/products/multi-branch  "Çoklu Şube Yönetimi"    --tint:#f43f5e
+  (kart başlık+açıklamaları HER İKİ locale'de Türkçe; yalnız "Keşfet"/"Explore" çevrili)
+
+section 5 — İSTATİSTİK ŞERİDİ  [py-12 border-t border-border-subtle bg-bg-subtle]
+  3'lü divide grid: "7/24 Türkçe destek hattı" · "14 gün Ortalama kurulum süresi" · "%99.9 Uptime garantisi"
+  (EN: "24/7 Support hotline" · "14 days Average setup time" · "99.9% Uptime guarantee")
+
+ŞABLON SAPMALARI (diğer ürün sayfalarına göre):
+- Hero SPLIT varyantı: 2 kolon, mockup SOLDA (Reveal direction=right), h1 küçük ölçek (40→76px, tracking-[-0.025em]) ve eyebrow "←" geri-link. pos/analytics/heatmaps ise CENTERED varyant: tek kolon ortalı, h1 44→104px, radial-gradient "ellipse 70% 50% at 50% 0%" opacity-[0.1]. Split varyant signage ile ortak (signage tint #10b981).
+- Yetenek gridi lg:grid-cols-4 ve yalnız 4 kart (pos/qr-menu 8 kart).
+- 01-06 numaralı ADIM bölümü YOK (multi-branch'te 01/07 step'ler var).
+- "why" bölümü YOK; yerine QUOTE bölümü var (pos/qr-menu'de "Ekibinizin zaten kullandığı panele entegre." why-bölümü var).
+- Client-side simülasyon bileşeni YOK (RSC'de yalnız Navbar/Image/Reveal/IconMark). hasSimulation: yok.
+- DİL ANOMALİSİ: ürün-özgü tüm metinler (h1, açıklama, yetenek başlık/gövdeleri, quote) TR sayfada da İNGİLİZCE; iki locale'de birebir aynı. Şablon metinleri (eyebrow'lar, CTA'lar, istatistikler) normal şekilde çevrilmiş. Ayrıca deploy'daki PricingSheet tablosu başlıkları "Product/Base" (eski kaynakta "Ürün/Taban" idi) — deploy esas.

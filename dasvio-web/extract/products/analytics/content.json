@@ -1,0 +1,70 @@
+{
+  "slug": "analytics",
+  "category": null,
+  "categoryNote": "Sayfada hero eyebrow/kategori etiketi YOK: analytics 'centered showcase' hero varyantini kullaniyor (eyebrow'suz, geri-link'siz). Karsilastirma: reports sayfasi split-hero'da '← Intelligence' eyebrow tasiyor. Navbar dropdown'unda urun 'Analitik & Raporlama' (desc: 'Satış, ürün, ödeme, heatmap dashboardları') olarak gecer.",
+  "tint": "#ef4444",
+  "heroVariant": "centered",
+  "title": "Real-Time Analytics",
+  "description": "Sales broken down by hour, branch, channel and product. Heatmaps reveal peak load, payment distribution shows guest behavior. Filter by any dimension, drill into any metric, export anything.",
+  "tags": ["Heatmap", "Product analytics", "Live dashboard"],
+  "heroCtas": [],
+  "heroCtasNote": "Centered hero varyantinda CTA butonu yok (h1 + p + tam genislik mockup + 3 cip). Split-hero'lu sayfalardaki 'Ücretsiz Demo Al' / 'Fiyatlandırma' butonlari bu sayfada bulunmuyor.",
+  "steps": [],
+  "stepsNote": "01-06 numarali adim bolumu bu sayfada yok.",
+  "capabilitiesEyebrow": { "tr": "Yetenekler", "en": "Capabilities" },
+  "capabilitiesHeading": {
+    "tr": "Real-Time Analytics ile gelen her şey, uçtan uca.",
+    "en": "Everything Real-Time Analytics ships with, end to end."
+  },
+  "capabilities": [
+    {
+      "title": "Hourly sales heatmap",
+      "body": "See peaks and troughs across days and hours. Spot when to schedule promos or extra staff."
+    },
+    {
+      "title": "Branch & channel comparison",
+      "body": "Compare branches side by side. Slice revenue by dine-in, delivery, online or any channel you operate."
+    },
+    {
+      "title": "Payment & product mix",
+      "body": "Card vs cash vs online split. Top sellers, category performance, modifier usage — all drillable."
+    },
+    {
+      "title": "Comp/void monitoring",
+      "body": "Track comp and void rates per branch and shift. Flag unusual patterns that need attention."
+    }
+  ],
+  "why": {
+    "variant": "why",
+    "note": "Bu sayfada 'quote' degil 'why' varyanti var. Metinler sablon-geneli (urune ozgu degil), locale'e gore cevrilmis.",
+    "eyebrow": { "tr": "Neden Dasvio?", "en": "Why teams switch" },
+    "heading": {
+      "tr": "Ekibinizin zaten kullandığı panele entegre.",
+      "en": "Built into the same panel your team already uses."
+    },
+    "bullets": {
+      "tr": [
+        "Marka bağımlılığı yok — mevcut donanımınızla çalışır",
+        "Ortalama 14 günde canlıya al, tek şubeden zincirlere kadar",
+        "7/24 Türkçe destek hattı, her planda dahil",
+        "GİB uyumlu, KVKK uyumlu — ek modül gerektirmez"
+      ],
+      "en": [
+        "No vendor lock-in — works alongside your existing setup",
+        "14 days average go-live across single locations and chains",
+        "24/7 native-language support included on every plan",
+        "GDPR & GİB-compliant out of the box, no add-ons required"
+      ]
+    },
+    "cta": {
+      "tr": { "label": "Kişiselleştirilmiş demo al", "href": "/tr/contact" },
+      "en": { "label": "Book a personalized demo", "href": "/en/contact" }
+    }
+  },
+  "otherProducts": ["qr-menu", "pos", "multi-branch"],
+  "trTitle_vs_enTitle": {
+    "differingProductStrings": [],
+    "note": "Urune ozgu HICBIR string iki locale arasinda FARKLI DEGIL — ancak DIKKAT: urune ozgu icerigin tamami her iki locale'de de INGILIZCE (Turkce degil). TR sayfasinda da h1 'Real-Time Analytics', hero aciklamasi, 3 cip ('Heatmap', 'Product analytics', 'Live dashboard'), 4 yetenek karti basligi+govdesi ve mockup ici metinler ('This week', 'Orders', 'Avg ticket', 'Branches', 'Spike Fri 22:00', 'Card/Cash/Online') aynen Ingilizce. Locale'e gore degisen tek main-ici metinler sablon string'leri: Yetenekler/Capabilities, capabilities h2 kalibi, Neden Dasvio?/Why teams switch bolumu, Kesfetmeye devam et/Also explore, Tum urunler/All products, Kesfet/Explore, istatistik bandi (7/24-24/7, 14 gun-14 days, %99.9-99.9%). Diger urun kartlarindaki basliklar ve aciklamalar (QR Menü, Dasvio POS, Çoklu Şube Yönetimi + Turkce aciklama paragraflari) her iki locale'de de ayni TURKCE metin."
+  },
+  "sharedVisualNote": "Hero mockup'i (haftalik satis karti, €42,580) eski kaynaktaki AnalyticsVisual bileseni; ayni mockup reports ve heatmaps sayfalarinin hero'sunda da kullaniliyor. 4 yetenek karti gorseli eski kaynaktaki HeatmapMini, ComparisonBars, PaymentDonut, CompChart bilesenleriyle birebir ayni."
+}

@@ -1,0 +1,267 @@
+      <section class="py-24 lg:py-32 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.1] pointer-events-none" style="background:radial-gradient(ellipse 60% 50% at 50% 0%, #f43f5e, transparent 60%)">
+        <div class="container-page relative">
+          <div class="max-w-3xl">
+            <div class="inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-[11.5px] font-semibold uppercase tracking-[0.18em]" style="border-color:#f43f5e40;background:#f43f5e0d;color:#f43f5e">
+              <svg aria-hidden="true" class="lucide lucide-sparkles size-3.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
+                <path d="M20 2v4">
+                <path d="M22 4h-4">
+                <circle cx="4" cy="20" r="2">
+              #text Katalog Freeze · Enterprise Yayın
+            <h2 class="mt-7 text-balance text-[36px] sm:text-[48px] lg:text-[64px] xl:text-[72px] font-light leading-[1.0] tracking-[-0.025em]">
+              #text Menü değişikliklerini
+              <span style="color:#f43f5e">
+                #text yazılım gibi deploy et.
+            <p class="mt-6 max-w-[640px] text-[16px] lg:text-[19px] leading-[1.6] text-fg-muted text-pretty">
+              #text Çoğu restoran sistemi katalog güncellemelerini Excel düzenlemesi gibi yapar. Dasvio, bir deployment pipeline gibi yapar — aşamalı, gözlemlenebilir, geri alınabilir.
+          <div class="mt-14 lg:mt-20 rounded-3xl border border-white/10 bg-zinc-950 overflow-hidden" style="box-shadow:0 40px 100px #f43f5e15">
+            <div class="border-b border-white/8 px-6 lg:px-8 py-4 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex gap-1.5">
+                  <div class="size-3 rounded-full bg-[#ff5f57]">
+                  <div class="size-3 rounded-full bg-[#febc2e]">
+                  <div class="size-3 rounded-full bg-[#28c840]">
+                <div class="text-[12px] font-medium text-white/40 ml-2">
+                  #text Dasvio Enterprise · Katalog Pipeline
+              <div class="flex items-center gap-2">
+                <div class="size-2 rounded-full bg-emerald-400 animate-pulse">
+                <span class="text-[11px] font-semibold text-white/60">
+                  #text Sürüm v2.4
+                <span class="text-[10px] font-semibold text-white/40 bg-white/8 px-2 py-0.5 rounded-full ml-1">
+                  #text QoS2
+            <div class="border-b border-white/5 px-6 lg:px-8 py-3">
+              <div class="flex items-center gap-1">
+                <div class="flex items-center gap-1 flex-1">
+                  <div class="flex-1 h-8 rounded-lg flex items-center justify-center gap-1.5 text-[9px] font-semibold border transition-all duration-700 border-white/20 bg-white/[0.06] text-white/90 sim-active-stage" style="border-color:#f43f5e40;background:#f43f5e10">
+                    <div class="size-1.5 rounded-full animate-pulse" style="background:#f43f5e">
+                    #text Dondur
+                  <div class="w-3 h-px flex-none transition-colors duration-500 bg-white/8">
+                <div class="flex items-center gap-1 flex-1">
+                  <div class="flex-1 h-8 rounded-lg flex items-center justify-center gap-1.5 text-[9px] font-semibold border transition-all duration-700 border-white/8 bg-white/3 text-white/25">
+                    #text Pilot
+                  <div class="w-3 h-px flex-none transition-colors duration-500 bg-white/8">
+                <div class="flex items-center gap-1 flex-1">
+                  <div class="flex-1 h-8 rounded-lg flex items-center justify-center gap-1.5 text-[9px] font-semibold border transition-all duration-700 border-white/8 bg-white/3 text-white/25">
+                    #text Aşama 1
+                  <div class="w-3 h-px flex-none transition-colors duration-500 bg-white/8">
+                <div class="flex items-center gap-1 flex-1">
+                  <div class="flex-1 h-8 rounded-lg flex items-center justify-center gap-1.5 text-[9px] font-semibold border transition-all duration-700 border-white/8 bg-white/3 text-white/25">
+                    #text Aşama 2
+                  <div class="w-3 h-px flex-none transition-colors duration-500 bg-white/8">
+                <div class="flex items-center gap-1 flex-1">
+                  <div class="flex-1 h-8 rounded-lg flex items-center justify-center gap-1.5 text-[9px] font-semibold border transition-all duration-700 border-white/8 bg-white/3 text-white/25">
+                    #text Yayınla
+            <div class="grid lg:grid-cols-[1.15fr_1fr]">
+              <div class="p-6 lg:p-8 border-r border-white/8 min-h-[480px]">
+                <div class="mb-5">
+                  <div class="flex items-baseline justify-between mb-2">
+                    <div class="flex items-center gap-3">
+                      <div class="size-10 rounded-xl flex items-center justify-center sim-icon-pulse" style="background:#f43f5e15">
+                        <svg aria-hidden="true" class="lucide lucide-snowflake size-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="color:#f43f5e" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                          <path d="m10 20-1.25-2.5L6 18">
+                          <path d="M10 4 8.75 6.5 6 6">
+                          <path d="m14 20 1.25-2.5L18 18">
+                          <path d="m14 4 1.25 2.5L18 6">
+                          <path d="m17 21-3-6h-4">
+                          <path d="m17 3-3 6 1.5 3">
+                          <path d="M2 12h6.5L10 9">
+                          <path d="m20 10-1.5 2 1.5 2">
+                          <path d="M22 12h-6.5L14 15">
+                          <path d="m4 10 1.5 2L4 14">
+                          <path d="m7 21 3-6-1.5-3">
+                          <path d="m7 3 3 6h4">
+                      <div>
+                        <div class="text-[14px] font-semibold text-white/90">
+                          #text Kataloğu dondur
+                        <div class="text-[10px] text-white/35">
+                          #text Adım
+                          #text 01
+                          #text / 07
+                    <div class="text-right">
+                      <div class="text-[28px] font-light text-white leading-none tracking-tight tabular-nums">
+                        #text 0
+                        <span class="text-white/30 text-[14px]">
+                          #text %
+                      <div class="text-[9px] text-white/35 mt-0.5">
+                        #text 1.342
+                        #text / 1.342
+                  <div class="h-1.5 rounded-full bg-white/8 overflow-hidden">
+                    <div class="h-full rounded-full transition-all duration-1000 ease-out" style="width:0%;background:linear-gradient(to right, #f43f5e99, #f43f5e)">
+                <div class="grid grid-cols-3 gap-2 mb-5">
+                  <div class="rounded-lg bg-white/[0.03] border border-white/5 px-3 py-2 transition-all duration-500">
+                    <div class="text-[8px] uppercase tracking-wider text-white/30 font-semibold">
+                      #text Teslim edildi
+                    <div class="text-[14px] font-semibold text-emerald-400 mt-0.5 tabular-nums">
+                      #text 1.342
+                  <div class="rounded-lg bg-white/[0.03] border border-white/5 px-3 py-2 transition-all duration-500">
+                    <div class="text-[8px] uppercase tracking-wider text-white/30 font-semibold">
+                      #text Senkron
+                    <div class="text-[14px] font-semibold text-amber-400 mt-0.5 tabular-nums">
+                      #text 0
+                  <div class="rounded-lg bg-white/[0.03] border border-white/5 px-3 py-2 transition-all duration-500">
+                    <div class="text-[8px] uppercase tracking-wider text-white/30 font-semibold">
+                      #text Bekliyor
+                    <div class="text-[14px] font-semibold text-white/35 mt-0.5 tabular-nums">
+                      #text 0
+                <div>
+                  <div class="space-y-2.5 sim-fade-in">
+                    <div class="rounded-lg border border-blue-500/20 bg-blue-500/5 p-3 flex items-center gap-3">
+                      <svg aria-hidden="true" class="lucide lucide-snowflake size-5 text-blue-400 sim-spin-slow flex-none" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m10 20-1.25-2.5L6 18">
+                        <path d="M10 4 8.75 6.5 6 6">
+                        <path d="m14 20 1.25-2.5L18 18">
+                        <path d="m14 4 1.25 2.5L18 6">
+                        <path d="m17 21-3-6h-4">
+                        <path d="m17 3-3 6 1.5 3">
+                        <path d="M2 12h6.5L10 9">
+                        <path d="m20 10-1.5 2 1.5 2">
+                        <path d="M22 12h-6.5L14 15">
+                        <path d="m4 10 1.5 2L4 14">
+                        <path d="m7 21 3-6-1.5-3">
+                        <path d="m7 3 3 6h4">
+                      <div>
+                        <div class="text-[11px] font-semibold text-blue-300">
+                          #text Katalog donduruldu
+                        <div class="text-[9px] text-white/40 mt-0.5">
+                          #text Tüm değişiklikler sandbox'a yönlendirildi
+                    <div class="rounded-lg border border-white/8 bg-white/3 p-3 space-y-1.5">
+                      <div class="text-[9px] text-white/35 uppercase tracking-wider font-semibold">
+                        #text Canlı menü durumu
+                      <div class="flex items-center gap-2">
+                        <div class="size-2 rounded-full bg-emerald-400">
+                        <span class="text-[10px] text-white/60">
+                          #text Fiyatlar
+                        <span class="ml-auto text-[8px] text-emerald-400/70 font-semibold">
+                          #text KİLİTLİ
+                      <div class="flex items-center gap-2">
+                        <div class="size-2 rounded-full bg-emerald-400">
+                        <span class="text-[10px] text-white/60">
+                          #text Ürün görünürlüğü
+                        <span class="ml-auto text-[8px] text-emerald-400/70 font-semibold">
+                          #text KİLİTLİ
+                      <div class="flex items-center gap-2">
+                        <div class="size-2 rounded-full bg-emerald-400">
+                        <span class="text-[10px] text-white/60">
+                          #text Seçenekler
+                        <span class="ml-auto text-[8px] text-emerald-400/70 font-semibold">
+                          #text KİLİTLİ
+              <div class="p-6 lg:p-8 overflow-y-auto max-h-[560px]">
+                <div class="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/30 mb-4">
+                  #text Pipeline adımları
+                <ol class="space-y-2">
+                  <li class="rounded-xl border p-4 cursor-pointer transition-all duration-500 border-white/20 bg-white/[0.04]">
+                    <div class="flex items-start gap-3">
+                      <div class="shrink-0 size-7 rounded-lg flex items-center justify-center text-[10px] font-bold transition-all duration-500" style="background:#f43f5e20;color:#f43f5e">
+                        #text 01
+                      <div class="flex-1 min-w-0">
+                        <h3 class="text-[14px] font-medium tracking-tight transition-colors duration-300 text-white">
+                          #text Kataloğu dondur
+                        <div class="transition-all duration-500 overflow-hidden max-h-[80px] opacity-100 mt-1.5">
+                          <p class="text-[12px] leading-[1.5] text-white/40 text-pretty">
+                            #text Mevcut durumu kilitle. Fiyat kararları verilirken yarım kalmış düzenlemelerin canlıya sızması artık yok.
+                      <div class="shrink-0 size-2 rounded-full mt-1.5 animate-pulse" style="background:#f43f5e">
+                  <li class="rounded-xl border p-4 cursor-pointer transition-all duration-500 border-white/5 bg-transparent opacity-35 hover:opacity-55">
+                    <div class="flex items-start gap-3">
+                      <div class="shrink-0 size-7 rounded-lg flex items-center justify-center text-[10px] font-bold transition-all duration-500" style="background:rgba(255,255,255,0.03);color:rgba(255,255,255,0.25)">
+                        #text 02
+                      <div class="flex-1 min-w-0">
+                        <h3 class="text-[14px] font-medium tracking-tight transition-colors duration-300 text-white/60">
+                          #text Değişiklikleri güvenle hazırla
+                        <div class="transition-all duration-500 overflow-hidden max-h-0 opacity-0">
+                          <p class="text-[12px] leading-[1.5] text-white/40 text-pretty">
+                            #text Her fiyat ayarlamasını, seçenek değişikliğini ve ürün görünürlüğünü sandbox kopyada hazırla. Canlı menü dokunulmadan çalışmaya devam eder.
+                  <li class="rounded-xl border p-4 cursor-pointer transition-all duration-500 border-white/5 bg-transparent opacity-35 hover:opacity-55">
+                    <div class="flex items-start gap-3">
+                      <div class="shrink-0 size-7 rounded-lg flex items-center justify-center text-[10px] font-bold transition-all duration-500" style="background:rgba(255,255,255,0.03);color:rgba(255,255,255,0.25)">
+                        #text 03
+                      <div class="flex-1 min-w-0">
+                        <h3 class="text-[14px] font-medium tracking-tight transition-colors duration-300 text-white/60">
+                          #text Yayınlamadan önce önizle
+                        <div class="transition-all duration-500 overflow-hidden max-h-0 opacity-0">
+                          <p class="text-[12px] leading-[1.5] text-white/40 text-pretty">
+                            #text Misafirlerin, kasiyerlerin ve platformların ne göreceğini — şube şube — tek bir cihaz güncellenmeden önce gör.
+                  <li class="rounded-xl border p-4 cursor-pointer transition-all duration-500 border-white/5 bg-transparent opacity-35 hover:opacity-55">
+                    <div class="flex items-start gap-3">
+                      <div class="shrink-0 size-7 rounded-lg flex items-center justify-center text-[10px] font-bold transition-all duration-500" style="background:rgba(255,255,255,0.03);color:rgba(255,255,255,0.25)">
+                        #text 04
+                      <div class="flex-1 min-w-0">
+                        <h3 class="text-[14px] font-medium tracking-tight transition-colors duration-300 text-white/60">
+                          #text Pilot yayın
+                        <div class="transition-all duration-500 overflow-hidden max-h-0 opacity-0">
+                          <p class="text-[12px] leading-[1.5] text-white/40 text-pretty">
+                            #text Önce 1, 5 veya 20 şubeye gönder. Gerçek trafikte doğrula, sonra tüm ağa yay.
+                  <li class="rounded-xl border p-4 cursor-pointer transition-all duration-500 border-white/5 bg-transparent opacity-35 hover:opacity-55">
+                    <div class="flex items-start gap-3">
+                      <div class="shrink-0 size-7 rounded-lg flex items-center justify-center text-[10px] font-bold transition-all duration-500" style="background:rgba(255,255,255,0.03);color:rgba(255,255,255,0.25)">
+                        #text 05
+                      <div class="flex-1 min-w-0">
+                        <h3 class="text-[14px] font-medium tracking-tight transition-colors duration-300 text-white/60">
+                          #text Zamanlanmış yayın
+                        <div class="transition-all duration-500 overflow-hidden max-h-0 opacity-0">
+                          <p class="text-[12px] leading-[1.5] text-white/40 text-pretty">
+                            #text Tam anı seç — 03:00, happy hour sonrası, vardiya arası. Gece yarısı Slack'te zam geçişi koordinasyonu artık yok.
+                  <li class="rounded-xl border p-4 cursor-pointer transition-all duration-500 border-white/5 bg-transparent opacity-35 hover:opacity-55">
+                    <div class="flex items-start gap-3">
+                      <div class="shrink-0 size-7 rounded-lg flex items-center justify-center text-[10px] font-bold transition-all duration-500" style="background:rgba(255,255,255,0.03);color:rgba(255,255,255,0.25)">
+                        #text 06
+                      <div class="flex-1 min-w-0">
+                        <h3 class="text-[14px] font-medium tracking-tight transition-colors duration-300 text-white/60">
+                          #text Anlık teslim takibi
+                        <div class="transition-all duration-500 overflow-hidden max-h-0 opacity-0">
+                          <p class="text-[12px] leading-[1.5] text-white/40 text-pretty">
+                            #text Her terminalin yeni durumu onaylamasını izle. Eski menüde takılı kalan tableti bul, detaya in, çöz.
+                  <li class="rounded-xl border p-4 cursor-pointer transition-all duration-500 border-white/5 bg-transparent opacity-35 hover:opacity-55">
+                    <div class="flex items-start gap-3">
+                      <div class="shrink-0 size-7 rounded-lg flex items-center justify-center text-[10px] font-bold transition-all duration-500" style="background:rgba(255,255,255,0.03);color:rgba(255,255,255,0.25)">
+                        #text 07
+                      <div class="flex-1 min-w-0">
+                        <h3 class="text-[14px] font-medium tracking-tight transition-colors duration-300 text-white/60">
+                          #text Tek tıkla geri alma
+                        <div class="transition-all duration-500 overflow-hidden max-h-0 opacity-0">
+                          <p class="text-[12px] leading-[1.5] text-white/40 text-pretty">
+                            #text Bir şeyler yanlış mı? Tüm ağı önceki bilinen doğru kataloğa tek işlemle geri al. İşlem geçmişi dahil.
+                <div class="flex items-center justify-center gap-1.5 mt-5">
+                  <button class="rounded-full transition-all duration-300 w-6 h-1.5" style="background:#f43f5e" type="button">
+                  <button class="rounded-full transition-all duration-300 size-1.5" style="background:rgba(255,255,255,0.12)" type="button">
+                  <button class="rounded-full transition-all duration-300 size-1.5" style="background:rgba(255,255,255,0.12)" type="button">
+                  <button class="rounded-full transition-all duration-300 size-1.5" style="background:rgba(255,255,255,0.12)" type="button">
+                  <button class="rounded-full transition-all duration-300 size-1.5" style="background:rgba(255,255,255,0.12)" type="button">
+                  <button class="rounded-full transition-all duration-300 size-1.5" style="background:rgba(255,255,255,0.12)" type="button">
+                  <button class="rounded-full transition-all duration-300 size-1.5" style="background:rgba(255,255,255,0.12)" type="button">
+            <div class="border-t border-white/5 px-6 lg:px-8 py-4 grid grid-cols-3 gap-3">
+              <div class="flex items-center gap-3">
+                <div class="text-[11px] font-bold uppercase tracking-[0.14em]" style="color:#f43f5e">
+                  #text QoS2
+                <div class="text-[10px] text-white/30">
+                  #text MQTT garantili teslim — paket kaybolmaz
+              <div class="flex items-center gap-3">
+                <div class="text-[11px] font-bold uppercase tracking-[0.14em]" style="color:#f43f5e">
+                  #text Pilot
+                <div class="text-[10px] text-white/30">
+                  #text Önce 5 şube, sonra tüm ağ — aşamalı yayın
+              <div class="flex items-center gap-3">
+                <div class="text-[11px] font-bold uppercase tracking-[0.14em]" style="color:#f43f5e">
+                  #text Audit
+                <div class="text-[10px] text-white/30">
+                  #text Kim, ne zaman, hangi şube — tam iz kaydı
+          <div class="mt-16 lg:mt-24 rounded-2xl border border-white/10 bg-zinc-950 p-8 lg:p-12 text-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-[0.15] pointer-events-none" style="background:radial-gradient(circle at center, #f43f5e, transparent 70%)">
+            <div class="relative">
+              <p class="text-[14px] lg:text-[15px] text-fg-muted max-w-[640px] mx-auto text-pretty">
+                #text Çevrimdışı terminaller bile yeniden bağlandıkları anda otomatik senkronize olur — MQTT QoS2 garantili teslim ile.
+              <div class="mt-7 flex flex-wrap items-baseline justify-center gap-x-6 gap-y-2 text-balance">
+                <span class="text-[28px] sm:text-[36px] lg:text-[44px] font-light tracking-tight">
+                  #text Tek tık.
+                <span class="text-[28px] sm:text-[36px] lg:text-[44px] font-light tracking-tight" style="color:#f43f5e">
+                  #text 1.300 şube.
+                <span class="text-[28px] sm:text-[36px] lg:text-[44px] font-light tracking-tight">
+                  #text Sıfır kaos.
+              <div class="mt-8">
+                <a class="inline-flex items-center justify-center gap-2 font-medium rounded-lg transition-all duration-200 whitespace-nowrap bg-[linear-gradient(160deg,#f43f5e,#e11d48)] text-white border border-[rgba(255,255,255,0.28)] shadow-[0_4px_24px_rgba(244,63,94,0.5),inset_0_1.5px_0_rgba(255,255,255,0.45),inset_0_-1px_0_rgba(0,0,0,0.2)] hover:shadow-[0_8px_36px_rgba(244,63,94,0.7),inset_0_1.5px_0_rgba(255,255,255,0.55)] active:scale-[0.97] backdrop-blur-sm h-12 px-6 text-base" href="/tr/contact">
+                  #text Katalog Freeze'i canlı gör
+                  <svg aria-hidden="true" class="lucide lucide-arrow-right size-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12h14">
+                    <path d="m12 5 7 7-7 7">
+        <style>
+          #text .sim-active-stage { animation: simStagePulse 2s ease-in-out infinite; } @keyframes simStagePulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(244,63,94,0.15); } 50% { box-shadow: 0 0 0 4px rgba(244,63,94,0.06); } } .sim-icon-pulse { animation: simIconBounce 3s ease-in-out infinite; } @keyframes simIconBounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } } .sim-fade-in { animation: simFadeIn 0.5s ease-out; } @keyframes simFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } } .sim-slide-in { opacity: 0; animation: simSlideIn 0.4s ease-out forwards; } @keyframes simSlideIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } } .sim-scale-in { opacity: 0; animation: simScaleIn 0.4s ease-out forwards; } @keyframes simScaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } } .sim-spin-slow { animation: simSpinSlow 8s linear infinite; } @keyframes simSpinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } } .sim-radio-pulse { animation: simRadioPulse 1.5s ease-in-out infinite; } @keyframes simRadioPulse { 0%, 100% { opacity: 0.7; transform: scale(1); } 50% { opacity: 1; transform: scale(1.15); } } .sim-rollback-ready { animation: simRollbackReady 3s ease-in-out infinite; } @keyframes simRollbackReady { 0%, 80%, 100% { transform: rotate(0); } 85% { transform: rotate(-20deg); } 90% { transform: rotate(10deg); } 95% { transform: rotate(-5deg); } } .sim-timer-bar { width: 0%; animation: simTimerFill 5s linear forwards; } @keyframes simTimerFill { to { width: 50%; } } .sim-countdown { animation: simCountPulse 2s ease-in-out infinite; } @keyframes simCountPulse { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }

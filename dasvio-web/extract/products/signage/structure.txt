@@ -1,0 +1,73 @@
+signage — <main class="flex-1"> iskeleti (tr/products/signage.html; en birebir aynı yapı)
+================================================================================
+
+section  HERO  .pt-36.lg:pt-40.pb-16.lg:pb-24.relative.overflow-hidden
+  div .absolute.inset-0.opacity-[0.08]  style: radial-gradient(circle at 30% 50%, #10b981, transparent 45%)
+  div .container-page.relative
+    div .grid.lg:grid-cols-2.gap-10.lg:gap-12.items-stretch          ← 2 KOLONLU hero (magazine)
+      [Reveal x:-24px]  SOL KOLON = SignageHeroVisual
+        div .relative.h-full
+          glow .absolute.inset-4.rounded-full.opacity-[0.18].blur-3xl.animate-pulse-glow (bg #10b981)
+          çerçeve .relative.h-full.min-h-[480px].rounded-2xl.border.border-white/10.bg-zinc-950 …
+            .bg-grid overlay + TV mockup (Now playing / Summer special / 2 of 8 / Live · 3 branches)
+      [Reveal y:24, delay 150]  SAĞ KOLON
+        a  eyebrow geri-link → /tr#features   "← " + "Customer experience"  (2 text node)
+        h1 .text-[40px].sm:text-[52px].lg:text-[64px].xl:text-[76px]   "Digital Signage"
+        div .mt-7.h-px.w-24  style: linear-gradient(to right, #10b981, transparent)   ← ayraç çizgi
+        p  description (İngilizce)
+        3 tag çipi (border #10b98140 / bg #10b9810d): Playlist, Device management, Customer display
+        CTA'lar: primary → /tr/contact "Ücretsiz Demo Al" | glass → /tr/pricing "Fiyatlandırma" + ArrowRight
+
+section  YETENEKLER  .py-20.lg:py-28
+  [Reveal] div .max-w-2xl
+    div eyebrow  "Yetenekler" (en: "Capabilities")
+    h2 .text-[32px].sm:text-[40px].lg:text-[48px]  "Digital Signage ile gelen her şey, uçtan uca."
+       (en: "Everything Digital Signage ships with, end to end.")
+  div .mt-12.grid.grid-cols-1.sm:grid-cols-2.lg:grid-cols-4.gap-4.lg:gap-5   ← 4 kart
+    her kart: [Reveal delay 0/100/200/300] > .rounded-xl.bg-black.border.border-white/10 (--tint:#10b981)
+      görsel kutusu .rounded-lg.bg-zinc-950.border.border-white/5.p-1.h-[200px]
+      h3 + p
+    h3 sırası:
+      1. Playlists & layouts            (PlaylistStack)
+      2. Schedule by branch or tag      (ScheduleClock)
+      3. Customer-facing display        (CustomerScreen)
+      4. Real-time push                 (PushScreens)
+
+section  QUOTE  .py-20.lg:py-32.relative.overflow-hidden          ← "why" DEĞİL, quote varyantı
+  div .absolute.inset-0.opacity-[0.08]  style: radial-gradient(ellipse at center, #10b981, transparent 60%)
+  [Reveal] figure .max-w-4xl.mx-auto.text-center
+    ikon kutusu .size-12.rounded-2xl (bg #10b98120) > tırnak SVG'si (color #10b981, path fill currentColor)
+    blockquote .text-[24px].sm:text-[32px].lg:text-[40px]  — 3 text node:
+      "We finally have a single panel for everything " / "digital signage" / " touches. Our team onboards in a morning, not a week."
+    figcaption "Restaurant operator, multi-branch chain · Türkiye"
+
+section  DİĞER ÜRÜNLER  .py-20.lg:py-28
+  eyebrow "Keşfetmeye devam et" (en: Also explore)
+  h2 .text-[28px].sm:text-[36px].lg:text-[40px]  "Dasvio platformunun geri kalanı." (en: The rest of the Dasvio platform.)
+  a "Tüm ürünler" → /tr#features (en: All products)
+  div .mt-12.grid.sm:grid-cols-2.lg:grid-cols-3.gap-3
+    1. /tr/products/qr-menu       --tint:#ffffff   h3 "QR Menü"
+    2. /tr/products/pos           --tint:#06b6d4   h3 "Dasvio POS"
+    3. /tr/products/multi-branch  --tint:#f43f5e   h3 "Çoklu Şube Yönetimi"
+  (kart başlık/açıklamaları EN sayfada da Türkçe; yalnız "Keşfet"→"Explore")
+
+section  STAT BANDI  .py-12.border-t.border-border-subtle.bg-bg-subtle
+  3'lü grid: 7/24 Türkçe destek hattı | 14 gün Ortalama kurulum süresi | %99.9 Uptime garantisi
+  (en: 24/7 Support hotline | 14 days Average setup time | 99.9% Uptime guarantee)
+
+================================================================================
+ŞABLON SAPMALARI (standart ürün sayfasına göre)
+- MAGAZINE varyantı: 2 kolonlu hero grid + büyük çerçeveli mockup paneli. Deploy'da sadece
+  signage, integrations ve regional-pricing bu varyantı kullanır. Standart sayfalarda
+  (qr-menu, pos, analytics, heatmaps…) hero tek kolon ve h1 .text-[44px].sm:text-[68px]
+  .lg:text-[88px].xl:text-[104px] .mt-7'dir; signage'de h1 daha küçük (40/52/64/76) ve .mt-6.
+- Hero'da eyebrow düz metin değil, /tr#features'a dönen "←"'li LİNK; ayrıca h1 altında
+  gradient ayraç çizgisi (.mt-7.h-px.w-24) var — standart varyantta yok.
+- 3. bölüm QUOTE (figure/blockquote, ortalanmış): standart sayfalardaki
+  "Neden Dasvio?" (.bg-bg-subtle, grid lg:grid-cols-[1fr_1.2fr]) bölümünün YERİNE geçer.
+- 01–06 numaralı adım bölümü YOK (yalnız multi-branch ve campaign-builder'da var).
+- Client-side simülasyon bileşeni YOK (RSC'deki client bileşenler: Navbar, Image, Reveal,
+  Link, IconMark + lucide ikonlar). hasSimulation değeri bu yüzden content.json'a yazılmadı.
+- İÇERİK DİLİ SAPMASI: ürün-özgü tüm metinler (eyebrow "Customer experience", description,
+  tag'ler, kart başlık/gövdeleri, quote, mockup metinleri) her iki locale'de de İNGİLİZCE.
+  Eski kaynak src/lib/products.ts'te bu girdi Türkçe'dir — deploy içeriği İngilizce'ye çevrilmiş.

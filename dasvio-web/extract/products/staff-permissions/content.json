@@ -1,0 +1,102 @@
+{
+  "slug": "staff-permissions",
+  "category": null,
+  "categoryNote": "Hero'da eyebrow/kategori etiketi YOK — h1 doğrudan .max-w-4xl konteynerinin ilk çocuğu (incelenen diğer ürün sayfalarında da yok).",
+  "title": "Personel & Yetki Yönetimi",
+  "description": "Tüm ekibinizi tek panelden yönetin — özel roller, detaylı yetki matrisi, POS PIN girişi, şube bazlı erişim, vardiya planı, yönetici onay akışları ve tam işlem geçmişi. Dakikalar içinde yeni personel ekleyin, yetkisiz işlemleri kilitleyin.",
+  "tint": "#3b82f6",
+  "tags": [
+    "Yetki matrisi",
+    "POS PIN",
+    "Yönetici onayı",
+    "Vardiya",
+    "İşlem geçmişi",
+    "Şube erişimi",
+    "Saat kısıtlaması"
+  ],
+  "heroCtas": [],
+  "heroMockup": {
+    "type": "image",
+    "src": "/images/pos/dasvio_qsr.png",
+    "alt": "Dasvio POS",
+    "note": "Hero görseli özel DOM mockup değil, çerçeveli statik ürün görseli (POS sayfasıyla aynı görsel, preload edilir). Çerçeve boxShadow: 0 60px 120px #3b82f61f, inset 0 0 0 1px rgba(255,255,255,0.02). Çipler mockup'ın ALTINDA."
+  },
+  "steps": [],
+  "capabilitiesHeading": "Personel & Yetki Yönetimi ile gelen her şey, uçtan uca.",
+  "capabilitiesEyebrow": "Yetenekler",
+  "capabilities": [
+    {
+      "title": "Detaylı yetki matrisi",
+      "body": "Her role için okuma, yazma, silme, fiyat değiştirme, iade ve daha fazlası — kaynak bazında tam kontrol. Yönetici, kasiyer, garson, şube müdürü, vardiya müdürü gibi hazır roller veya özel roller oluşturun."
+    },
+    {
+      "title": "POS PIN giriş & hızlı oturum",
+      "body": "Her personele özel PIN atayın. Başarısız denemelerden sonra otomatik kilitleme, panelden yönetici ile kilit açma. Personel değişimi saniyeler sürer."
+    },
+    {
+      "title": "Personel yönetimi & davet",
+      "body": "Telefon numarasıyla davet edin, rol atayın, şube erişimi verin. Yetki yükseltme koruması — kimse kendi rolünün üstüne çıkamaz. Tek tıkla personel çıkarma."
+    },
+    {
+      "title": "Yönetici onay akışları (JIT)",
+      "body": "İade, void, indirim, ikram ve kasa açma gibi kritik işlemlerde anlık yönetici PIN onayı. Hangi işlemler onay gerektirsin — tamamen yapılandırılabilir."
+    },
+    {
+      "title": "Şube bazlı erişim kontrolü",
+      "body": "Her personel sadece yetkili olduğu şubeleri görür ve işlem yapabilir. Bölge müdürü kendi bölgesini, şube müdürü kendi şubesini yönetir. Zaman penceresi ile erişim sınırlama."
+    },
+    {
+      "title": "Vardiya planı & mesai takibi",
+      "body": "Şube bazında vardiya planlayın, personel atayın, saat takibi yapın. POS ile entegre — mesai dışında giriş otomatik engellenir."
+    },
+    {
+      "title": "Tam işlem geçmişi (Audit Trail)",
+      "body": "Her void, ikram, indirim, iade, fiyat değişikliği ve kasa işlemi — kim yaptı, hangi şube, hangi cihaz, ne zaman. Önem derecesi ile filtreleme: bilgi, uyarı, alarm, kritik."
+    },
+    {
+      "title": "Saat bazlı erişim kısıtlaması",
+      "body": "Her role ve personele çalışma saati penceresi tanımlayın. Mesai dışında POS erişimi otomatik kapanır — gece yarısı yetkisiz işlem riski sıfır. Şube ve gün bazında farklı pencereler."
+    }
+  ],
+  "why": {
+    "variant": "why",
+    "eyebrow": "Neden Dasvio?",
+    "heading": "Ekibinizin zaten kullandığı panele entegre.",
+    "bullets": [
+      "Marka bağımlılığı yok — mevcut donanımınızla çalışır",
+      "Ortalama 14 günde canlıya al, tek şubeden zincirlere kadar",
+      "7/24 Türkçe destek hattı, her planda dahil",
+      "GİB uyumlu, KVKK uyumlu — ek modül gerektirmez"
+    ],
+    "cta": { "label": "Kişiselleştirilmiş demo al", "href": "/tr/contact" }
+  },
+  "quote": null,
+  "otherProducts": ["qr-menu", "pos", "multi-branch"],
+  "trTitle_vs_enTitle": {
+    "productSpecificDifferences": [],
+    "note": "Ürün-özgü string'lerin TAMAMI iki locale'de de aynı Türkçe: h1, açıklama, çipler, 8 yetenek kartı başlık+gövde, görsel içi metinler, diğer-ürün kart başlık/açıklamaları. EN sayfada yalnızca paylaşılan ŞABLON string'leri İngilizce.",
+    "templateDifferences": {
+      "capabilitiesEyebrow": { "tr": "Yetenekler", "en": "Capabilities" },
+      "capabilitiesHeading": { "tr": "Personel & Yetki Yönetimi ile gelen her şey, uçtan uca.", "en": "Everything Personel & Yetki Yönetimi ships with, end to end." },
+      "whyEyebrow": { "tr": "Neden Dasvio?", "en": "Why teams switch" },
+      "whyHeading": { "tr": "Ekibinizin zaten kullandığı panele entegre.", "en": "Built into the same panel your team already uses." },
+      "whyBullets": {
+        "en": [
+          "No vendor lock-in — works alongside your existing setup",
+          "14 days average go-live across single locations and chains",
+          "24/7 native-language support included on every plan",
+          "GDPR & GİB-compliant out of the box, no add-ons required"
+        ]
+      },
+      "whyCta": { "tr": "Kişiselleştirilmiş demo al", "en": "Book a personalized demo" },
+      "otherEyebrow": { "tr": "Keşfetmeye devam et", "en": "Also explore" },
+      "otherHeading": { "tr": "Dasvio platformunun geri kalanı.", "en": "The rest of the Dasvio platform." },
+      "otherAllProductsLink": { "tr": "Tüm ürünler", "en": "All products" },
+      "otherCardCta": { "tr": "Keşfet", "en": "Explore" },
+      "statsBand": {
+        "tr": [["7/24", "Türkçe destek hattı"], ["14 gün", "Ortalama kurulum süresi"], ["%99.9", "Uptime garantisi"]],
+        "en": [["24/7", "Support hotline"], ["14 days", "Average setup time"], ["99.9%", "Uptime guarantee"]]
+      }
+    }
+  }
+}

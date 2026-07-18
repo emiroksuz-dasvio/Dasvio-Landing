@@ -1,0 +1,57 @@
+analytics — <main> iskeleti (tr/products/analytics.html; EN sayfa yapısal olarak birebir aynı)
+Tint: #ef4444 (kırmızı) — hero radial bg, mockup gölgesi, cip noktaları, kart --tint, why-check rengi
+
+<main class="flex-1">
+  section.pt-36.lg:pt-40.pb-16.lg:pb-24.relative.overflow-hidden          [HERO — "centered showcase" varyantı]
+    div.absolute (radial-gradient #ef4444, opacity-[0.1])
+    Reveal(delay 0)
+      div.max-w-4xl.mx-auto.text-center
+        h1  "Real-Time Analytics"                                          (mt-7, text-[44px]/[68px]/[88px]/[104px])
+        p   "Sales broken down by hour, branch, channel and product. ..."  (mt-7, max-w-[680px], mx-auto)
+    Reveal(delay 250)
+      div.mt-14.lg:mt-20.rounded-lg.border.bg-zinc-950 (box-shadow #ef44441f)  [tam genişlik mockup çerçevesi]
+        > AnalyticsVisual (haftalık satış kartı: This week / €42,580 / ↑ 12.4% / M-S barlar / Orders 412 / Avg ticket €34 / Branches 12)
+    Reveal(delay 400)
+      div.mt-10 çipler (3): "Heatmap" | "Product analytics" | "Live dashboard"  (nokta rengi #ef4444)
+
+  section.py-20.lg:py-28                                                   [YETENEKLER]
+    Reveal: eyebrow "Yetenekler" / EN "Capabilities"
+      h2  "Real-Time Analytics ile gelen her şey, uçtan uca." / EN "Everything Real-Time Analytics ships with, end to end."
+    div.mt-12.grid.grid-cols-1.sm:grid-cols-2.lg:grid-cols-4.gap-4.lg:gap-5   [4 kart, Reveal delay 0/100/200/300, --tint:#ef4444]
+      kart 1: görsel HeatmapMini      → h3 "Hourly sales heatmap"
+      kart 2: görsel ComparisonBars   → h3 "Branch & channel comparison"
+      kart 3: görsel PaymentDonut     → h3 "Payment & product mix"
+      kart 4: görsel CompChart        → h3 "Comp/void monitoring"
+      (kart görsel çerçevesi: div.rounded-lg.bg-zinc-950.border.border-white/5.p-1.h-[200px])
+
+  section.py-20.lg:py-28.bg-bg-subtle                                      [WHY varyantı — quote DEĞİL]
+    grid lg:grid-cols-[1fr_1.2fr]
+      sol Reveal: eyebrow "Neden Dasvio?" / EN "Why teams switch"
+        h2  "Ekibinizin zaten kullandığı panele entegre." / EN "Built into the same panel your team already uses."
+      sağ Reveal(150): ul 4 check maddesi (check ikonu style color:#ef4444) + CTA "Kişiselleştirilmiş demo al" → /tr/contact
+
+  section.py-20.lg:py-28                                                   [DİĞER ÜRÜNLER]
+    Reveal: eyebrow "Keşfetmeye devam et" / EN "Also explore"
+      h2  "Dasvio platformunun geri kalanı." / EN "The rest of the Dasvio platform."
+    a "Tüm ürünler" → /tr#features
+    div.mt-12.grid.sm:grid-cols-2.lg:grid-cols-3.gap-3   [3 kart, delay 0/100/200]
+      h3 "QR Menü"              → /tr/products/qr-menu       (--tint:#ffffff)
+      h3 "Dasvio POS"           → /tr/products/pos           (--tint:#06b6d4)
+      h3 "Çoklu Şube Yönetimi"  → /tr/products/multi-branch  (--tint:#f43f5e)
+
+  section.py-12.border-t.border-border-subtle.bg-bg-subtle                 [İSTATİSTİK BANDI — şablon geneli]
+    3 hücre: "7/24 Türkçe destek hattı" | "14 gün Ortalama kurulum süresi" | "%99.9 Uptime garantisi"
+
+ŞABLON SAPMALARI / NOTLAR
+1. HERO VARYANTI: "centered showcase" — eyebrow/kategori etiketi YOK, geri-link YOK, hero CTA butonları YOK.
+   Split-hero'lu sayfalar (ör. reports, branch-overrides) "← Intelligence" eyebrow + "Ücretsiz Demo Al"/"Fiyatlandırma"
+   CTA'ları + solda metin/sağda mockup grid'i taşır; analytics'te h1+p ortalanmış, mockup tam genişlik altta, çipler mockup'ın ALTINDA.
+   Aynı centered varyantı kullananlar: combo-builder, heatmaps, revenue-centers, staff-permissions (+ pos, qr-menu, multi-branch).
+   h1 boyutu bu varyantta daha büyük: text-[44px] sm:[68px] lg:[88px] xl:[104px] (split varyantta 40/56/72/84).
+2. 01-06 numaralı adım (steps) bölümü YOK (multi-branch/campaign-builder'da var).
+3. Quote bölümü YOK; "why" (Neden Dasvio?) varyantı var.
+4. Client-side simülasyon bileşeni YOK (RSC payload'daki client bileşenler: Navbar, Image, Reveal, IconMark).
+5. Hero mockup'ı (AnalyticsVisual) paylaşımlı: reports ve heatmaps hero'sunda da birebir aynı DOM.
+6. DİL SAPMASI: ürüne özgü tüm metinler (h1, açıklama, çipler, 4 yetenek kartı, mockup içi metinler)
+   TR sayfasında da İNGİLİZCE ve iki locale'de birebir aynı. Locale'e göre çevrilen yalnızca şablon string'leri.
+   Diğer-ürün kartlarının başlık/açıklamaları ise iki locale'de de TÜRKÇE.

@@ -1,0 +1,91 @@
+{
+  "slug": "multi-branch",
+  "category": null,
+  "categoryNote": "Hero'da eyebrow/kategori etiketi YOK — h1 doğrudan geliyor (diğer ürün sayfalarında da yok; hero h1 mt-7 ile başlıyor). Tek eyebrow simülasyon bölümünde: 'Katalog Freeze · Enterprise Yayın' (CatalogFreezeSimulation içinde).",
+  "title": "Çoklu Şube Yönetimi",
+  "description": "Merkezi master menü, şube bazlı fiyat override, hiyerarşik mağaza grupları, toplu fiyat editörü, katalog dondurma/yayınlama pipeline'ı, 9 tip kampanya oluşturucu, platform bazlı fiyatlama ve şube politikaları — 1 şubeden 1.300 şubeye kadar ölçeklenen tam enterprise yönetim paneli.",
+  "tags": [
+    "Master menü",
+    "Mağaza grupları",
+    "Katalog freeze",
+    "Toplu fiyatlama",
+    "Kampanya oluşturucu",
+    "Platform fiyatlama",
+    "Şube politikaları"
+  ],
+  "heroCtas": [],
+  "heroCtasNote": "Hero bölümünde CTA butonu YOK. Sayfadaki CTA'lar: simülasyon bölümü sonunda 'Katalog Freeze'i canlı gör' (/tr/contact, arrow-right ikonlu — CatalogFreezeSimulation DOM'unun parçası) ve why bölümünde 'Kişiselleştirilmiş demo al' (/tr/contact, arrow-right ikonlu).",
+  "hasSimulation": "CatalogFreezeSimulation",
+  "simulationProps": { "accentTint": "#f43f5e", "locale": "tr | en" },
+  "steps": [
+    { "num": "01", "title": "Kataloğu dondur", "body": "Mevcut durumu kilitle. Fiyat kararları verilirken yarım kalmış düzenlemelerin canlıya sızması artık yok." },
+    { "num": "02", "title": "Değişiklikleri güvenle hazırla", "body": "Her fiyat ayarlamasını, seçenek değişikliğini ve ürün görünürlüğünü sandbox kopyada hazırla. Canlı menü dokunulmadan çalışmaya devam eder." },
+    { "num": "03", "title": "Yayınlamadan önce önizle", "body": "Misafirlerin, kasiyerlerin ve platformların ne göreceğini — şube şube — tek bir cihaz güncellenmeden önce gör." },
+    { "num": "04", "title": "Pilot yayın", "body": "Önce 1, 5 veya 20 şubeye gönder. Gerçek trafikte doğrula, sonra tüm ağa yay." },
+    { "num": "05", "title": "Zamanlanmış yayın", "body": "Tam anı seç — 03:00, happy hour sonrası, vardiya arası. Gece yarısı Slack'te zam geçişi koordinasyonu artık yok." },
+    { "num": "06", "title": "Anlık teslim takibi", "body": "Her terminalin yeni durumu onaylamasını izle. Eski menüde takılı kalan tableti bul, detaya in, çöz." },
+    { "num": "07", "title": "Tek tıkla geri alma", "body": "Bir şeyler yanlış mı? Tüm ağı önceki bilinen doğru kataloğa tek işlemle geri al. İşlem geçmişi dahil." }
+  ],
+  "stepsNote": "Bu 01-07 adımları sayfa şablonunun bağımsız steps bölümü DEĞİL — CatalogFreezeSimulation client bileşeninin 'Pipeline adımları' listesi (simulation-dom.txt içinde). Bu sayfada şablonun 01-06 steps bölümü yok.",
+  "capabilitiesHeading": "Çoklu Şube Yönetimi ile gelen her şey, uçtan uca.",
+  "capabilitiesEyebrow": "Yetenekler",
+  "capabilities": [
+    { "title": "Merkezi master menü", "body": "Tek bir kaynak: master menüyü düzenle, değişiklikler seçtiğin şubelere kontrollü şekilde yayılsın. Birden fazla menü oluştur, şubelere ata, gün ve saat bazlı zamanlama yap." },
+    { "title": "Şube bazlı fiyat override", "body": "Herhangi bir şubede fiyatı, varyantı, görünürlüğü veya görseli master'a dokunmadan değiştir. Kaynak etiketi her üründe: Master, Override, Grup veya Tier. Tek tıkla master'a sıfırla." },
+    { "title": "Hiyerarşik mağaza grupları", "body": "İstanbul > Anadolu Yakası > AVM Şubeleri gibi ağaç yapısında gruplar. Her gruba yüzde veya sabit fiyat ayarlaması ata. Grup üyelerini ekle/çıkar, alt gruplar oluştur." },
+    { "title": "Bölgesel fiyat tier'ları", "body": "AVM, Cadde, Premium gibi isimlendirilmiş tier'lar. Şubeleri tier'lara ata — fiyat ayarlaması otomatik uygulanır. Havaalanında premium, mahallede indirimli, tek ayar." },
+    { "title": "Katalog dondurma & yayınlama", "body": "Yazılım deploy'u gibi menü güncelle: Dondur → değişiklikleri hazırla → önizle → pilot şubelerde test et → zamanla → tüm ağa yayınla. Tek tıkla rollback. MQTT QoS2 ile cihaz bazlı teslim takibi." },
+    { "title": "Toplu fiyat editörü (spreadsheet)", "body": "Ürün × şube fiyat matrisi. Her hücrede efektif fiyat, kaynak (master/override/tier) ve badge. Satır içi düzenleme, kategori filtresi, CSV export. 50 ürünü 12 şubede tek operasyonda güncelle." },
+    { "title": "Kampanya oluşturucu (9 tip)", "body": "BOGO, çoklu al, hediye ürün, kombo menü, sepet eşiği, happy hour, şube spesiyali, sadakat puanı, refill hakkı. Görsel node builder: tetik → koşul → ödül. 8 ödül tipi, 6 koşul, zamanlama ve münhasırlık kuralları." },
+    { "title": "Platform bazlı fiyatlama", "body": "Getir'de %17, Trendyol'da %14, salonda baz fiyat — her platform için ayrı fiyat. Şube × platform kombinasyonu editörü. Zincir menü yönetimi (Getir/Migros) ve ürün eşleme dahil." },
+    { "title": "Şube politikaları & yetki", "body": "Şubeler ne yapabilir, ne yapamaz — merkezden kontrol. Fiyat değiştirme, ürün gizleme, 86 (tükenme), indirim oluşturma gibi toggle'lar. Yönetici onay akışları (JIT) ile kritik işlem kontrolü." },
+    { "title": "Enterprise raporlama (5 rapor)", "body": "Genel bakış, şube karşılaştırma, kanal bazlı satış, ürün performansı ve gelir merkezi raporu. Şube bazlı ciro, sipariş, ortalama sepet, trend grafikleri. Filtrele, drill-down yap, export et." },
+    { "title": "Menü zamanlama & klonlama", "body": "Menüleri belirli gün ve saatlerde otomatik değiştir. Bir şubenin tüm kurulumunu başka şubeye saniyede klonla. Timezone desteği: İstanbul, Londra, Berlin, Dubai." },
+    { "title": "Override özet & audit", "body": "Enterprise genelinde tüm aktif override'lar tek ekranda. Fiyat, görünürlük, tükenme tipine göre filtrele. Her override'da orijinal vs güncel değer, şube, tarih bilgisi." }
+  ],
+  "why": {
+    "variant": "why",
+    "eyebrow_tr": "Neden Dasvio?",
+    "eyebrow_en": "Why teams switch",
+    "heading_tr": "Ekibinizin zaten kullandığı panele entegre.",
+    "heading_en": "Built into the same panel your team already uses.",
+    "bullets_tr": [
+      "Marka bağımlılığı yok — mevcut donanımınızla çalışır",
+      "Ortalama 14 günde canlıya al, tek şubeden zincirlere kadar",
+      "7/24 Türkçe destek hattı, her planda dahil",
+      "GİB uyumlu, KVKK uyumlu — ek modül gerektirmez"
+    ],
+    "bullets_en": [
+      "No vendor lock-in — works alongside your existing setup",
+      "14 days average go-live across single locations and chains",
+      "24/7 native-language support included on every plan",
+      "GDPR & GİB-compliant out of the box, no add-ons required"
+    ],
+    "cta_tr": "Kişiselleştirilmiş demo al",
+    "cta_en": "Book a personalized demo"
+  },
+  "otherProducts": ["qr-menu", "pos", "integrations"],
+  "otherProductsNote": "Kart tint'leri sırayla: #ffffff (QR Menü), #06b6d4 (Dasvio POS), #f59e0b (Platform Integrations). DİKKAT: 'Platform Integrations' kartının başlığı ve açıklaması HER İKİ locale'de de İNGİLİZCE (veri kaynağı öyle); 'QR Menü' ve 'Dasvio POS' kartları her iki locale'de de Türkçe.",
+  "trTitle_vs_enTitle": {
+    "productSpecificStrings": "FARK YOK — h1, hero açıklaması, çipler, 12 yetenek kartı başlık+gövde ve CatalogFreezeSimulation'ın SSR içeriği iki locale'de de birebir aynı (Türkçe). EN sayfada simülasyon bölümündeki tek fark CTA href'i: /tr/contact → /en/contact (buton metni 'Katalog Freeze'i canlı gör' EN'de de Türkçe kalıyor).",
+    "templateStrings": [
+      { "tr": "Yetenekler", "en": "Capabilities" },
+      { "tr": "Çoklu Şube Yönetimi ile gelen her şey, uçtan uca.", "en": "Everything Çoklu Şube Yönetimi ships with, end to end.", "note": "Şablon cümlesi değişiyor, ürün adı EN'de de Türkçe kalıyor" },
+      { "tr": "Neden Dasvio?", "en": "Why teams switch" },
+      { "tr": "Keşfetmeye devam et", "en": "Also explore" },
+      { "tr": "Dasvio platformunun geri kalanı.", "en": "The rest of the Dasvio platform." },
+      { "tr": "Tüm ürünler", "en": "All products" },
+      { "tr": "Keşfet", "en": "Explore" },
+      { "tr": "7/24 / Türkçe destek hattı", "en": "24/7 / Support hotline" },
+      { "tr": "14 gün / Ortalama kurulum süresi", "en": "14 days / Average setup time" },
+      { "tr": "%99.9 / Uptime garantisi", "en": "99.9% / Uptime guarantee" }
+    ],
+    "metaTitle": "İki locale'de de aynı: 'Dasvio — Restoran Yönetiminin Yeni Standardı' (meta description da aynı Türkçe metin)"
+  },
+  "accentTint": "#f43f5e",
+  "statsStrip": [
+    { "value": "7/24", "label": "Türkçe destek hattı" },
+    { "value": "14 gün", "label": "Ortalama kurulum süresi" },
+    { "value": "%99.9", "label": "Uptime garantisi" }
+  ]
+}

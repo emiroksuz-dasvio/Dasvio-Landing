@@ -1,0 +1,428 @@
+{
+  "nav": {
+    "products": "Products",
+    "solutions": "Solutions",
+    "pricing": "Pricing",
+    "resources": "Resources",
+    "login": "Log in",
+    "demo": "Get a demo",
+    "menu": {
+      "qrMenu": "QR Menu",
+      "qrMenuDesc": "Multilingual digital menu, AI translation, table-based ordering",
+      "pos": "POS Management",
+      "posDesc": "Devices, printers, revenue centers from one panel",
+      "multiBranch": "Multi-Branch Management",
+      "multiBranchDesc": "Master menu, price tiers, branch overrides",
+      "integrations": "Platform Integrations",
+      "integrationsDesc": "Getir, Trendyol, Yemeksepeti, Qapera",
+      "analytics": "Analytics & Reporting",
+      "analyticsDesc": "Sales, product, payment, heatmap dashboards",
+      "signage": "Digital Signage",
+      "signageDesc": "Screen, playlist, customer display management"
+    }
+  },
+  "hero": {
+    "eyebrow": "The new standard in restaurant management",
+    "title": "Your entire restaurant from one",
+    "titleAccent": "dashboard",
+    "subtitle": "QR menu, POS, multi-branch management, platform integrations and analytics — all of your restaurant operations in one place with Dasvio.",
+    "ctaPrimary": "Get a free demo",
+    "ctaSecondary": "Explore features",
+    "trustBadge": "Trusted by 2,000+ leading restaurants"
+  },
+  "stats": {
+    "title": "The choice of industry-leading businesses",
+    "items": [
+      { "value": "2,000+", "label": "Active restaurants" },
+      { "value": "12,000+", "label": "Managed branches" },
+      { "value": "14", "label": "Supported languages" },
+      { "value": "8+", "label": "Platform integrations" }
+    ]
+  },
+  "problem": {
+    "eyebrow": "THE PROBLEM",
+    "title": "Running a restaurant gets more complex every day.",
+    "body": "Different branches, separate POS systems, dozens of delivery platforms, multilingual guests, shift management, price changes... Managing all of these separately is no longer sustainable. Dasvio unifies your entire restaurant operation into a single control point."
+  },
+  "features": {
+    "eyebrow": "FEATURES",
+    "title": "Everything you need for your restaurant",
+    "subtitle": "From QR menus to POS, from multi-branch to analytics — a modular yet holistic platform.",
+    "items": [
+      {
+        "icon": "pos",
+        "title": "POS Management",
+        "description": "Run your entire point-of-sale operation from one panel: tablet and terminal devices, receipt and kitchen printers, revenue centers, operating hours and check history. Compatible with all major hardware vendors, so you don't need to replace anything to get started. Onboard new staff in under 10 minutes.",
+        "tags": ["Multi-device", "Printer management", "Revenue centers"]
+      },
+      {
+        "icon": "branch",
+        "title": "Multi-Branch Management",
+        "description": "A central master menu with branch-level overrides for prices, variants and availability. Group branches into regional price tiers, apply percentage or fixed bulk adjustments, schedule menus by time or location, and clone an entire setup between branches in seconds. Designed for 1 location to 1,000.",
+        "tags": ["Master menu", "Store groups", "Price tiers"]
+      },
+      {
+        "icon": "qr",
+        "title": "QR Menu",
+        "description": "A multilingual digital menu with AI-powered translation in 14 languages. Includes theme customization, spotlights, campaigns, and table-based ordering with a PWA-style mobile experience. Guests scan, browse and order without waiting for staff — and your menu stays in sync across every language automatically as you edit.",
+        "tags": ["AI translation", "Theme management", "Table-based"]
+      },
+      {
+        "icon": "plug",
+        "title": "Platform Integrations",
+        "description": "Getir, Trendyol, Yemeksepeti, Qapera and more — map your catalog once and every platform stays in sync. Update prices in bulk, reply to reviews from a single inbox, manage claims and refunds, and toggle restaurant busyness or courier status from one place. Catalog mapping is one-time, not ongoing work.",
+        "tags": ["Getir", "Trendyol", "Yemeksepeti"]
+      },
+      {
+        "icon": "chart",
+        "title": "Real-Time Analytics",
+        "description": "Sales broken down by hour, branch, channel and product. Heatmaps reveal peak load, comp and void rates flag operational issues, payment distribution shows guest behavior. Filter by any dimension, drill into any metric in one click, export anything — your restaurant operating as a data product.",
+        "tags": ["Heatmap", "Product analytics", "Live dashboard"]
+      },
+      {
+        "icon": "screen",
+        "title": "Digital Signage",
+        "description": "Restaurant screens, customer-facing displays and menu boards — all managed from the same panel. Upload media, build playlists, schedule by branch or tag, and push updates in real time. Includes a guest-facing checkout display with order summary, payment prompts, tipping and multilingual support.",
+        "tags": ["Playlist", "Device management", "Customer display"]
+      }
+    ]
+  },
+  "logos": {
+    "title": "Leading restaurant chains run on Dasvio"
+  },
+  "personas": {
+    "eyebrow": "FOR EVERYONE",
+    "title": "Built for every level of your restaurant team",
+    "subtitle": "From owners to operations managers, from cashiers to regional supervisors — Dasvio makes everyone's job easier.",
+    "items": [
+      {
+        "role": "Restaurant Owner",
+        "headline": "Keep your entire business at your fingertips",
+        "points": [
+          "See live sales for all branches on a single screen",
+          "Understand which branch, product, and hour drives revenue",
+          "Make growth decisions backed by data"
+        ]
+      },
+      {
+        "role": "Operations Manager",
+        "headline": "Reduce complexity to a single panel",
+        "points": [
+          "Cross-branch price and menu control in minutes",
+          "Staff, shifts, and permissions managed from one place",
+          "Platform reviews, claims, and catalog sync handled automatically"
+        ]
+      },
+      {
+        "role": "Staff",
+        "headline": "Fast, intuitive, a joy to use",
+        "points": [
+          "New POS staff fully trained in 10 minutes",
+          "Order taking time cut in half with QR menus",
+          "Toggle product availability instantly from mobile"
+        ]
+      }
+    ]
+  },
+  "qrMenu": {
+    "eyebrow": "QR MENU",
+    "title": "Open your menu to guests in 14 languages, in minutes",
+    "subtitle": "Dasvio AI translates your existing menu into 14 languages. You only create the menu — we handle the rest.",
+    "features": [
+      "Automatic AI translation in 14 languages",
+      "Theme, color and typography management from the panel",
+      "Spotlight, campaign and combo displays",
+      "Table-based QR flow and order tracking",
+      "Product variants, modifiers and extras support",
+      "PWA — opens like a native app on the phone"
+    ],
+    "cta": "Request a QR Menu demo"
+  },
+  "multiBranch": {
+    "eyebrow": "MULTI-BRANCH MANAGEMENT",
+    "title": "From 1 branch to 1,000, with the same ease",
+    "subtitle": "Create a master menu, assign it to branches. Override prices, variants or availability at any branch you want.",
+    "features": [
+      "Central master menu and catalog management",
+      "Branch-menu assignment matrix and bulk assignment",
+      "Regional price groups and store group structure",
+      "Branch-level product, variant and price overrides",
+      "Spreadsheet-style price matrix and bulk price adjustment tool",
+      "Menu scheduling and cloning"
+    ],
+    "cta": "Request a multi-branch demo"
+  },
+  "integrations": {
+    "eyebrow": "INTEGRATIONS",
+    "title": "You're no longer fighting delivery platforms",
+    "subtitle": "Getir, Trendyol, Yemeksepeti and more — manage all platforms from the Dasvio panel. Map your catalog once, everything stays in sync.",
+    "platforms": [
+      "Getir Yemek",
+      "Trendyol Yemek",
+      "Yemeksepeti",
+      "Qapera",
+      "e-Adisyon (GİB)"
+    ],
+    "features": [
+      "Open/close all platforms from one panel",
+      "Map products, categories, variants and modifiers",
+      "Reply to platform reviews from the panel",
+      "Manage Trendyol claims (refunds/cancellations)",
+      "Bulk update platform prices",
+      "Restaurant busyness, courier and delivery time control"
+    ],
+    "cta": "View integrations"
+  },
+  "analytics": {
+    "eyebrow": "ANALYTICS",
+    "title": "Measure everything, decide right",
+    "subtitle": "Run your restaurant like a data product. Which item, what hour, which branch, which channel earns how much — all at a glance.",
+    "metrics": [
+      { "label": "Hourly sales heatmap", "value": "38% peak load Monday 12-2pm" },
+      { "label": "Top-selling item", "value": "Chicken wrap — 142 units/day" },
+      { "label": "Payment distribution", "value": "Card 62% • Cash 23% • Online 15%" },
+      { "label": "Comp rate", "value": "2.1% of total sales" }
+    ],
+    "cta": "Request an analytics demo"
+  },
+  "testimonials": {
+    "eyebrow": "CUSTOMER STORIES",
+    "title": "What restaurant owners say",
+    "items": [
+      {
+        "quote": "Managing our 12 branches used to require 3 different software systems. After switching to Dasvio, all our operations run from a single panel. We gained 40 extra hours per month.",
+        "name": "Mehmet Yılmaz",
+        "role": "General Manager",
+        "company": "Anatolia Kebab Chain"
+      },
+      {
+        "quote": "Translating our QR menu into 14 languages increased sales by 22% in our tourist-heavy locations. Plus, AI translation still lets us manually polish anything.",
+        "name": "Selin Aktaş",
+        "role": "Founder",
+        "company": "Coastal Bistro"
+      },
+      {
+        "quote": "Menu mapping across delivery platforms was our biggest headache. With Dasvio, you set it up once and everything stays in sync.",
+        "name": "Ahmet Kaya",
+        "role": "Operations Director",
+        "company": "Big Burger Group"
+      }
+    ]
+  },
+  "sectors": {
+    "eyebrow": "INDUSTRIES",
+    "title": "Built for every corner of the restaurant ecosystem",
+    "subtitle": "From single locations to international chains, from cafés to cloud kitchens — Dasvio adapts to every scale and format.",
+    "items": [
+      {
+        "icon": "utensils",
+        "title": "Fine Dining",
+        "desc": "QR menus, table management and detailed analytics for fine dining, gourmet and private venues."
+      },
+      {
+        "icon": "coffee",
+        "title": "Café & Bakery",
+        "desc": "Streamlined POS and rapid order flow for coffee shops, bakeries and patisseries."
+      },
+      {
+        "icon": "pizza",
+        "title": "Fast Food & QSR",
+        "desc": "High-volume operations, combos, drive-thru and mobile-order integrations."
+      },
+      {
+        "icon": "wine",
+        "title": "Bar & Pub",
+        "desc": "Open tabs, split checks, beverage menus and event scheduling in one system."
+      },
+      {
+        "icon": "bed",
+        "title": "Hotel & Resort",
+        "desc": "Restaurant, bar and room service in a single panel. PMS integration ready."
+      },
+      {
+        "icon": "truck",
+        "title": "Cloud Kitchen",
+        "desc": "One kitchen, multiple brands. Getir, Trendyol, Yemeksepeti managed in parallel."
+      },
+      {
+        "icon": "building",
+        "title": "Chain & Franchise",
+        "desc": "Master menu, regional pricing, branch performance comparison — scalable infrastructure."
+      },
+      {
+        "icon": "store",
+        "title": "Bistro & Brasserie",
+        "desc": "Balanced feature set and minutes-fast setup for mid-sized businesses."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "ABOUT",
+    "title": "We redesigned restaurant operations",
+    "body": "Dasvio was born from the fragmented systems, scattered data and unnecessary manual work restaurant owners face every day. One control point, full operations, fast setup — a clear answer to what restaurant technology should look like.",
+    "pillars": [
+      {
+        "title": "2,000+ active restaurants",
+        "desc": "Trusted at every scale, from single locations to international chains."
+      },
+      {
+        "title": "Built in Türkiye",
+        "desc": "GİB compliance, local platforms and native-language support — a team that knows the industry inside out."
+      },
+      {
+        "title": "Here 24/7",
+        "desc": "Local-language support hotline, 14 days average setup, 99.9% uptime guarantee."
+      }
+    ],
+    "cta": "More about Dasvio"
+  },
+  "pricing": {
+    "eyebrow": "PRICING",
+    "title": "Plans that scale with your business",
+    "subtitle": "From single-location operators to international chains — a plan for every size.",
+    "billingMonthly": "Monthly",
+    "billingAnnual": "Annual",
+    "billingAnnualSave": "2 months free",
+    "plans": [
+      {
+        "name": "Starter",
+        "tagline": "For single-location businesses",
+        "price": "$49",
+        "period": "/ mo",
+        "cta": "Start",
+        "features": [
+          "QR Menu (1 branch)",
+          "Basic POS",
+          "1 platform integration",
+          "Basic analytics",
+          "Email support"
+        ]
+      },
+      {
+        "name": "Pro",
+        "tagline": "For 2-10 branch businesses",
+        "price": "$129",
+        "period": "/ mo",
+        "highlight": true,
+        "cta": "Most popular",
+        "features": [
+          "QR Menu (up to 10 branches)",
+          "POS + revenue centers",
+          "All platform integrations",
+          "Multi-branch master menu",
+          "Advanced analytics",
+          "Priority support"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "tagline": "For 10+ branch chains",
+        "price": "Custom",
+        "period": "",
+        "cta": "Contact us",
+        "features": [
+          "Unlimited branches",
+          "Regional price tiers",
+          "Custom integrations",
+          "Digital signage",
+          "Dedicated success manager",
+          "SLA guarantee"
+        ]
+      }
+    ]
+  },
+  "demoForm": {
+    "eyebrow": "DEMO",
+    "title": "See Dasvio live in 15 minutes",
+    "subtitle": "Let's schedule a personalized demo tailored to your restaurant's needs.",
+    "fields": {
+      "name": "Full name",
+      "company": "Restaurant / Company",
+      "branches": "Number of branches",
+      "country": "Country",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message (optional)"
+    },
+    "branchesOptions": ["1", "2-5", "6-20", "20+"],
+    "submit": "Request a demo",
+    "privacy": "By submitting this form, you agree to our privacy policy."
+  },
+  "trust": {
+    "items": [
+      { "value": "24/7", "label": "Support hotline" },
+      { "value": "14 days", "label": "Average setup time" },
+      { "value": "99.9%", "label": "Uptime guarantee" }
+    ]
+  },
+  "footer": {
+    "tagline": "The new standard for restaurant operations.",
+    "cta": {
+      "eyebrow": "New standard in restaurant management",
+      "headline": "Move your entire operation to one panel",
+      "primary": "Get a Free Demo",
+      "secondary": "Explore Pricing",
+      "stats": [
+        { "label": "24/7 Support", "value": "Always there for you" },
+        { "label": "Thousands of transactions", "value": "Fast payment flow" },
+        { "label": "Mobile-ready", "value": "Works on every device" }
+      ]
+    },
+    "contact": {
+      "eyebrow": "Get in touch",
+      "title": "Ready for a quick demo and detailed quote.",
+      "body": "Our expert team gets back to you within 2 hours on average.",
+      "cta": "Contact us",
+      "badge": "Local support, 24/7 service"
+    },
+    "social": "Social networks",
+    "columns": {
+      "products": {
+        "title": "Products",
+        "links": [
+          "QR Menu",
+          "POS",
+          "Multi-Branch Management",
+          "Digital Signage",
+          "Analytics",
+          "Staff & Permissions"
+        ]
+      },
+      "solutions": {
+        "title": "Solutions",
+        "links": [
+          "Restaurants",
+          "Cafes",
+          "Fast Food",
+          "Bars",
+          "Hotels & Resorts",
+          "Chains"
+        ]
+      },
+      "company": {
+        "title": "Company",
+        "links": [
+          "About",
+          "Careers",
+          "Press",
+          "Contact"
+        ]
+      },
+      "resources": {
+        "title": "Resources",
+        "links": [
+          "Blog",
+          "Customer Stories",
+          "Help Center",
+          "API Docs",
+          "Status"
+        ]
+      }
+    },
+    "legal": {
+      "rights": "All rights reserved.",
+      "links": ["GDPR", "Terms of Service", "Privacy Policy", "Cookies"],
+      "allPolicies": "All policies"
+    }
+  }
+}

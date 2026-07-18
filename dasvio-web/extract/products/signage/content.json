@@ -1,0 +1,69 @@
+{
+  "slug": "signage",
+  "category": "Customer experience",
+  "title": "Digital Signage",
+  "description": "Restaurant screens, customer-facing displays and menu boards — all managed from the same panel. Upload media, build playlists, schedule by branch or tag. Updates push in real time.",
+  "tags": ["Playlist", "Device management", "Customer display"],
+  "accentTint": "#10b981",
+  "layoutVariant": "magazine",
+  "heroEyebrowLink": { "label": "← Customer experience", "href": "/{lang}#features" },
+  "heroCtas": [
+    { "tr": "Ücretsiz Demo Al", "en": "Get a free demo", "href": "/{lang}/contact", "variant": "primary" },
+    { "tr": "Fiyatlandırma", "en": "Pricing", "href": "/{lang}/pricing", "variant": "glass", "trailingIcon": "arrow-right" }
+  ],
+  "steps": [],
+  "capabilitiesEyebrow": { "tr": "Yetenekler", "en": "Capabilities" },
+  "capabilitiesHeading": {
+    "tr": "Digital Signage ile gelen her şey, uçtan uca.",
+    "en": "Everything Digital Signage ships with, end to end."
+  },
+  "capabilities": [
+    {
+      "title": "Playlists & layouts",
+      "body": "Build playlists of images, videos and live content. Apply layouts per screen — portrait, landscape or dual."
+    },
+    {
+      "title": "Schedule by branch or tag",
+      "body": "Push lunch promos at 11am, dinner at 6pm. Target specific branches, branch groups or content tags."
+    },
+    {
+      "title": "Customer-facing display",
+      "body": "Mirror checkout to a guest-facing screen. Show order summary, tipping prompts and branding."
+    },
+    {
+      "title": "Real-time push",
+      "body": "Update content on every screen in seconds. Take a screen offline remotely if it shows the wrong thing."
+    }
+  ],
+  "quote": {
+    "variant": "quote",
+    "note": "Quote (magazine) varyantı — diğer sayfalardaki 'Neden Dasvio?' (why) bölümü YOK. Blockquote 3 ayrı text node'dan oluşur; ortadaki 'digital signage' parçası span İÇİNDE DEĞİL, düz text node (RSC: [q1, highlight, q2]).",
+    "iconTint": "#10b981",
+    "iconBg": "#10b98120",
+    "textParts": [
+      "We finally have a single panel for everything ",
+      "digital signage",
+      " touches. Our team onboards in a morning, not a week."
+    ],
+    "attribution": "Restaurant operator, multi-branch chain · Türkiye"
+  },
+  "otherProducts": ["qr-menu", "pos", "multi-branch"],
+  "otherProductsTints": { "qr-menu": "#ffffff", "pos": "#06b6d4", "multi-branch": "#f43f5e" },
+  "trTitle_vs_enTitle": {
+    "note_1": "ÖNEMLİ SAPMA: Bu sayfanın TÜM ürün-özgü içeriği (category eyebrow, title, description, tags, 4 yetenek kartı başlık+gövde, quote metni ve mockup içi metinler) HER İKİ locale'de de AYNI İNGİLİZCE. Diğer ürünlerde bu alanlar iki locale'de aynı Türkçe'dir; eski kaynak src/lib/products.ts'te signage girdisi Türkçe'dir (ör. 'Müşteri deneyimi', 'Restoran ekranları, müşteri yüzü ekranlar...', tags ['Playlist','Cihaz yönetimi','Müşteri ekranı'], 'Playlist & düzenler' vb.) — deploy'da İngilizce'ye çevrilmiş.",
+    "note_2": "tr ve en sayfalar arasında main içinde FARKLI olan string'ler yalnızca şablon (template) metinleri; ürün-özgü string'ler iki locale'de birebir aynı. Diğer-ürün kartlarının başlık/açıklamaları en sayfada da Türkçe kalır.",
+    "differingTemplateStrings": [
+      { "key": "heroCta1", "tr": "Ücretsiz Demo Al", "en": "Get a free demo" },
+      { "key": "heroCta2", "tr": "Fiyatlandırma", "en": "Pricing" },
+      { "key": "capabilitiesEyebrow", "tr": "Yetenekler", "en": "Capabilities" },
+      { "key": "capabilitiesHeading", "tr": "Digital Signage ile gelen her şey, uçtan uca.", "en": "Everything Digital Signage ships with, end to end." },
+      { "key": "otherProductsEyebrow", "tr": "Keşfetmeye devam et", "en": "Also explore" },
+      { "key": "otherProductsHeading", "tr": "Dasvio platformunun geri kalanı.", "en": "The rest of the Dasvio platform." },
+      { "key": "otherProductsAllLink", "tr": "Tüm ürünler", "en": "All products" },
+      { "key": "otherProductsCardCta", "tr": "Keşfet", "en": "Explore" },
+      { "key": "statsBand.1", "tr": "7/24 — Türkçe destek hattı", "en": "24/7 — Support hotline" },
+      { "key": "statsBand.2", "tr": "14 gün — Ortalama kurulum süresi", "en": "14 days — Average setup time" },
+      { "key": "statsBand.3", "tr": "%99.9 — Uptime garantisi", "en": "99.9% — Uptime guarantee" }
+    ]
+  }
+}
