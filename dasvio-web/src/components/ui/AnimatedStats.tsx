@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 
 type Stat = { value: string; label: string };
 
@@ -34,8 +35,10 @@ export function AnimatedStats({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(false);
+  const reduced = useReducedMotion();
 
   useEffect(() => {
+    if (reduced) return;
     const el = ref.current;
     if (!el) return;
     const obs = new IntersectionObserver(
@@ -49,7 +52,7 @@ export function AnimatedStats({
     );
     obs.observe(el);
     return () => obs.disconnect();
-  }, []);
+  }, [reduced]);
 
   return (
     <div
@@ -63,6 +66,7 @@ export function AnimatedStats({
           index={i}
           isFirst={i === 0}
           active={active}
+          reduced={reduced}
           locale={locale}
         />
       ))}
@@ -75,18 +79,23 @@ function StatItem({
   index,
   isFirst,
   active,
+  reduced,
   locale,
 }: {
   item: Stat;
   index: number;
   isFirst: boolean;
   active: boolean;
+  reduced: boolean;
   locale: string;
 }) {
   const target = parseTarget(item.value);
   const delay = index * 220;
   const value = useCountUp(target.number, 1700, active, delay);
-  const display = `${target.prefix}${formatNumber(value, locale)}${target.suffix}`;
+  const display = `${target.prefix}${formatNumber(
+    reduced ? target.number : value,
+    locale,
+  )}${target.suffix}`;
 
   return (
     <div
@@ -94,10 +103,11 @@ function StatItem({
         !isFirst ? "lg:border-l lg:border-white/10" : ""
       }`}
       style={{
-        opacity: active ? 1 : 0,
-        transform: active ? "translateY(0)" : "translateY(12px)",
-        transition: "opacity 800ms ease, transform 800ms cubic-bezier(.2,.7,.2,1)",
-        transitionDelay: `${delay}ms`,
+        opacity: reduced || active ? 1 : 0,
+        transform: reduced || active ? "translateY(0)" : "translateY(12px)",
+        transition: reduced
+          ? "none"
+          : `opacity 800ms ease ${delay}ms, transform 800ms cubic-bezier(.2,.7,.2,1) ${delay}ms`,
       }}
     >
       <div className="text-[32px] lg:text-[44px] xl:text-[52px] font-light text-fg leading-none tracking-[-0.02em] tabular-nums">

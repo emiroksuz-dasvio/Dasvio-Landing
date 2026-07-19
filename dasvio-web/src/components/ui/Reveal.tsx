@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 
 type Direction = "up" | "down" | "left" | "right" | "scale";
 
@@ -23,8 +24,10 @@ export function Reveal({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(false);
+  const reduced = useReducedMotion();
 
   useEffect(() => {
+    if (reduced) return;
     const el = ref.current;
     if (!el) return;
     const obs = new IntersectionObserver(
@@ -40,9 +43,11 @@ export function Reveal({
     );
     obs.observe(el);
     return () => obs.disconnect();
-  }, [once]);
+  }, [once, reduced]);
 
-  const transform = active
+  const transform = reduced
+    ? "none"
+    : active
     ? "translate3d(0,0,0) scale(1)"
     : direction === "up"
       ? `translate3d(0, ${distance}px, 0) scale(1)`
@@ -59,10 +64,11 @@ export function Reveal({
       ref={ref}
       className={className}
       style={{
-        opacity: active ? 1 : 0,
+        opacity: reduced || active ? 1 : 0,
         transform,
-        transition: `opacity ${duration}ms ease, transform ${duration}ms cubic-bezier(.2,.7,.2,1)`,
-        transitionDelay: `${delay}ms`,
+        transition: reduced
+          ? "none"
+          : `opacity ${duration}ms ease ${delay}ms, transform ${duration}ms cubic-bezier(.2,.7,.2,1) ${delay}ms`,
         willChange: "opacity, transform",
       }}
     >

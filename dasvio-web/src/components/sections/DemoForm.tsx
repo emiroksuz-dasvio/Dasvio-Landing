@@ -42,7 +42,7 @@ export function DemoForm({ t }: { t: DemoFormDict }) {
             <div className="text-[13px] font-semibold uppercase tracking-[0.18em] text-accent">
               {t.eyebrow}
             </div>
-            <h2 className="display-tight text-balance mt-5 text-[36px] sm:text-[44px] lg:text-[52px] font-semibold">
+            <h2 className="text-balance mt-5 text-[36px] sm:text-[44px] lg:text-[56px] font-light leading-[1.02] tracking-[-0.02em]">
               {t.title}
             </h2>
             <p className="mt-5 text-[17px] lg:text-[18px] leading-[1.6] text-fg-inverse-muted text-pretty">

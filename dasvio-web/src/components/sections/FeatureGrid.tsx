@@ -241,11 +241,8 @@ export function FeatureGrid({
   return (
     <section id="features" className="py-24 lg:py-32 relative overflow-hidden">
       <div
-        className="absolute inset-0 opacity-[0.06] pointer-events-none"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 15% 5%, rgba(255,255,255,0.15), transparent 50%), radial-gradient(circle at 85% 95%, rgba(255,255,255,0.1), transparent 45%)",
-        }}
+        className="absolute inset-0 bg-radial-fade pointer-events-none"
+        aria-hidden
       />
       <Container className="relative">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
@@ -307,7 +304,7 @@ export function FeatureGrid({
             <p className="mt-6 text-[16px] lg:text-[19px] leading-[1.6] text-fg-muted text-pretty">
               {current.description}
             </p>
-            <div className="mt-9 text-[12px] font-semibold uppercase tracking-[0.18em] text-accent">
+            <div className="mt-9 text-[13px] font-semibold uppercase tracking-[0.18em] text-accent">
               Özellikler
             </div>
             <div className="mt-4 flex flex-wrap gap-2.5">
@@ -328,7 +325,7 @@ export function FeatureGrid({
           {subs.map((sc) => (
             <div
               key={sc.title}
-              className="rounded-2xl liquid-glass p-7 lg:p-9 flex flex-col hover:-translate-y-1.5 hover:border-[rgba(244,63,94,0.4)] hover:shadow-[0_28px_60px_rgba(244,63,94,0.2)] transition-all duration-500"
+              className="rounded-2xl liquid-glass liquid-card p-7 lg:p-9 flex flex-col"
             >
               <div className="rounded-2xl mockup-container p-5 min-h-[220px] flex items-center justify-center">
                 <sc.Visual />

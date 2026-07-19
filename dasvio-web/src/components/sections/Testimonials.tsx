@@ -25,11 +25,11 @@ export function Testimonials({ t }: { t: TestimonialsDict }) {
           <div className="text-[13px] font-semibold uppercase tracking-[0.18em] text-accent">
             {t.eyebrow}
           </div>
-          <h2 className="display-tight text-balance mt-5 text-[36px] sm:text-[44px] lg:text-[56px] font-semibold text-fg">
+          <h2 className="text-balance mt-5 text-[36px] sm:text-[44px] lg:text-[56px] font-light leading-[1.02] tracking-[-0.02em] text-fg">
             {t.title}
           </h2>
         </div>
-        <div className="mt-14 grid md:grid-cols-3 gap-3">
+        <div className="mt-14 grid md:grid-cols-3 gap-5 lg:gap-6">
           {t.items.map((item, i) => {
             const initials = item.name
               .split(" ")
@@ -39,7 +39,7 @@ export function Testimonials({ t }: { t: TestimonialsDict }) {
             return (
               <Reveal key={item.name} delay={i * 140}>
               <figure
-                className="rounded-2xl liquid-glass p-7 lg:p-8 flex flex-col h-full hover:-translate-y-1.5 hover:border-[rgba(244,63,94,0.4)] hover:shadow-[0_30px_60px_rgba(244,63,94,0.22)] transition-all duration-500"
+                className="rounded-2xl liquid-glass liquid-card p-7 lg:p-8 flex flex-col h-full"
               >
                 <Quote className="size-7 text-accent" strokeWidth={2} />
                 <blockquote className="mt-5 text-[16px] lg:text-[17px] leading-[1.6] text-fg text-pretty flex-1">

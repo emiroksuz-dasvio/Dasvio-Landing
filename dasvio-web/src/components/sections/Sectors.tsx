@@ -79,7 +79,7 @@ export function Sectors({ t }: { t: SectorsDict }) {
               type="button"
               onClick={() => scroll("prev")}
               aria-label="Previous"
-              className="size-12 rounded-lg border border-white/15 bg-white/[0.03] hover:bg-white/[0.06] hover:border-white/25 transition flex items-center justify-center"
+              className="size-12 rounded-lg liquid-glass-sm hover:border-[rgba(244,63,94,0.35)] transition flex items-center justify-center"
             >
               <ChevronLeft className="size-5 text-fg" strokeWidth={2} />
             </button>
@@ -87,7 +87,7 @@ export function Sectors({ t }: { t: SectorsDict }) {
               type="button"
               onClick={() => scroll("next")}
               aria-label="Next"
-              className="size-12 rounded-lg border border-white/15 bg-white/[0.03] hover:bg-white/[0.06] hover:border-white/25 transition flex items-center justify-center"
+              className="size-12 rounded-lg liquid-glass-sm hover:border-[rgba(244,63,94,0.35)] transition flex items-center justify-center"
             >
               <ChevronRight className="size-5 text-fg" strokeWidth={2} />
             </button>
@@ -105,7 +105,7 @@ export function Sectors({ t }: { t: SectorsDict }) {
                 key={item.title}
                 className="flex-none w-[280px] sm:w-[320px] lg:w-[360px] snap-start"
               >
-                <article className="rounded-2xl liquid-glass overflow-hidden flex flex-col h-full hover:-translate-y-1.5 hover:border-[rgba(244,63,94,0.42)] hover:shadow-[0_24px_50px_rgba(244,63,94,0.2)] transition-all duration-500">
+                <article className="rounded-2xl liquid-glass liquid-card overflow-hidden flex flex-col h-full">
                   <div
                     className="relative aspect-[5/4]"
                     style={{

@@ -16,7 +16,7 @@ type AboutDict = {
 
 export function About({ t, locale }: { t: AboutDict; locale: string }) {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-bg-subtle">
+    <section id="about" className="py-24 lg:py-32 bg-bg border-t border-border-subtle">
       <Container>
         <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-start">
           <div>

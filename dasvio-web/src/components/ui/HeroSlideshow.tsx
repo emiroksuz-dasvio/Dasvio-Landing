@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 
 const photos = [
   {
@@ -30,13 +31,15 @@ const DURATION_MS = 2200;
 
 export function HeroSlideshow() {
   const [active, setActive] = useState(0);
+  const reduced = useReducedMotion();
 
   useEffect(() => {
+    if (reduced) return;
     const t = window.setInterval(() => {
       setActive((p) => (p + 1) % photos.length);
     }, DURATION_MS);
     return () => window.clearInterval(t);
-  }, []);
+  }, [reduced]);
 
   return (
     <>

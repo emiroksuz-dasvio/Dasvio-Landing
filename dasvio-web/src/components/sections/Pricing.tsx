@@ -37,7 +37,7 @@ export function Pricing({ t, locale }: { t: PricingDict; locale: string }) {
           <div className="text-[13px] font-semibold uppercase tracking-[0.18em] text-accent">
             {t.eyebrow}
           </div>
-          <h2 className="display-tight text-balance mt-5 text-[36px] sm:text-[44px] lg:text-[56px] font-semibold text-fg">
+          <h2 className="text-balance mt-5 text-[36px] sm:text-[44px] lg:text-[56px] font-light leading-[1.02] tracking-[-0.02em] text-fg">
             {t.title}
           </h2>
           <p className="mt-5 text-[17px] lg:text-[18px] leading-[1.6] text-fg-muted text-pretty">
@@ -58,7 +58,7 @@ export function Pricing({ t, locale }: { t: PricingDict; locale: string }) {
               type="button"
               onClick={() => setAnnual(true)}
               className={clsx(
-                "h-9 px-4 rounded-lg text-[13.5px] font-semibold transition flex items-center gap-2",
+                "h-9 px-4 rounded-md text-[13.5px] font-semibold transition flex items-center gap-2",
                 annual ? "bg-fg text-fg-inverse" : "text-fg-muted",
               )}
             >
@@ -74,12 +74,12 @@ export function Pricing({ t, locale }: { t: PricingDict; locale: string }) {
             </button>
           </div>
         </div>
-        <div className="mt-14 grid md:grid-cols-3 gap-3 max-w-5xl mx-auto">
+        <div className="mt-14 grid md:grid-cols-3 gap-5 lg:gap-6 max-w-5xl mx-auto">
           {t.plans.map((plan, idx) => (
             <Reveal key={plan.name} delay={idx * 120} className="h-full">
             <div
               className={clsx(
-                "rounded-2xl p-7 lg:p-8 flex flex-col relative transition-all duration-500 hover:-translate-y-2",
+                "rounded-2xl p-7 lg:p-8 flex flex-col relative transition-all duration-500 hover:-translate-y-1.5",
                 plan.highlight
                   ? "liquid-glass-strong text-fg-inverse border-2 border-accent shadow-[0_24px_64px_rgba(244,63,94,0.35)] hover:shadow-[0_36px_80px_rgba(244,63,94,0.5)]"
                   : "liquid-glass hover:border-[rgba(244,63,94,0.4)] hover:shadow-[0_24px_60px_rgba(244,63,94,0.2)]",

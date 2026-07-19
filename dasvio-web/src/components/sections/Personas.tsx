@@ -135,12 +135,12 @@ function PersonaCard({
   Icon: typeof Crown;
 }) {
   return (
-    <div className="rounded-2xl liquid-glass text-fg-inverse p-6 lg:p-7 flex flex-col hover:-translate-y-1.5 hover:border-[rgba(244,63,94,0.42)] hover:shadow-[0_30px_60px_rgba(244,63,94,0.24)] transition-all duration-500 h-full">
+    <div className="rounded-2xl liquid-glass liquid-card text-fg p-6 lg:p-7 flex flex-col h-full">
       <div className="flex items-center gap-2.5">
-        <div className="size-9 rounded-lg bg-bg-inverse flex items-center justify-center border border-white/10">
+        <div className="size-9 rounded-lg bg-bg-muted flex items-center justify-center border border-border-default">
           <Icon className="size-4 text-accent" strokeWidth={2.25} />
         </div>
-        <div className="text-[11.5px] font-semibold uppercase tracking-[0.15em] text-fg-inverse-muted">
+        <div className="text-[11.5px] font-semibold uppercase tracking-[0.15em] text-fg-muted">
           {item.role}
         </div>
       </div>
@@ -151,7 +151,7 @@ function PersonaCard({
         {item.points.map((p) => (
           <li
             key={p}
-            className="flex gap-2 text-[13.5px] text-fg-inverse-muted leading-[1.5]"
+            className="flex gap-2 text-[13.5px] text-fg-muted leading-[1.5]"
           >
             <Check
               className="size-3.5 mt-0.5 text-accent flex-none"

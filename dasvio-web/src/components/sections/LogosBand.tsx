@@ -29,7 +29,7 @@ export function LogosBand({ t }: { t: LogosDict }) {
           {row.map((name, i) => (
             <span
               key={`${name}-${i}`}
-              className="text-[22px] lg:text-[28px] font-semibold tracking-tight text-fg-subtle whitespace-nowrap"
+              className="text-[22px] lg:text-[28px] font-semibold tracking-tight text-fg-muted whitespace-nowrap"
               style={{ fontFamily: i % 3 === 0 ? "serif" : undefined, fontStyle: i % 5 === 0 ? "italic" : undefined }}
             >
               {name}

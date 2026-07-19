@@ -29,22 +29,37 @@ export function Hero({
 }) {
   return (
     <section className="relative pt-32 lg:pt-36 pb-16 lg:pb-20 overflow-hidden">
-      <Container>
+      <div
+        className="absolute inset-0 bg-radial-fade pointer-events-none"
+        aria-hidden
+      />
+      <Container className="relative">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 xl:gap-20 items-center">
           <div className="max-w-[720px]">
+            <div className="inline-flex items-center gap-2 rounded-full liquid-glass-sm px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.16em] text-accent">
+              <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" />
+              {t.eyebrow}
+            </div>
             <AnimatedHeadline
               title={t.title}
               accent={t.titleAccent}
-              className="text-balance text-[48px] sm:text-[64px] lg:text-[80px] xl:text-[96px] font-light text-fg leading-[1.0] tracking-[-0.025em]"
+              className="mt-6 text-balance text-[48px] sm:text-[64px] lg:text-[80px] xl:text-[96px] font-light text-fg leading-[1.0] tracking-[-0.025em]"
             />
             <p className="mt-7 max-w-[520px] text-[15px] lg:text-[16px] leading-[1.55] text-fg-muted text-pretty">
               {t.subtitle}
             </p>
-            <div className="mt-9">
+            <div className="mt-9 flex flex-wrap items-center gap-3">
               <Button variant="primary" size="lg" href={`/${locale}#demo`}>
                 {t.ctaPrimary}
               </Button>
+              <Button variant="secondary" size="lg" href={`/${locale}#features`}>
+                {t.ctaSecondary}
+              </Button>
             </div>
+            <p className="mt-6 flex items-center gap-2 text-[13px] text-fg-muted">
+              <span className="size-1 rounded-full bg-accent" aria-hidden />
+              {t.trustBadge}
+            </p>
           </div>
           <div className="relative">
             <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[4/5] lg:aspect-[1/1] xl:aspect-[6/5] bg-bg-muted">
@@ -62,7 +77,7 @@ export function Hero({
 
 function LiveOrderCard() {
   return (
-    <div className="absolute right-3 lg:right-[-28px] top-[18%] w-[230px] lg:w-[270px] rounded-2xl liquid-glass shadow-[0_20px_60px_rgba(0,0,0,0.4),0_0_0_1px_rgba(244,63,94,0.12),inset_0_1px_0_rgba(255,255,255,0.12)] p-4 animate-float">
+    <div className="absolute right-3 lg:right-[-28px] top-[18%] w-[230px] lg:w-[270px] rounded-2xl liquid-glass-strong shadow-[0_20px_60px_rgba(0,0,0,0.4),0_0_0_1px_rgba(244,63,94,0.12),inset_0_1px_0_rgba(255,255,255,0.12)] p-4 animate-float">
       <div className="flex items-center justify-between">
         <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-fg-muted">
           Masa 7
@@ -91,7 +106,7 @@ function LiveOrderCard() {
           {["#fbbf24", "#06b6d4", "#fb7185"].map((c) => (
             <span
               key={c}
-              className="size-5 rounded-full border-2 border-white"
+              className="size-5 rounded-full border-2 border-bg"
               style={{ background: c }}
             />
           ))}
@@ -104,7 +119,7 @@ function LiveOrderCard() {
 
 function TranslationCard() {
   return (
-    <div className="absolute left-[-12px] lg:left-[-32px] bottom-[14%] rounded-2xl liquid-glass shadow-[0_20px_60px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.12)] px-4 py-3 flex items-center gap-3 animate-float-alt">
+    <div className="absolute left-[-12px] lg:left-[-32px] bottom-[14%] rounded-2xl liquid-glass-strong shadow-[0_20px_60px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.12)] px-4 py-3 flex items-center gap-3 animate-float-alt">
       <div className="size-9 rounded-lg bg-accent flex items-center justify-center text-[14px] font-bold text-accent-fg">
         AI
       </div>

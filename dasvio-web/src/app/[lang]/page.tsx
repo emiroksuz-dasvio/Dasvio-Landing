@@ -11,6 +11,7 @@ import { About } from "@/components/sections/About";
 import { Pricing } from "@/components/sections/Pricing";
 import { DemoForm } from "@/components/sections/DemoForm";
 import { Trust } from "@/components/sections/Trust";
+import { ParallaxGlow } from "@/components/ui/ParallaxGlow";
 
 export default async function HomePage({
   params,
@@ -23,7 +24,8 @@ export default async function HomePage({
   const t = await getDictionary(locale);
 
   return (
-    <>
+    <div className="relative">
+      <ParallaxGlow />
       <Hero t={t.hero} stats={t.stats} locale={locale} />
       <FeatureGrid t={t.features} problem={t.problem} />
       <Sectors t={t.sectors} />
@@ -34,7 +36,7 @@ export default async function HomePage({
       <Pricing t={t.pricing} locale={locale} />
       <DemoForm t={t.demoForm} />
       <Trust t={t.trust} />
-    </>
+    </div>
   );
 }
 
