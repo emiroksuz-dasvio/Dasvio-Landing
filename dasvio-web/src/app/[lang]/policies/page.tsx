@@ -9,6 +9,7 @@ import {
   Mail,
 } from "lucide-react";
 import { hasLocale, locales, type Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
@@ -25,6 +26,7 @@ export default async function PoliciesHubPage({
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const locale = lang as Locale;
+  const t = (await getDictionary(locale)).policyPage;
 
   return (
     <>
@@ -41,27 +43,33 @@ export default async function PoliciesHubPage({
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-[12px] font-semibold uppercase tracking-[0.18em] text-accent">
                 <ShieldCheck className="size-3.5" strokeWidth={2.5} />
-                Yasal & Politikalar
+                {t.badge}
               </div>
               <h1 className="mt-6 text-balance text-[44px] sm:text-[60px] lg:text-[80px] xl:text-[92px] font-light leading-[0.98] tracking-[-0.025em]">
-                Şeffaflık ve <span className="text-accent">güven</span>, baştan
-                sona.
+                {t.titleLead} <span className="text-accent">{t.titleAccent}</span>
+                {t.titleTail}
               </h1>
               <p className="mt-6 max-w-2xl text-[16px] lg:text-[18px] leading-[1.65] text-fg-muted text-pretty">
-                Verilerinizi nasıl koruduğumuz, hizmetlerimizi nasıl
-                sunduğumuz ve haklarınızın tamamı tek bir yerde. Avukat onaylı,
-                KVKK uyumlu, açıkça yazılmış.
+                {t.body}
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4 text-[13px] text-fg-muted">
                 <span className="inline-flex items-center gap-2">
                   <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" />
-                  KVKK uyumlu
+                  {t.badge1}
                 </span>
                 <span className="size-1 rounded-full bg-fg-muted/40" />
-                <span>PCI DSS sertifikalı</span>
+                <span>{t.badge2}</span>
                 <span className="size-1 rounded-full bg-fg-muted/40" />
-                <span>{POLICIES.length} belge</span>
+                <span>{t.documents.replace("{count}", String(POLICIES.length))}</span>
               </div>
+              {/* The documents themselves are Turkish-law instruments (KVKK,
+                  distance-selling contract) and are deliberately not translated
+                  — say so rather than letting an /en visitor be surprised. */}
+              {locale === "en" && (
+                <p className="mt-6 max-w-2xl rounded-xl border border-border-default bg-bg-subtle px-4 py-3 text-[13.5px] leading-relaxed text-fg-muted">
+                  {t.languageNote}
+                </p>
+              )}
             </div>
           </Reveal>
         </Container>
@@ -131,11 +139,10 @@ export default async function PoliciesHubPage({
                 <Mail className="size-5" strokeWidth={2} />
               </div>
               <h2 className="text-balance text-[28px] sm:text-[36px] lg:text-[44px] font-light leading-[1.04] tracking-[-0.02em]">
-                Hukuki bir sorunuz mu var?
+                {t.contactTitle}
               </h2>
               <p className="mt-5 max-w-xl mx-auto text-[15px] lg:text-[16px] leading-[1.65] text-fg-muted text-pretty">
-                Veri talepleri, KVKK başvuruları veya sözleşme soruları için
-                doğrudan hukuk ekibimizle iletişime geçebilirsiniz.
+                {t.contactBody}
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <Button
@@ -151,7 +158,7 @@ export default async function PoliciesHubPage({
                   href={`/${locale}/contact`}
                   withArrow
                 >
-                  İletişim formu
+                {t.contactForm}
                 </Button>
               </div>
             </div>

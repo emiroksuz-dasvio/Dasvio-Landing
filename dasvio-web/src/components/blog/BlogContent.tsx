@@ -5,20 +5,30 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, Clock } from "lucide-react";
 import clsx from "clsx";
-import { CATEGORIES, formatBlogDate, type BlogPost } from "@/lib/blog";
+import {
+  CATEGORIES,
+  CATEGORY_LABELS,
+  formatBlogDate,
+  type BlogPost,
+  type CategoryFilter,
+} from "@/lib/blog";
+import type { Locale } from "@/i18n/config";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function BlogContent({
   posts,
   locale,
+  emptyLabel,
 }: {
   posts: BlogPost[];
-  locale: string;
+  locale: Locale;
+  emptyLabel: string;
 }) {
-  const [active, setActive] = useState<(typeof CATEGORIES)[number]>("Tümü");
+  const labels = CATEGORY_LABELS[locale];
+  const [active, setActive] = useState<CategoryFilter>("all");
 
   const filtered = useMemo(() => {
-    if (active === "Tümü") return posts;
+    if (active === "all") return posts;
     return posts.filter((p) => p.category === active);
   }, [posts, active]);
 
@@ -27,7 +37,7 @@ export function BlogContent({
       <div className="flex flex-wrap gap-2">
         {CATEGORIES.map((cat) => {
           const isActive = cat === active;
-          const count = cat === "Tümü"
+          const count = cat === "all"
             ? posts.length
             : posts.filter((p) => p.category === cat).length;
           return (
@@ -42,7 +52,7 @@ export function BlogContent({
                   : "liquid-glass-sm text-fg-muted hover:text-white hover:border-[rgba(255,255,255,0.28)]",
               )}
             >
-              {cat}
+              {labels[cat]}
               <span
                 className={clsx(
                   "text-[10px] font-bold rounded-full size-5 flex items-center justify-center flex-none",
@@ -68,14 +78,15 @@ export function BlogContent({
 
       {filtered.length === 0 && (
         <div className="mt-12 text-center py-20 text-fg-muted">
-          Bu kategoride henüz makale yok.
+          {emptyLabel}
         </div>
       )}
     </>
   );
 }
 
-function PostCard({ post, locale }: { post: BlogPost; locale: string }) {
+function PostCard({ post, locale }: { post: BlogPost; locale: Locale }) {
+  const labels = CATEGORY_LABELS[locale];
   return (
     <Link
       href={`/${locale}/blog/${post.slug}`}
@@ -100,12 +111,12 @@ function PostCard({ post, locale }: { post: BlogPost; locale: string }) {
             borderColor: `${post.accentTint}88`,
           }}
         >
-          {post.category}
+          {labels[post.category]}
         </div>
       </div>
       <div className="p-6 lg:p-7 flex-1 flex flex-col">
         <div className="flex items-center gap-3 text-[12px] text-fg-muted">
-          <span>{formatBlogDate(post.date)}</span>
+          <span>{formatBlogDate(post.date, locale)}</span>
           <span className="size-1 rounded-full bg-fg-muted/40" />
           <span className="inline-flex items-center gap-1">
             <Clock className="size-3" strokeWidth={2} />

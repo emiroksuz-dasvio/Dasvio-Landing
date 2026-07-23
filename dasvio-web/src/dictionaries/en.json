@@ -19,6 +19,157 @@
       "analyticsDesc": "Sales, product, payment, heatmap dashboards",
       "signage": "Digital Signage",
       "signageDesc": "Screen, playlist, customer display management"
+    },
+    "mega": {
+      "sections": {
+        "products": "Products",
+        "solutions": "Solutions",
+        "resources": "Resources",
+        "company": "Company"
+      },
+      "groups": {
+        "experience": "Guest experience",
+        "operations": "Operations",
+        "multiBranch": "Multi-branch",
+        "intelligence": "Intelligence",
+        "byFormat": "By format",
+        "byVenue": "By venue",
+        "byScale": "By scale",
+        "learn": "Learn",
+        "build": "Build",
+        "aboutUs": "About us",
+        "getInTouch": "Get in touch"
+      },
+      "items": {
+        "qrMenu": {
+          "title": "QR Menu",
+          "desc": "Multilingual digital menu, AI translation"
+        },
+        "signage": {
+          "title": "Digital Signage",
+          "desc": "In-restaurant screens & playlists"
+        },
+        "pos": {
+          "title": "POS Management",
+          "desc": "Devices, printers, revenue centres"
+        },
+        "staffPermissions": {
+          "title": "Staff & Permissions",
+          "desc": "Roles, shifts, POS PINs"
+        },
+        "revenueCenters": {
+          "title": "Revenue Centres",
+          "desc": "Channel-based operations"
+        },
+        "multiBranch": {
+          "title": "Multi-Branch Management",
+          "desc": "One menu, every branch"
+        },
+        "branchOverrides": {
+          "title": "Branch Overrides",
+          "desc": "Local price & availability"
+        },
+        "regionalPricing": {
+          "title": "Regional Pricing",
+          "desc": "Tier-based price groups"
+        },
+        "analytics": {
+          "title": "Analytics",
+          "desc": "Sales, products, payments"
+        },
+        "heatmaps": {
+          "title": "Heatmaps",
+          "desc": "Peak-hour visualisation"
+        },
+        "reports": {
+          "title": "Reports",
+          "desc": "Custom report builder"
+        },
+        "restaurants": {
+          "title": "Restaurants",
+          "desc": "Fine dining & gourmet venues"
+        },
+        "cafes": {
+          "title": "Cafés & Bakeries",
+          "desc": "Coffee shops & patisseries"
+        },
+        "fastFood": {
+          "title": "Fast Food & QSR",
+          "desc": "High volume, drive-thru"
+        },
+        "bars": {
+          "title": "Bars & Pubs",
+          "desc": "Open tabs, split bills"
+        },
+        "hotels": {
+          "title": "Hotels & Resorts",
+          "desc": "Restaurant + room service"
+        },
+        "cloudKitchens": {
+          "title": "Cloud Kitchens",
+          "desc": "One kitchen, many brands"
+        },
+        "singleLocation": {
+          "title": "Single location",
+          "desc": "Independents & bistros"
+        },
+        "chains": {
+          "title": "Chains & Franchises",
+          "desc": "Multi-location businesses"
+        },
+        "platforms": {
+          "title": "Platforms",
+          "desc": "Getir, Trendyol, Yemeksepeti"
+        },
+        "blog": {
+          "title": "Blog",
+          "desc": "Product & industry trends"
+        },
+        "stories": {
+          "title": "Customer Stories",
+          "desc": "How real restaurants run"
+        },
+        "help": {
+          "title": "Help Centre",
+          "desc": "Step-by-step guides"
+        },
+        "api": {
+          "title": "API & Webhooks",
+          "desc": "Build on Dasvio"
+        },
+        "status": {
+          "title": "Status",
+          "desc": "System uptime & history"
+        },
+        "academy": {
+          "title": "Academy",
+          "desc": "Team training & certification"
+        },
+        "about": {
+          "title": "About Dasvio",
+          "desc": "Our mission & team"
+        },
+        "careers": {
+          "title": "Careers",
+          "desc": "Join the team"
+        },
+        "press": {
+          "title": "Press",
+          "desc": "Media & announcements"
+        },
+        "demo": {
+          "title": "Get a demo",
+          "desc": "A personalised walkthrough"
+        },
+        "contact": {
+          "title": "Contact us",
+          "desc": "Email, phone, chat"
+        },
+        "partners": {
+          "title": "Partnerships",
+          "desc": "Become a Dasvio partner"
+        }
+      }
     }
   },
   "hero": {
@@ -33,10 +184,22 @@
   "stats": {
     "title": "The choice of industry-leading businesses",
     "items": [
-      { "value": "2,000+", "label": "Active restaurants" },
-      { "value": "12,000+", "label": "Managed branches" },
-      { "value": "14", "label": "Supported languages" },
-      { "value": "8+", "label": "Platform integrations" }
+      {
+        "value": "2,000+",
+        "label": "Active restaurants"
+      },
+      {
+        "value": "12,000+",
+        "label": "Managed branches"
+      },
+      {
+        "value": "14",
+        "label": "Supported languages"
+      },
+      {
+        "value": "8+",
+        "label": "Platform integrations"
+      }
     ]
   },
   "problem": {
@@ -48,42 +211,67 @@
     "eyebrow": "FEATURES",
     "title": "Everything you need for your restaurant",
     "subtitle": "From QR menus to POS, from multi-branch to analytics — a modular yet holistic platform.",
+    "featuresLabel": "Features",
     "items": [
       {
         "icon": "pos",
         "title": "POS Management",
         "description": "Run your entire point-of-sale operation from one panel: tablet and terminal devices, receipt and kitchen printers, revenue centers, operating hours and check history. Compatible with all major hardware vendors, so you don't need to replace anything to get started. Onboard new staff in under 10 minutes.",
-        "tags": ["Multi-device", "Printer management", "Revenue centers"]
+        "tags": [
+          "Multi-device",
+          "Printer management",
+          "Revenue centers"
+        ]
       },
       {
         "icon": "branch",
         "title": "Multi-Branch Management",
         "description": "A central master menu with branch-level overrides for prices, variants and availability. Group branches into regional price tiers, apply percentage or fixed bulk adjustments, schedule menus by time or location, and clone an entire setup between branches in seconds. Designed for 1 location to 1,000.",
-        "tags": ["Master menu", "Store groups", "Price tiers"]
+        "tags": [
+          "Master menu",
+          "Store groups",
+          "Price tiers"
+        ]
       },
       {
         "icon": "qr",
         "title": "QR Menu",
         "description": "A multilingual digital menu with AI-powered translation in 14 languages. Includes theme customization, spotlights, campaigns, and table-based ordering with a PWA-style mobile experience. Guests scan, browse and order without waiting for staff — and your menu stays in sync across every language automatically as you edit.",
-        "tags": ["AI translation", "Theme management", "Table-based"]
+        "tags": [
+          "AI translation",
+          "Theme management",
+          "Table-based"
+        ]
       },
       {
         "icon": "plug",
         "title": "Platform Integrations",
         "description": "Getir, Trendyol, Yemeksepeti, Qapera and more — map your catalog once and every platform stays in sync. Update prices in bulk, reply to reviews from a single inbox, manage claims and refunds, and toggle restaurant busyness or courier status from one place. Catalog mapping is one-time, not ongoing work.",
-        "tags": ["Getir", "Trendyol", "Yemeksepeti"]
+        "tags": [
+          "Getir",
+          "Trendyol",
+          "Yemeksepeti"
+        ]
       },
       {
         "icon": "chart",
         "title": "Real-Time Analytics",
         "description": "Sales broken down by hour, branch, channel and product. Heatmaps reveal peak load, comp and void rates flag operational issues, payment distribution shows guest behavior. Filter by any dimension, drill into any metric in one click, export anything — your restaurant operating as a data product.",
-        "tags": ["Heatmap", "Product analytics", "Live dashboard"]
+        "tags": [
+          "Heatmap",
+          "Product analytics",
+          "Live dashboard"
+        ]
       },
       {
         "icon": "screen",
         "title": "Digital Signage",
         "description": "Restaurant screens, customer-facing displays and menu boards — all managed from the same panel. Upload media, build playlists, schedule by branch or tag, and push updates in real time. Includes a guest-facing checkout display with order summary, payment prompts, tipping and multilingual support.",
-        "tags": ["Playlist", "Device management", "Customer display"]
+        "tags": [
+          "Playlist",
+          "Device management",
+          "Customer display"
+        ]
       }
     ]
   },
@@ -178,10 +366,22 @@
     "title": "Measure everything, decide right",
     "subtitle": "Run your restaurant like a data product. Which item, what hour, which branch, which channel earns how much — all at a glance.",
     "metrics": [
-      { "label": "Hourly sales heatmap", "value": "38% peak load Monday 12-2pm" },
-      { "label": "Top-selling item", "value": "Chicken wrap — 142 units/day" },
-      { "label": "Payment distribution", "value": "Card 62% • Cash 23% • Online 15%" },
-      { "label": "Comp rate", "value": "2.1% of total sales" }
+      {
+        "label": "Hourly sales heatmap",
+        "value": "38% peak load Monday 12-2pm"
+      },
+      {
+        "label": "Top-selling item",
+        "value": "Chicken wrap — 142 units/day"
+      },
+      {
+        "label": "Payment distribution",
+        "value": "Card 62% • Cash 23% • Online 15%"
+      },
+      {
+        "label": "Comp rate",
+        "value": "2.1% of total sales"
+      }
     ],
     "cta": "Request an analytics demo"
   },
@@ -335,6 +535,11 @@
     "eyebrow": "DEMO",
     "title": "See Dasvio live in 15 minutes",
     "subtitle": "Let's schedule a personalized demo tailored to your restaurant's needs.",
+    "bullets": [
+      "Live demo in 15 minutes",
+      "A personalized product tour",
+      "Pricing Q&A"
+    ],
     "fields": {
       "name": "Full name",
       "company": "Restaurant / Company",
@@ -344,15 +549,70 @@
       "phone": "Phone",
       "message": "Message (optional)"
     },
-    "branchesOptions": ["1", "2-5", "6-20", "20+"],
+    "placeholders": {
+      "name": "Jane Miller",
+      "company": "Lokanta 1928",
+      "email": "jane@restaurant.com",
+      "phone": "+90 5xx xxx xx xx",
+      "message": "A quick note about your restaurant…"
+    },
+    "selectPlaceholder": "Select",
+    "countries": [
+      {
+        "code": "TR",
+        "label": "Türkiye"
+      },
+      {
+        "code": "DE",
+        "label": "Germany"
+      },
+      {
+        "code": "GB",
+        "label": "United Kingdom"
+      },
+      {
+        "code": "US",
+        "label": "United States"
+      },
+      {
+        "code": "FR",
+        "label": "France"
+      },
+      {
+        "code": "other",
+        "label": "Other"
+      }
+    ],
+    "branchesOptions": [
+      "1",
+      "2-5",
+      "6-20",
+      "20+"
+    ],
     "submit": "Request a demo",
-    "privacy": "By submitting this form, you agree to our privacy policy."
+    "submitting": "Sending…",
+    "error": "We could not send your form. Please try again or email hello@dasvio.com.",
+    "honeypot": "Leave this field empty",
+    "privacy": "By submitting this form, you agree to our privacy policy.",
+    "success": {
+      "title": "Thank you!",
+      "body": "We will get back to you shortly to schedule your demo."
+    }
   },
   "trust": {
     "items": [
-      { "value": "24/7", "label": "Support hotline" },
-      { "value": "14 days", "label": "Average setup time" },
-      { "value": "99.9%", "label": "Uptime guarantee" }
+      {
+        "value": "24/7",
+        "label": "Support hotline"
+      },
+      {
+        "value": "14 days",
+        "label": "Average setup time"
+      },
+      {
+        "value": "99.9%",
+        "label": "Uptime guarantee"
+      }
     ]
   },
   "footer": {
@@ -363,9 +623,18 @@
       "primary": "Get a Free Demo",
       "secondary": "Explore Pricing",
       "stats": [
-        { "label": "24/7 Support", "value": "Always there for you" },
-        { "label": "Thousands of transactions", "value": "Fast payment flow" },
-        { "label": "Mobile-ready", "value": "Works on every device" }
+        {
+          "label": "24/7 Support",
+          "value": "Always there for you"
+        },
+        {
+          "label": "Thousands of transactions",
+          "value": "Fast payment flow"
+        },
+        {
+          "label": "Mobile-ready",
+          "value": "Works on every device"
+        }
       ]
     },
     "contact": {
@@ -421,8 +690,176 @@
     },
     "legal": {
       "rights": "All rights reserved.",
-      "links": ["GDPR", "Terms of Service", "Privacy Policy", "Cookies"],
+      "links": [
+        "GDPR",
+        "Terms of Service",
+        "Privacy Policy",
+        "Cookies"
+      ],
       "allPolicies": "All policies"
     }
+  },
+  "resourcesPage": {
+    "eyebrow": "RESOURCES",
+    "title": "Everything you need to get more out of Dasvio.",
+    "subtitle": "Guides, case studies, API documentation and team training — all the material that helps your restaurant move faster.",
+    "cards": {
+      "blog": {
+        "label": "Blog",
+        "title": "Product updates & industry trends",
+        "body": "Release notes, restaurant-technology analysis and engineering write-ups from the Dasvio team.",
+        "cta": "Read the blog"
+      },
+      "stories": {
+        "label": "Customer stories",
+        "title": "How real restaurants run on Dasvio",
+        "body": "Case studies from chains, fine-dining rooms and cloud kitchens — the numbers, the screenshots and the lessons learned.",
+        "cta": "Browse the stories"
+      },
+      "help": {
+        "label": "Help centre",
+        "title": "Step-by-step product guides",
+        "body": "Quick answers, video walkthroughs and detailed how-tos for every Dasvio feature — searchable in seconds.",
+        "cta": "Search the help centre"
+      },
+      "docs": {
+        "label": "API & developers",
+        "title": "Build on the Dasvio platform",
+        "body": "REST API, webhooks and integration recipes. Connect your stack, build custom dashboards, automate workflows.",
+        "cta": "Read the API docs"
+      },
+      "templates": {
+        "label": "Templates",
+        "title": "Menu, signage and reporting templates",
+        "body": "Free starter templates for QR menus, customer displays and weekly reports — import them straight into your dashboard.",
+        "cta": "Browse templates"
+      },
+      "academy": {
+        "label": "Academy",
+        "title": "Train your team on Dasvio",
+        "body": "Self-paced training tracks for managers, kitchen staff and cashiers. Certification included.",
+        "cta": "Start learning"
+      }
+    }
+  },
+  "contactPage": {
+    "eyebrow": "CONTACT",
+    "title": "Let's talk about your restaurant.",
+    "subtitle": "Book a personalised demo, ask product questions or join the team. Reach us on any channel.",
+    "blocks": {
+      "email": {
+        "label": "Email",
+        "value": "hello@dasvio.com"
+      },
+      "phone": {
+        "label": "Phone",
+        "value": "+90 850 000 00 00"
+      },
+      "address": {
+        "label": "Address",
+        "value": "Levent, Istanbul, Türkiye"
+      },
+      "hours": {
+        "label": "Opening hours",
+        "value": "24/7 support · office 09:00–18:00"
+      }
+    }
+  },
+  "productPage": {
+    "whyEyebrow": "Why teams switch",
+    "whyTitle": "Built into the same dashboard your team already uses.",
+    "whyPoints": [
+      "No vendor lock-in — it works alongside your existing setup",
+      "Live in 14 days on average, for single sites and chains alike",
+      "24/7 Turkish-language support included on every plan",
+      "GDPR and Turkish Revenue Administration compliant, no add-on module needed"
+    ],
+    "demoCta": "Get a personalised demo",
+    "quote": "We finally have one dashboard for everything to do with {product}. Our team picked it up in a single morning, not a week.",
+    "quoteAuthor": "Restaurant operator, multi-branch chain · Türkiye",
+    "otherEyebrow": "Other products",
+    "otherTitle": "The rest of the Dasvio platform.",
+    "allProducts": "All products",
+    "capabilitiesEyebrow": "CAPABILITIES",
+    "capabilitiesTitle": "Everything {product} ships with, end to end.",
+    "explore": "Explore"
+  },
+  "solutionPage": {
+    "breadcrumb": "Solutions",
+    "seeRecommended": "Recommended products",
+    "seeProducts": "See the products",
+    "challengeEyebrow": "The challenge",
+    "challengeTitle": "What actually breaks in {sector}.",
+    "fitEyebrow": "How Dasvio fits",
+    "fitBody": "Start with these modules. Add the rest as you grow — Dasvio is one integrated platform, so upgrades take zero configuration.",
+    "numbersEyebrow": "By the numbers",
+    "ctaTitle": "Built for {sector}. Ready in days.",
+    "ctaBody": "We review your current setup together, map your menu across, and have your team running on Dasvio within two weeks.",
+    "ctaPrimary": "Get a personalised demo",
+    "ctaSecondary": "See pricing",
+    "trust1": "No card required",
+    "trust2": "14-day average setup",
+    "trust3": "Turkish-language support",
+    "otherEyebrow": "Other solutions",
+    "otherTitle": "The other restaurant formats we serve.",
+    "fitTitle": "Dasvio modules for {sector}.",
+    "seeProduct": "See the product",
+    "numbersTitle": "What teams running Dasvio see in {sector}.",
+    "allSolutions": "All solutions"
+  },
+  "meta": {
+    "title": "Dasvio — The New Standard in Restaurant Management",
+    "description": "QR menu, POS, multi-branch management, platform integrations and analytics. Your entire restaurant operation from one dashboard."
+  },
+  "blogPage": {
+    "badge": "Dasvio Journal",
+    "heroTitle": "Field notes from",
+    "heroTitleAccent": "restaurant technology.",
+    "heroBody": "Product updates, industry analysis, customer stories and engineering deep dives from the Dasvio team. Written for the operators, founders and chefs who run the modern restaurant.",
+    "published": "{count} articles published",
+    "cadence": "Updated weekly",
+    "newThisMonth": "3 new this month",
+    "featuredBadge": "★ Featured",
+    "readFull": "Read the full article",
+    "allEyebrow": "All articles",
+    "allTitle": "Browse the whole archive.",
+    "emptyCategory": "No articles in this category yet.",
+    "newsletterBadge": "Weekly digest",
+    "newsletterTitle": "Get the best of Dasvio Journal,",
+    "newsletterTitleAccent": "every Friday morning.",
+    "newsletterBody": "Hand-picked articles, exclusive case studies, product previews. No spam, unsubscribe in one click.",
+    "newsletterPlaceholder": "you@restaurant.com",
+    "newsletterCta": "Subscribe",
+    "newsletterStat1": "4,200+ subscribers",
+    "newsletterStat2": "7 min average read",
+    "newsletterStat3": "50+ countries",
+    "pitchTitle": "Want to write for Dasvio Journal?",
+    "pitchBody": "Restaurant operators, chefs, engineers — if you have something sharp to say about how this industry actually works, we'd like to read it.",
+    "pitchCta": "Pitch a story",
+    "allArticles": "All articles",
+    "readNext": "What to read next",
+    "ctaTitle": "See Dasvio in your restaurant.",
+    "ctaBody": "Let's book a 15-minute personalised demo — using your own menu and your own numbers.",
+    "ctaButton": "Get a demo"
+  },
+  "policyPage": {
+    "badge": "Legal & Policies",
+    "titleLead": "Transparency and",
+    "titleAccent": "trust",
+    "titleTail": ", end to end.",
+    "body": "How we protect your data, how we deliver our services and every right you have, in one place. Lawyer-reviewed, KVKK compliant, plainly written.",
+    "badge1": "KVKK compliant",
+    "badge2": "PCI DSS certified",
+    "documents": "{count} documents",
+    "contactTitle": "Have a legal question?",
+    "contactBody": "For data requests, KVKK applications or contract questions, you can reach our legal team directly.",
+    "contactForm": "Contact form",
+    "allPolicies": "All policies",
+    "questionsTitle": "Any questions?",
+    "questionsBody": "Reach our legal team directly.",
+    "otherEyebrow": "Other policies",
+    "otherTitle": "All of our Dasvio legal documents.",
+    "seeAll": "See all",
+    "languageNote": "Our legal documents are governed by Turkish law and are published in Turkish only."
   }
 }

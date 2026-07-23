@@ -53,7 +53,66 @@ type NavDict = {
   login: string;
   demo: string;
   menu: Record<string, string>;
+  /**
+   * Mega-menu copy. Structure (icons, colours, hrefs, column widths) stays in
+   * `buildSections` below; only the strings are localised, looked up by the
+   * stable keys used there. A missing key is a build-time type error.
+   */
+  mega: {
+    sections: Record<MegaSectionKey, string>;
+    groups: Record<MegaGroupKey, string>;
+    items: Record<MegaItemKey, { title: string; desc: string }>;
+  };
 };
+
+type MegaSectionKey = "products" | "solutions" | "resources" | "company";
+
+type MegaGroupKey =
+  | "experience"
+  | "operations"
+  | "multiBranch"
+  | "intelligence"
+  | "byFormat"
+  | "byVenue"
+  | "byScale"
+  | "learn"
+  | "build"
+  | "aboutUs"
+  | "getInTouch";
+
+type MegaItemKey =
+  | "qrMenu"
+  | "signage"
+  | "pos"
+  | "staffPermissions"
+  | "revenueCenters"
+  | "multiBranch"
+  | "branchOverrides"
+  | "regionalPricing"
+  | "analytics"
+  | "heatmaps"
+  | "reports"
+  | "restaurants"
+  | "cafes"
+  | "fastFood"
+  | "bars"
+  | "hotels"
+  | "cloudKitchens"
+  | "singleLocation"
+  | "chains"
+  | "platforms"
+  | "blog"
+  | "stories"
+  | "help"
+  | "api"
+  | "status"
+  | "academy"
+  | "about"
+  | "careers"
+  | "press"
+  | "demo"
+  | "contact"
+  | "partners";
 
 type DropdownItem = {
   Icon: LucideIcon;
@@ -75,294 +134,143 @@ type Section = {
   groups: DropdownGroup[];
 };
 
-const buildSections = (locale: Locale): Section[] => [
-  {
-    label: "Ürünler",
-    key: "products",
-    width: "xl",
-    groups: [
-      {
-        label: "Müşteri deneyimi",
-        color: "#f43f5e",
-        items: [
-          {
-            Icon: QrCode,
-            title: "QR Menü",
-            desc: "Çok dilli dijital menü, AI çeviri",
-            href: `/${locale}/products/qr-menu`,
-          },
-          {
-            Icon: MonitorPlay,
-            title: "Digital Signage",
-            desc: "Restoran ekranları & playlist",
-            href: `/${locale}/products/signage`,
-          },
-        ],
-      },
-      {
-        label: "Operasyon",
-        color: "#e11d48",
-        items: [
-          {
-            Icon: Cpu,
-            title: "POS Yönetimi",
-            desc: "Cihazlar, yazıcılar, gelir merkezleri",
-            href: `/${locale}/products/pos`,
-          },
-          {
-            Icon: Users,
-            title: "Personel & Yetki",
-            desc: "Roller, vardiyalar, POS PIN'leri",
-            href: `/${locale}/products/staff-permissions`,
-          },
-          {
-            Icon: LayoutGrid,
-            title: "Gelir Merkezleri",
-            desc: "Kanal bazlı operasyon",
-            href: `/${locale}/products/revenue-centers`,
-          },
-        ],
-      },
-      {
-        label: "Çok şubeli",
-        color: "#be123c",
-        items: [
-          {
-            Icon: Building2,
-            title: "Çok Şubeli Yönetim",
-            desc: "Tek menü, her şube",
-            href: `/${locale}/products/multi-branch`,
-          },
-          {
-            Icon: GitBranch,
-            title: "Şube Override",
-            desc: "Yerel fiyat & uygunluk",
-            href: `/${locale}/products/branch-overrides`,
-          },
-          {
-            Icon: Coins,
-            title: "Bölgesel Fiyatlandırma",
-            desc: "Tier bazlı fiyat grupları",
-            href: `/${locale}/products/regional-pricing`,
-          },
-        ],
-      },
-      {
-        label: "Zeka",
-        color: "#9f1239",
-        items: [
-          {
-            Icon: BarChart3,
-            title: "Analitik",
-            desc: "Satış, ürün, ödemeler",
-            href: `/${locale}/products/analytics`,
-          },
-          {
-            Icon: Activity,
-            title: "Heatmap",
-            desc: "Pik saat görselleştirme",
-            href: `/${locale}/products/heatmaps`,
-          },
-          {
-            Icon: PieChart,
-            title: "Raporlar",
-            desc: "Özel rapor oluşturucu",
-            href: `/${locale}/products/reports`,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Çözümler",
-    key: "solutions",
-    width: "lg",
-    groups: [
-      {
-        label: "Format bazında",
-        color: "#f43f5e",
-        items: [
-          {
-            Icon: UtensilsCrossed,
-            title: "Restoranlar",
-            desc: "Fine dining & gurme mekanlar",
-            href: `/${locale}/solutions/restaurants`,
-          },
-          {
-            Icon: Coffee,
-            title: "Kafe & Pastane",
-            desc: "Kahve dükkanları & patisserie",
-            href: `/${locale}/solutions/cafes`,
-          },
-          {
-            Icon: Pizza,
-            title: "Fast Food & QSR",
-            desc: "Yüksek ciro, drive-thru",
-            href: `/${locale}/solutions/fast-food`,
-          },
-        ],
-      },
-      {
-        label: "Mekan bazında",
-        color: "#e11d48",
-        items: [
-          {
-            Icon: Wine,
-            title: "Bar & Pub",
-            desc: "Açık sekme, hesap bölme",
-            href: `/${locale}/solutions/bars`,
-          },
-          {
-            Icon: BedDouble,
-            title: "Otel & Resort",
-            desc: "Restoran + oda servisi",
-            href: `/${locale}/solutions/hotels`,
-          },
-          {
-            Icon: Truck,
-            title: "Cloud Kitchen",
-            desc: "Tek mutfak, çok marka",
-            href: `/${locale}/solutions/cloud-kitchens`,
-          },
-        ],
-      },
-      {
-        label: "Ölçek bazında",
-        color: "#9f1239",
-        items: [
-          {
-            Icon: Store,
-            title: "Tek şube",
-            desc: "Bağımsız işletmeler & bistrolar",
-            href: `/${locale}/solutions/single-location`,
-          },
-          {
-            Icon: Building2,
-            title: "Zincir & Franchise",
-            desc: "Çok lokasyonlu işletmeler",
-            href: `/${locale}/solutions/chains`,
-          },
-          {
-            Icon: Plug,
-            title: "Platformlar",
-            desc: "Getir, Trendyol, Yemeksepeti",
-            href: `/${locale}/products/integrations`,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Kaynaklar",
-    key: "resources",
-    width: "md",
-    groups: [
-      {
-        label: "Öğren",
-        color: "#f43f5e",
-        items: [
-          {
-            Icon: Newspaper,
-            title: "Blog",
-            desc: "Ürün & sektör trendleri",
-            href: `/${locale}/blog`,
-          },
-          {
-            Icon: BookOpen,
-            title: "Müşteri Hikayeleri",
-            desc: "Gerçek restoranlar nasıl çalışıyor",
-            href: `/${locale}/resources`,
-          },
-          {
-            Icon: HelpCircle,
-            title: "Yardım Merkezi",
-            desc: "Adım adım kılavuzlar",
-            href: `/${locale}/resources`,
-          },
-        ],
-      },
-      {
-        label: "Geliştir",
-        color: "#e11d48",
-        items: [
-          {
-            Icon: Code2,
-            title: "API & Webhook",
-            desc: "Dasvio üzerinde geliştir",
-            href: `/${locale}/resources`,
-          },
-          {
-            Icon: Activity,
-            title: "Durum",
-            desc: "Sistem uptime & geçmiş",
-            href: `/${locale}/resources`,
-          },
-          {
-            Icon: GraduationCap,
-            title: "Akademi",
-            desc: "Ekip eğitimi & sertifika",
-            href: `/${locale}/resources`,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Şirket",
-    key: "company",
-    width: "md",
-    groups: [
-      {
-        label: "Hakkımızda",
-        color: "#f43f5e",
-        items: [
-          {
-            Icon: Info,
-            title: "Dasvio Hakkında",
-            desc: "Misyonumuz & ekibimiz",
-            href: `/${locale}/about`,
-          },
-          {
-            Icon: Briefcase,
-            title: "Kariyer",
-            desc: "Ekibe katıl",
-            href: `/${locale}/about`,
-          },
-          {
-            Icon: Newspaper,
-            title: "Basın",
-            desc: "Medya & duyurular",
-            href: `/${locale}/about`,
-          },
-        ],
-      },
-      {
-        label: "İletişime geç",
-        color: "#e11d48",
-        items: [
-          {
-            Icon: Calendar,
-            title: "Demo Al",
-            desc: "Kişiselleştirilmiş sunum",
-            href: `/${locale}/contact`,
-          },
-          {
-            Icon: Mail,
-            title: "Bize Ulaşın",
-            desc: "E-posta, telefon, sohbet",
-            href: `/${locale}/contact`,
-          },
-          {
-            Icon: Handshake,
-            title: "Ortaklık",
-            desc: "Dasvio partneri ol",
-            href: `/${locale}/contact`,
-          },
-        ],
-      },
-    ],
-  },
-];
+const buildSections = (locale: Locale, m: NavDict["mega"]): Section[] => {
+  const item = (key: MegaItemKey, Icon: LucideIcon, href: string): DropdownItem => ({
+    Icon,
+    title: m.items[key].title,
+    desc: m.items[key].desc,
+    href,
+  });
+
+  return [
+    {
+      label: m.sections.products,
+      key: "products",
+      width: "xl",
+      groups: [
+        {
+          label: m.groups.experience,
+          color: "#f43f5e",
+          items: [
+            item("qrMenu", QrCode, `/${locale}/products/qr-menu`),
+            item("signage", MonitorPlay, `/${locale}/products/signage`),
+          ],
+        },
+        {
+          label: m.groups.operations,
+          color: "#e11d48",
+          items: [
+            item("pos", Cpu, `/${locale}/products/pos`),
+            item("staffPermissions", Users, `/${locale}/products/staff-permissions`),
+            item("revenueCenters", LayoutGrid, `/${locale}/products/revenue-centers`),
+          ],
+        },
+        {
+          label: m.groups.multiBranch,
+          color: "#be123c",
+          items: [
+            item("multiBranch", Building2, `/${locale}/products/multi-branch`),
+            item("branchOverrides", GitBranch, `/${locale}/products/branch-overrides`),
+            item("regionalPricing", Coins, `/${locale}/products/regional-pricing`),
+          ],
+        },
+        {
+          label: m.groups.intelligence,
+          color: "#9f1239",
+          items: [
+            item("analytics", BarChart3, `/${locale}/products/analytics`),
+            item("heatmaps", Activity, `/${locale}/products/heatmaps`),
+            item("reports", PieChart, `/${locale}/products/reports`),
+          ],
+        },
+      ],
+    },
+    {
+      label: m.sections.solutions,
+      key: "solutions",
+      width: "lg",
+      groups: [
+        {
+          label: m.groups.byFormat,
+          color: "#f43f5e",
+          items: [
+            item("restaurants", UtensilsCrossed, `/${locale}/solutions/restaurants`),
+            item("cafes", Coffee, `/${locale}/solutions/cafes`),
+            item("fastFood", Pizza, `/${locale}/solutions/fast-food`),
+          ],
+        },
+        {
+          label: m.groups.byVenue,
+          color: "#e11d48",
+          items: [
+            item("bars", Wine, `/${locale}/solutions/bars`),
+            item("hotels", BedDouble, `/${locale}/solutions/hotels`),
+            item("cloudKitchens", Truck, `/${locale}/solutions/cloud-kitchens`),
+          ],
+        },
+        {
+          label: m.groups.byScale,
+          color: "#9f1239",
+          items: [
+            item("singleLocation", Store, `/${locale}/solutions/single-location`),
+            item("chains", Building2, `/${locale}/solutions/chains`),
+            item("platforms", Plug, `/${locale}/products/integrations`),
+          ],
+        },
+      ],
+    },
+    {
+      label: m.sections.resources,
+      key: "resources",
+      width: "md",
+      groups: [
+        {
+          label: m.groups.learn,
+          color: "#f43f5e",
+          items: [
+            item("blog", Newspaper, `/${locale}/blog`),
+            item("stories", BookOpen, `/${locale}/resources`),
+            item("help", HelpCircle, `/${locale}/resources`),
+          ],
+        },
+        {
+          label: m.groups.build,
+          color: "#e11d48",
+          items: [
+            item("api", Code2, `/${locale}/resources`),
+            item("status", Activity, `/${locale}/resources`),
+            item("academy", GraduationCap, `/${locale}/resources`),
+          ],
+        },
+      ],
+    },
+    {
+      label: m.sections.company,
+      key: "company",
+      width: "md",
+      groups: [
+        {
+          label: m.groups.aboutUs,
+          color: "#f43f5e",
+          items: [
+            item("about", Info, `/${locale}/about`),
+            item("careers", Briefcase, `/${locale}/about`),
+            item("press", Newspaper, `/${locale}/about`),
+          ],
+        },
+        {
+          label: m.groups.getInTouch,
+          color: "#e11d48",
+          items: [
+            item("demo", Calendar, `/${locale}/contact`),
+            item("contact", Mail, `/${locale}/contact`),
+            item("partners", Handshake, `/${locale}/contact`),
+          ],
+        },
+      ],
+    },
+  ];
+};
 
 const panelWidth: Record<Section["width"], string> = {
   md: "min-w-[440px]",
@@ -481,7 +389,7 @@ function NavDropdown({ sec, navLink }: { sec: Section; navLink: string }) {
 
 export function Navbar({ t, locale }: { t: NavDict; locale: Locale }) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const sections = useMemo(() => buildSections(locale), [locale]);
+  const sections = useMemo(() => buildSections(locale, t.mega), [locale, t.mega]);
 
   const navLink =
     "inline-flex items-center gap-1 h-9 px-3 rounded-lg text-[14.5px] font-medium text-fg/80 hover:text-fg hover:bg-bg-muted transition whitespace-nowrap";
@@ -491,7 +399,7 @@ export function Navbar({ t, locale }: { t: NavDict; locale: Locale }) {
       <div className="container-page flex h-16 lg:h-18 items-center gap-2 lg:gap-4">
         <Logo href={`/${locale}`} />
 
-        <nav className="flex items-center gap-0.5 ml-2 lg:ml-6">
+        <nav className="hidden sm:flex items-center gap-0.5 ml-2 lg:ml-6">
           {sections.map((sec) => (
             <NavDropdown key={sec.key} sec={sec} navLink={navLink} />
           ))}
@@ -502,18 +410,20 @@ export function Navbar({ t, locale }: { t: NavDict; locale: Locale }) {
 
         <div className="ml-auto flex items-center gap-2">
           <ThemeToggle />
-          <LocaleSwitcher locale={locale} />
-          <Button
-            variant="secondary"
-            size="sm"
-            href="https://app.dasvio.com"
-            withArrow
-          >
-            {t.login}
-          </Button>
-          <Button variant="primary" size="sm" href={`/${locale}/contact`}>
-            {t.demo}
-          </Button>
+          <div className="hidden sm:contents">
+            <LocaleSwitcher locale={locale} />
+            <Button
+              variant="secondary"
+              size="sm"
+              href="https://app.dasvio.com"
+              withArrow
+            >
+              {t.login}
+            </Button>
+            <Button variant="primary" size="sm" href={`/${locale}/contact`}>
+              {t.demo}
+            </Button>
+          </div>
           <button
             type="button"
             aria-label="Toggle menu"

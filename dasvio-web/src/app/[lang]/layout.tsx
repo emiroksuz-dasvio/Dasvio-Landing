@@ -6,6 +6,7 @@ import { hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { themeInitScript } from "@/context/ThemeContext";
 
 const inter = Inter({
   variable: "--ff-inter",
@@ -14,12 +15,24 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Dasvio — Restoran Yönetiminin Yeni Standardı",
-  description:
-    "QR menü, POS, çok şube yönetimi, platform entegrasyonları ve analitik. Restoran operasyonunuzun tamamı tek panelden.",
-  metadataBase: new URL("https://dasvio.com"),
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const locale: Locale = hasLocale(lang) ? lang : "tr";
+  const { meta } = await getDictionary(locale);
+  return {
+    title: meta.title,
+    description: meta.description,
+    metadataBase: new URL("https://dasvio.com"),
+    alternates: {
+      canonical: `/${locale}`,
+      languages: { tr: "/tr", en: "/en" },
+    },
+  };
+}
 
 export default async function LangLayout({
   children,
@@ -39,6 +52,9 @@ export default async function LangLayout({
       className={`${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-bg text-fg">
+        {/* Must stay the first child of <body> — it applies the stored theme
+            before any content paints. See themeInitScript. */}
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <Navbar t={t.nav} locale={locale} />
         <main className="flex-1">{children}</main>
         <Footer t={t.footer} locale={locale} />

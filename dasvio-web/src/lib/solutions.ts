@@ -1,4 +1,6 @@
 import type { ProductSlug } from "@/lib/products";
+import type { Locale } from "@/i18n/config";
+import { SOLUTIONS_EN } from "./solutions.en";
 
 export type SolutionSlug =
   | "restaurants"
@@ -29,6 +31,7 @@ export type SolutionData = {
   stats: SolutionStat[];
 };
 
+/** Turkish is the source of truth; `solutions.en.ts` mirrors it key for key. */
 export const SOLUTIONS: Record<SolutionSlug, SolutionData> = {
   restaurants: {
     slug: "restaurants",
@@ -333,4 +336,12 @@ export const SOLUTION_SLUGS = Object.keys(SOLUTIONS) as SolutionSlug[];
 
 export function isSolutionSlug(slug: string): slug is SolutionSlug {
   return slug in SOLUTIONS;
+}
+
+/**
+ * Prefer this over importing SOLUTIONS directly — pages are rendered per locale
+ * and the Turkish map is only the `tr` half of the pair.
+ */
+export function getSolutions(locale: Locale): Record<SolutionSlug, SolutionData> {
+  return locale === "en" ? SOLUTIONS_EN : SOLUTIONS;
 }

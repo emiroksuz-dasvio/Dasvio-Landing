@@ -1,9 +1,15 @@
+import type { Locale } from "@/i18n/config";
+import { BLOG_POSTS_EN } from "./blog.en";
+
+/** Stable keys, not display strings — labels live in CATEGORY_LABELS. */
 export type BlogCategory =
-  | "Ürün"
-  | "Sektör"
-  | "Müşteri Hikayesi"
-  | "Mühendislik"
-  | "Operasyon";
+  | "product"
+  | "industry"
+  | "customer-story"
+  | "engineering"
+  | "operations";
+
+export type CategoryFilter = "all" | BlogCategory;
 
 export type BlogAuthor = {
   name: string;
@@ -26,14 +32,33 @@ export type BlogPost = {
   accentTint: string;
 };
 
-export const CATEGORIES: ("Tümü" | BlogCategory)[] = [
-  "Tümü",
-  "Ürün",
-  "Sektör",
-  "Müşteri Hikayesi",
-  "Mühendislik",
-  "Operasyon",
+export const CATEGORIES: CategoryFilter[] = [
+  "all",
+  "product",
+  "industry",
+  "customer-story",
+  "engineering",
+  "operations",
 ];
+
+export const CATEGORY_LABELS: Record<Locale, Record<CategoryFilter, string>> = {
+  tr: {
+    all: "Tümü",
+    product: "Ürün",
+    industry: "Sektör",
+    "customer-story": "Müşteri Hikayesi",
+    engineering: "Mühendislik",
+    operations: "Operasyon",
+  },
+  en: {
+    all: "All",
+    product: "Product",
+    industry: "Industry",
+    "customer-story": "Customer Story",
+    engineering: "Engineering",
+    operations: "Operations",
+  },
+};
 
 const AUTHORS: Record<string, BlogAuthor> = {
   ayse: {
@@ -71,7 +96,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "AI çevirisi Türkiye genelindeki QR menüleri nasıl dönüştürüyor",
     excerpt:
       "İstanbul'un turist merkezlerinden Antalya'nın sahil resortlarına kadar çok dilli menüler artık bir lüks değil — temel gereksinim. Dasvio'nun 14 dil açılımının ardındaki rakamların içinde.",
-    category: "Sektör",
+    category: "industry",
     date: "2026-05-18",
     readTime: "8 dk okuma",
     author: AUTHORS.ayse,
@@ -85,7 +110,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "1'den 50 şubeye: Anatolia Kebap'ın menüsünü 90 günde ölçeklendirme",
     excerpt:
       "Bölgesel bir zincir tek bir çeyrekte 7 şehirde franchise açmaya karar verdiğinde, operasyon ekibinin çökmeyecek bir sisteme ihtiyacı vardı. İşte bunu nasıl başardılar.",
-    category: "Müşteri Hikayesi",
+    category: "customer-story",
     date: "2026-05-10",
     readTime: "12 dk okuma",
     author: AUTHORS.selin,
@@ -98,7 +123,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Platform entegrasyonu neden yerlerinde parçalanır (ve biz bunu nasıl düzelttik)",
     excerpt:
       "Getir, Trendyol ve Yemeksepeti'nin kendine özgü katalog tuhaflıkları var. Senkronizasyon motorumuzu sıfırdan yeniden inşa ettik — dağıtık eşleştirme konusunda öğrendiklerimiz.",
-    category: "Mühendislik",
+    category: "engineering",
     date: "2026-05-02",
     readTime: "15 dk okuma",
     author: AUTHORS.mehmet,
@@ -111,7 +136,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Dasvio'nun gelir merkezi motorunun içinde: 7 tasarım kararı",
     excerpt:
       "Kasiyerin işini zorlaştırmadan veya yöneticinin raporunu karmaşıklaştırmadan masaiçi, gel-al, teslimat ve bar gelirini bölen bir sistem nasıl inşa ettik.",
-    category: "Ürün",
+    category: "product",
     date: "2026-04-28",
     readTime: "10 dk okuma",
     author: AUTHORS.mehmet,
@@ -124,7 +149,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "12 saniyelik ödeme: bir kafe sabah yoğunluğunun anatomisi",
     excerpt:
       "8 İstanbul kafesinde 4.200 işlemi takip ettik. Her saniyenin nereye gittiği, misafirlerin nerede döndüğü ve Dasvio'nun önemli saniyeler nerede kazandırdığı.",
-    category: "Operasyon",
+    category: "operations",
     date: "2026-04-22",
     readTime: "9 dk okuma",
     author: AUTHORS.can,
@@ -137,7 +162,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Restoran operasyonları için saatlik heatmap'ler: çalışan bir başlangıç kılavuzu",
     excerpt:
       "En yoğun saatinizi en sakin güne karşı hiç çizmediyseniz, masada para bırakıyorsunuz demektir. Gerçek operatörlerden örneklerle adım adım açıklama.",
-    category: "Operasyon",
+    category: "operations",
     date: "2026-04-15",
     readTime: "7 dk okuma",
     author: AUTHORS.ayse,
@@ -150,7 +175,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Master menü, şube gerçeği: 1000 lokasyonlu açılışlardan dersler",
     excerpt:
       "Merkez %95 marka tutarlılığı isterken her franchise sahibi kendi pazarının özel olduğuna yemin ettiğinde ne olur. İpucu: yalnızca yazılım sorunu değil.",
-    category: "Sektör",
+    category: "industry",
     date: "2026-04-08",
     readTime: "11 dk okuma",
     author: AUTHORS.can,
@@ -163,7 +188,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Cloud kitchen'lar gayrimenkul kılığına bürünmüş bir yazılım sorunudur",
     excerpt:
       "Altı marka, bir hazırlık hattı, sekiz aggregator. Ekonomi ancak sistem kaosa yetişebildiğinde işe yarar — çoğu platformun kaçırdıkları.",
-    category: "Sektör",
+    category: "industry",
     date: "2026-03-30",
     readTime: "13 dk okuma",
     author: AUTHORS.mehmet,
@@ -176,7 +201,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "POS'umuzu neden mühendisler için değil kasiyerler için inşa ettik",
     excerpt:
       "Çoğu POS sistemi arka ofis raporlamasını optimize eder. Bizimki Cuma akşamı 21:00'de terminaldeki yorgun kişiyi optimize eder. Bu kararın her şeyi nasıl şekillendirdiği.",
-    category: "Ürün",
+    category: "product",
     date: "2026-03-22",
     readTime: "6 dk okuma",
     author: AUTHORS.ayse,
@@ -189,7 +214,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Q3 2026 ürün güncellemesi: 14 yeni özellik, bir büyük fikir",
     excerpt:
       "Heatmap üst üste bindirmeleri, çok dilli müşteri ekranları, Trendyol claim gelen kutusu v2 ve uzun beklenen sürükle-bırak rapor oluşturucu. Hepsi bu çeyrekte geliyor.",
-    category: "Ürün",
+    category: "product",
     date: "2026-03-15",
     readTime: "5 dk okuma",
     author: AUTHORS.ayse,
@@ -202,7 +227,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "2026'da fiş yazıcıları: bir şekilde hâlâ vahşi batı",
     excerpt:
       "Restoranınızdaki en sıradan çevre birimi aynı zamanda en parçalı standarttır. 14 donanım üreticisinden, grafiklerle saha raporu.",
-    category: "Mühendislik",
+    category: "engineering",
     date: "2026-03-08",
     readTime: "8 dk okuma",
     author: AUTHORS.mehmet,
@@ -215,7 +240,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Otel F&B gelir merkezlerinin kendine özgü matematiği",
     excerpt:
       "Restoran + bar + oda servisi + havuz kafe 4 işletme değil — tek arka ofisi paylaşan 4 farklı işletmedir. Muhasebenin bunu neden yansıtması gerektiği.",
-    category: "Sektör",
+    category: "industry",
     date: "2026-03-01",
     readTime: "10 dk okuma",
     author: AUTHORS.can,
@@ -225,17 +250,45 @@ export const BLOG_POSTS: BlogPost[] = [
   },
 ];
 
-export function getFeaturedPost(): BlogPost {
-  return BLOG_POSTS.find((p) => p.featured) ?? BLOG_POSTS[0];
+export const BLOG_SLUGS = BLOG_POSTS.map((p) => p.slug);
+
+/**
+ * Prefer this over importing BLOG_POSTS directly — the Turkish array is only
+ * the `tr` half of the pair. Both arrays hold the same slugs in the same order.
+ */
+export function getPosts(locale: Locale): BlogPost[] {
+  return locale === "en" ? BLOG_POSTS_EN : BLOG_POSTS;
 }
 
-export function getOtherPosts(): BlogPost[] {
-  return BLOG_POSTS.filter((p) => !p.featured);
+export function getPostBySlug(slug: string, locale: Locale): BlogPost | undefined {
+  return getPosts(locale).find((p) => p.slug === slug);
 }
 
-export function formatBlogDate(iso: string): string {
-  const d = new Date(iso);
-  return d.toLocaleDateString("tr-TR", {
+/**
+ * Same category first, then most recent, excluding the post itself. Falls back
+ * to filling from the rest of the archive so the "read next" row is never short.
+ */
+export function getRelatedPosts(slug: string, locale: Locale, limit = 3): BlogPost[] {
+  const posts = getPosts(locale);
+  const post = posts.find((p) => p.slug === slug);
+  if (!post) return posts.slice(0, limit);
+  const rest = posts.filter((p) => p.slug !== slug);
+  const sameCategory = rest.filter((p) => p.category === post.category);
+  const others = rest.filter((p) => p.category !== post.category);
+  return [...sameCategory, ...others].slice(0, limit);
+}
+
+export function getFeaturedPost(locale: Locale): BlogPost {
+  const posts = getPosts(locale);
+  return posts.find((p) => p.featured) ?? posts[0];
+}
+
+export function getOtherPosts(locale: Locale): BlogPost[] {
+  return getPosts(locale).filter((p) => !p.featured);
+}
+
+export function formatBlogDate(iso: string, locale: Locale): string {
+  return new Date(iso).toLocaleDateString(locale === "en" ? "en-GB" : "tr-TR", {
     month: "short",
     day: "numeric",
     year: "numeric",

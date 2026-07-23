@@ -10,23 +10,12 @@ await access(outputDir);
 // The site now ships entirely from the React app — Next's static export in out/
 // is the source of truth for every route (the recovered production snapshot has
 // been retired). This step only writes redirect fallbacks for slugs that don't
-// yet have a React route: blog post pages and resource sub-pages redirect to
-// their hub so direct links and old inbound URLs keep resolving.
+// yet have a React route, so direct links and old inbound URLs keep resolving.
+//
+// Blog posts used to be listed here too; they now have a real route at
+// app/[lang]/blog/[slug] and MUST NOT be re-added — a fallback written here
+// would overwrite the generated page in out/.
 
-const blogSlugs = [
-  "12-second-checkout",
-  "ai-translation-qr-menu-turkey-2026",
-  "anatolia-kebap-50-branches-90-days",
-  "cloud-kitchens-software-problem",
-  "hotel-fb-revenue-math",
-  "hourly-heatmaps-primer",
-  "master-menu-branch-reality",
-  "platform-integrations-engineering",
-  "pos-built-for-cashiers",
-  "q3-2026-product-update",
-  "receipt-printers-2026",
-  "revenue-center-engine",
-];
 const resourceSlugs = ["academy", "docs", "help", "stories", "templates"];
 
 function redirectDocument(destination) {
@@ -41,9 +30,6 @@ async function writeFallback(relativePath, destination) {
 }
 
 for (const locale of ["tr", "en"]) {
-  for (const slug of blogSlugs) {
-    await writeFallback(`${locale}/blog/${slug}`, `/${locale}/blog`);
-  }
   for (const slug of resourceSlugs) {
     await writeFallback(`${locale}/${slug}`, `/${locale}/resources`);
   }

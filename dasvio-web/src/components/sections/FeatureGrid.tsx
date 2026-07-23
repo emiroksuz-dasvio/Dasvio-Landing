@@ -12,40 +12,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import {
-  QrVisual,
-  PosVisual,
-  BranchVisual,
-  IntegrationsVisual,
-  AnalyticsVisual,
-  SignageVisual,
-} from "@/components/mockups/FeatureVisuals";
-import {
-  LangChips,
-  ThemeSwatches,
-  QrTablePreview,
-  SpotlightBanner,
-  DeviceSync,
-  ReceiptSlip,
-  RevenueDonut,
-  ClockFace,
-  NetworkNodes,
-  OverrideMatrix,
-  TierBadges,
-  ScheduleCalendar,
-  CatalogMap,
-  PricingSheet,
-  ReviewBubbles,
-  StatusToggles,
-  HeatmapMini,
-  ComparisonBars,
-  PaymentDonut,
-  CompChart,
-  PlaylistStack,
-  ScheduleClock,
-  CustomerScreen,
-  PushScreens,
-} from "@/components/mockups/FeatureSubVisuals";
+import { getProducts, type ProductSlug } from "@/lib/products";
+import type { Locale } from "@/i18n/config";
 
 type FeatureItem = {
   icon: string;
@@ -58,6 +26,7 @@ type FeaturesDict = {
   eyebrow: string;
   title: string;
   subtitle: string;
+  featuresLabel: string;
   items: FeatureItem[];
 };
 
@@ -76,167 +45,34 @@ const iconMap: Record<string, LucideIcon> = {
   screen: MonitorPlay,
 };
 
-type SubCard = {
-  title: string;
-  body: string;
-  Visual: () => React.ReactElement;
-};
-
-const subCardsMap: Record<string, SubCard[]> = {
-  qr: [
-    {
-      Visual: LangChips,
-      title: "AI çeviri, 14 dil",
-      body: "Menünüzün tamamını tek tıkla çevirin. İstediğiniz metni manuel düzenleyin — Dasvio AI geri kalanını senkronize tutar.",
-    },
-    {
-      Visual: ThemeSwatches,
-      title: "Tema & marka kontrolü",
-      body: "Renk, tipografi, düzen ve spotlight'ları panelden ayarlayın. Yayınlamadan önce gerçek cihazda önizleyin.",
-    },
-    {
-      Visual: QrTablePreview,
-      title: "Masa bazlı QR akışı",
-      body: "Her masanın kendine özel QR'ı var. Misafirler göz atar, özelleştirir ve sipariş verir — siparişler anında POS'unuza düşer.",
-    },
-    {
-      Visual: SpotlightBanner,
-      title: "Spotlight & kampanyalar",
-      body: "Haftalık özel veya sezonluk komboyu menünün üst kısmında öne çıkarın. Zamanlayın, şubeye göre hedefleyin, A/B test edin.",
-    },
-  ],
-  pos: [
-    {
-      Visual: DeviceSync,
-      title: "Çoklu cihaz senkronaizasyonu",
-      body: "Tabletler, terminaller, mobil POS — hepsi gerçek zamanlı senkronize. Bir cihazda açtığınız siparişi diğerinden kapatın.",
-    },
-    {
-      Visual: ReceiptSlip,
-      title: "Mutfak & fiş yazdırma",
-      body: "Ürünleri istasyona göre doğru mutfağa yönlendirin. Fiş şablonlarını şube bazında özelleştirin.",
-    },
-    {
-      Visual: RevenueDonut,
-      title: "Gelir merkezleri",
-      body: "Masaiçi, gel-al, teslimat ve bar gelirini kendi vergi, yazıcı ve raporlama kurallarıyla ayırın.",
-    },
-    {
-      Visual: ClockFace,
-      title: "Çalışma saatleri & vardiyalar",
-      body: "Şube ve kanal bazında saatleri tanımlayın. POS'u mesai dışında kilitleyin, vardiyaları ve PIN'leri yönetin.",
-    },
-  ],
-  branch: [
-    {
-      Visual: NetworkNodes,
-      title: "Merkezi master menü",
-      body: "Tek kaynak. Master menüyü düzenleyin — değişiklikler seçili şubelere belirlediğiniz sıklıkta yayılır.",
-    },
-    {
-      Visual: OverrideMatrix,
-      title: "Şube bazlı override",
-      body: "Herhangi bir şubede fiyatı, varyantı, uygunluğu veya görseli master'a dokunmadan override edin.",
-    },
-    {
-      Visual: TierBadges,
-      title: "Bölgesel fiyat tier'ları",
-      body: "Şubeleri tier'lara gruplandırın. Havalimanında premium, banliyöde indirimli fiyat — otomatik olarak.",
-    },
-    {
-      Visual: ScheduleCalendar,
-      title: "Menü zamanlama & klonlama",
-      body: "Menüleri belirli saatlerde geçiş yapacak şekilde zamanlayın. Tüm bir yapıyı şubeler arasında saniyeler içinde klonlayın.",
-    },
-  ],
-  plug: [
-    {
-      Visual: CatalogMap,
-      title: "Katalog eşleştirme, bir kez",
-      body: "Ürünlerinizi, kategorilerinizi ve modifier'ları platform karşılıklarıyla bir kez eşleştirin. Her şey sonsuza kadar senkronize kalır.",
-    },
-    {
-      Visual: PricingSheet,
-      title: "Toplu platform fiyatlandırması",
-      body: "Getir, Trendyol ve Yemeksepeti'ndeki fiyatları tek bir tablo görünümünde güncelleyin. Platform bazlı marj desteği.",
-    },
-    {
-      Visual: ReviewBubbles,
-      title: "Yorum & claim gelen kutusu",
-      body: "Platform yorumlarına tek gelen kutusundan yanıtlayın. Trendyol claim'lerini doğrudan onaylayın, reddedin veya iletin.",
-    },
-    {
-      Visual: StatusToggles,
-      title: "Canlı durum kontrolü",
-      body: "Restoran yoğunluğunu, kurye durumunu veya her platformdaki açık/kapalı durumunu tek düğmeden değiştirin.",
-    },
-  ],
-  chart: [
-    {
-      Visual: HeatmapMini,
-      title: "Saatlik satış heatmap'i",
-      body: "Gün ve saatler genelindeki pik ve düşükleri görün. Promosyon veya ekstra personel zamanlamasını belirleyin.",
-    },
-    {
-      Visual: ComparisonBars,
-      title: "Şube & kanal karşılaştırması",
-      body: "Şubeleri yan yana karşılaştırın. Geliri masaiçi, teslimat, online veya başka herhangi bir kanala göre dilimleyin.",
-    },
-    {
-      Visual: PaymentDonut,
-      title: "Ödeme & ürün mix'i",
-      body: "Kart - nakit - online dağılımı. En çok satanlar, kategori performansı, modifier kullanımı — hepsi detaylandırılabilir.",
-    },
-    {
-      Visual: CompChart,
-      title: "İkram/iptal takibi",
-      body: "Şube ve vardiya bazında ikram ve iptal oranlarını takip edin. Yönetim dikkatine giren örüntüleri işaretleyin.",
-    },
-  ],
-  screen: [
-    {
-      Visual: PlaylistStack,
-      title: "Playlist & düzenler",
-      body: "Görsel, video ve canlı içerikten playlist oluşturun. Ekran başına düzen uygulayın — dikey, yatay veya ikili.",
-    },
-    {
-      Visual: ScheduleClock,
-      title: "Şube veya etikete göre zamanlama",
-      body: "11'de öğle promosu, 18'de akşam. Belirli şubeleri, şube gruplarını veya içerik etiketlerini hedefleyin.",
-    },
-    {
-      Visual: CustomerScreen,
-      title: "Müşteri yüzü ekran",
-      body: "Kasayı misafir ekranına yansıtın. Sipariş özeti, bahşiş bildirimi ve markalama gösterin.",
-    },
-    {
-      Visual: PushScreens,
-      title: "Gerçek zamanlı güncelleme",
-      body: "İçeriği saniyeler içinde tüm ekranlarda güncelleyin. Yanlış içerik gösteren ekranı uzaktan çevrimdışı alın.",
-    },
-  ],
-};
-
-const visualMap: Record<string, () => React.ReactElement> = {
-  qr: QrVisual,
-  pos: PosVisual,
-  branch: BranchVisual,
-  plug: IntegrationsVisual,
-  chart: AnalyticsVisual,
-  screen: SignageVisual,
+/**
+ * Each homepage feature tab is the summary of a product page, so the hero
+ * visual and the four sub-cards come straight from the product record rather
+ * than being restated here — one copy to translate, one copy to keep correct.
+ */
+const productByIcon: Record<string, ProductSlug> = {
+  qr: "qr-menu",
+  pos: "pos",
+  branch: "multi-branch",
+  plug: "integrations",
+  chart: "analytics",
+  screen: "signage",
 };
 
 export function FeatureGrid({
   t,
   problem,
+  locale,
 }: {
   t: FeaturesDict;
   problem: ProblemDict;
+  locale: Locale;
 }) {
   const [active, setActive] = useState(0);
   const current = t.items[active];
-  const Visual = visualMap[current.icon];
-  const subs = subCardsMap[current.icon] ?? [];
+  const product = getProducts(locale)[productByIcon[current.icon]];
+  const Visual = product?.MainVisual;
+  const subs = product?.subCards ?? [];
 
   return (
     <section id="features" className="py-24 lg:py-32 relative overflow-hidden">
@@ -295,7 +131,7 @@ export function FeatureGrid({
 
         <div className="mt-12 lg:mt-16 rounded-2xl liquid-glass p-8 lg:p-14 grid lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-16 items-center">
           <div className="rounded-xl mockup-container p-6 lg:p-10 flex items-center justify-center min-h-[440px] lg:min-h-[560px]">
-            {Visual && <Visual />}
+            {Visual && <Visual locale={locale} />}
           </div>
           <div>
             <h3 className="text-[32px] lg:text-[52px] xl:text-[60px] font-light tracking-tight leading-[1.02] text-pretty">
@@ -305,7 +141,7 @@ export function FeatureGrid({
               {current.description}
             </p>
             <div className="mt-9 text-[13px] font-semibold uppercase tracking-[0.18em] text-accent">
-              Özellikler
+              {t.featuresLabel}
             </div>
             <div className="mt-4 flex flex-wrap gap-2.5">
               {current.tags.map((tag) => (
@@ -328,7 +164,7 @@ export function FeatureGrid({
               className="rounded-2xl liquid-glass liquid-card p-7 lg:p-9 flex flex-col"
             >
               <div className="rounded-2xl mockup-container p-5 min-h-[220px] flex items-center justify-center">
-                <sc.Visual />
+                <sc.Visual locale={locale} />
               </div>
               <h4 className="mt-7 text-[19px] lg:text-[21px] font-medium tracking-tight text-pretty">
                 {sc.title}

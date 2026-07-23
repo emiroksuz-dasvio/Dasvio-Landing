@@ -1,3 +1,4 @@
+import type { VisualProps } from "@/lib/products";
 import {
   Check,
   Star,
@@ -520,7 +521,7 @@ export function CatalogMap() {
   );
 }
 
-export function PricingSheet() {
+export function PricingSheet({ locale }: VisualProps) {
   const rows = [
     { name: "Latte", base: "€4.5", trend: "€4.9", getir: "€5.2" },
     { name: "Pizza M.", base: "€12", trend: "€13", getir: "€14" },
@@ -530,8 +531,8 @@ export function PricingSheet() {
     <div className={`${wrap}`}>
       <div className="rounded-xl border border-white/10 bg-white/[0.03] p-3 w-full max-w-[240px]">
         <div className="grid grid-cols-4 gap-2 text-[9px] uppercase tracking-wider text-white/40 font-bold pb-1 border-b border-white/5">
-          <div>Ürün</div>
-          <div>Taban</div>
+          <div>{locale === "en" ? "Item" : "Ürün"}</div>
+          <div>{locale === "en" ? "Base" : "Taban"}</div>
           <div>TY</div>
           <div>GT</div>
         </div>
@@ -551,11 +552,11 @@ export function PricingSheet() {
   );
 }
 
-export function ReviewBubbles() {
+export function ReviewBubbles({ locale }: VisualProps) {
   const reviews = [
-    { stars: 5, text: "Hızlı teslimat", color: "#5d3ebc" },
-    { stars: 4, text: "Lezzetli yemek", color: "#f27a1a" },
-    { stars: 5, text: "Mükemmel hizmet", color: "#fa0050" },
+    { stars: 5, text: locale === "en" ? "Fast delivery" : "Hızlı teslimat", color: "#5d3ebc" },
+    { stars: 4, text: locale === "en" ? "Delicious food" : "Lezzetli yemek", color: "#f27a1a" },
+    { stars: 5, text: locale === "en" ? "Excellent service" : "Mükemmel hizmet", color: "#fa0050" },
   ];
   return (
     <div className={`${wrap} flex-col gap-1.5`}>

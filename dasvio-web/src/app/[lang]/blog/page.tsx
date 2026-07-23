@@ -3,14 +3,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Clock, Sparkles } from "lucide-react";
 import { hasLocale, locales, type Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import {
-  BLOG_POSTS,
+  getPosts,
   getFeaturedPost,
   getOtherPosts,
   formatBlogDate,
+  CATEGORY_LABELS,
 } from "@/lib/blog";
 import { BlogContent } from "@/components/blog/BlogContent";
 
@@ -23,8 +25,10 @@ export default async function BlogPage({
   if (!hasLocale(lang)) notFound();
   const locale = lang as Locale;
 
-  const featured = getFeaturedPost();
-  const otherPosts = getOtherPosts();
+  const t = (await getDictionary(locale)).blogPage;
+  const labels = CATEGORY_LABELS[locale];
+  const featured = getFeaturedPost(locale);
+  const otherPosts = getOtherPosts(locale);
 
   return (
     <>
@@ -40,25 +44,25 @@ export default async function BlogPage({
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-[12px] font-semibold uppercase tracking-[0.18em] text-accent">
               <Sparkles className="size-3.5" strokeWidth={2.5} />
-              Dasvio Journal
+              {t.badge}
             </div>
             <h1 className="mt-6 text-balance text-[44px] sm:text-[64px] lg:text-[88px] xl:text-[104px] font-light leading-[0.96] tracking-[-0.03em]">
-              Restoran teknolojisinden
+              {t.heroTitle}
               <br />
-              <span className="text-accent">saha notları.</span>
+              <span className="text-accent">{t.heroTitleAccent}</span>
             </h1>
             <p className="mt-6 max-w-2xl text-[16px] lg:text-[19px] leading-[1.6] text-fg-muted text-pretty">
-              Dasvio ekibinden ürün güncellemeleri, sektör analizleri, müşteri hikayeleri ve mühendislik derinlemeleri. Modern restoranı çalıştıran operatörler, kurucular ve şefler için yazıldı.
+              {t.heroBody}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4 text-[13px] text-fg-muted">
               <span className="inline-flex items-center gap-2">
                 <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" />
-                {BLOG_POSTS.length} makale yayınlandı
+                {t.published.replace("{count}", String(getPosts(locale).length))}
               </span>
               <span className="size-1 rounded-full bg-fg-muted/40" />
-              <span>Haftalık güncelleme</span>
+              <span>{t.cadence}</span>
               <span className="size-1 rounded-full bg-fg-muted/40" />
-              <span>Bu ay 3 yeni</span>
+              <span>{t.newThisMonth}</span>
             </div>
           </Reveal>
         </Container>
@@ -93,10 +97,10 @@ export default async function BlogPage({
                         color: featured.accentTint,
                       }}
                     >
-                      ★ Öne Çıkan
+                      {t.featuredBadge}
                     </div>
                     <div className="text-[11px] font-bold uppercase tracking-wider text-fg-muted">
-                      {featured.category}
+                      {labels[featured.category]}
                     </div>
                   </div>
                   <h2 className="mt-5 text-balance text-[28px] sm:text-[36px] lg:text-[44px] xl:text-[52px] font-light leading-[1.05] tracking-[-0.02em]">
@@ -123,7 +127,7 @@ export default async function BlogPage({
                       </div>
                     </div>
                     <div className="ml-auto flex items-center gap-3 text-[12px] text-fg-muted">
-                      <span>{formatBlogDate(featured.date)}</span>
+                      <span>{formatBlogDate(featured.date, locale)}</span>
                       <span className="hidden sm:inline-flex items-center gap-1">
                         <Clock className="size-3" strokeWidth={2} />
                         {featured.readTime}
@@ -131,7 +135,7 @@ export default async function BlogPage({
                     </div>
                   </div>
                   <div className="mt-7 inline-flex items-center gap-1.5 text-[14px] font-semibold text-accent group-hover:gap-2.5 transition-all">
-                    Makalenin tamamını oku{" "}
+                    {t.readFull}{" "}
                     <ArrowRight className="size-4" strokeWidth={2.5} />
                   </div>
                 </div>
@@ -147,15 +151,19 @@ export default async function BlogPage({
             <div className="flex items-end justify-between gap-6 flex-wrap mb-10">
               <div className="max-w-xl">
                 <div className="text-[13px] font-semibold uppercase tracking-[0.18em] text-accent">
-                  Tüm makaleler
+                  {t.allEyebrow}
                 </div>
                 <h2 className="mt-4 text-balance text-[32px] sm:text-[40px] lg:text-[52px] font-light leading-[1.04] tracking-[-0.02em]">
-                  Tüm arşive göz atın.
+                  {t.allTitle}
                 </h2>
               </div>
             </div>
           </Reveal>
-          <BlogContent posts={otherPosts} locale={locale} />
+          <BlogContent
+            posts={otherPosts}
+            locale={locale}
+            emptyLabel={t.emptyCategory}
+          />
         </Container>
       </section>
 
@@ -180,15 +188,15 @@ export default async function BlogPage({
               <div className="relative">
                 <div className="inline-flex items-center gap-2 rounded-lg border border-accent/40 bg-accent/10 px-3 py-1.5 text-[11.5px] font-semibold uppercase tracking-[0.18em] text-accent mb-7">
                   <Sparkles className="size-3.5" strokeWidth={2.5} />
-                  Haftalık özet
+                  {t.newsletterBadge}
                 </div>
                 <h2 className="text-balance text-[32px] sm:text-[44px] lg:text-[56px] font-light leading-[1.04] tracking-[-0.025em]">
-                  Dasvio Journal&apos;ın en iyisini alın,
+                  {t.newsletterTitle}
                   <br />
-                  <span className="text-accent">her Cuma sabahı.</span>
+                  <span className="text-accent">{t.newsletterTitleAccent}</span>
                 </h2>
                 <p className="mt-5 max-w-xl mx-auto text-[15px] lg:text-[16px] leading-[1.6] text-fg-muted text-pretty">
-                  Elle seçilmiş makaleler, özel vaka çalışmaları, ürün önizlemeleri. Spam yok, tek tıkla abonelik iptali.
+                  {t.newsletterBody}
                 </p>
                 <form
                   className="mt-9 max-w-md mx-auto flex flex-col sm:flex-row gap-3"
@@ -196,7 +204,7 @@ export default async function BlogPage({
                 >
                   <input
                     type="email"
-                    placeholder="siz@restoran.com"
+                    placeholder={t.newsletterPlaceholder}
                     required
                     className="flex-1 h-12 rounded-lg border border-white/15 bg-white/[0.04] px-5 text-[14.5px] text-fg placeholder:text-fg-subtle focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition"
                   />
@@ -204,18 +212,18 @@ export default async function BlogPage({
                     type="submit"
                     className="h-12 px-6 rounded-lg bg-accent text-accent-fg font-semibold text-[14.5px] hover:bg-accent-hover active:scale-[0.98] transition shadow-[0_8px_24px_rgba(255,255,255,0.15)] whitespace-nowrap"
                   >
-                    Abone ol
+                    {t.newsletterCta}
                   </button>
                 </form>
                 <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[12px] text-fg-muted">
                   <span className="inline-flex items-center gap-1.5">
                     <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" />
-                    4.200+ abone
+                    {t.newsletterStat1}
                   </span>
                   <span className="size-1 rounded-full bg-fg-muted/40" />
-                  <span>Ort. 7 dk okuma</span>
+                  <span>{t.newsletterStat2}</span>
                   <span className="size-1 rounded-full bg-fg-muted/40" />
-                  <span>50+ ülke</span>
+                  <span>{t.newsletterStat3}</span>
                 </div>
               </div>
             </div>
@@ -228,10 +236,10 @@ export default async function BlogPage({
           <Reveal>
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="text-balance text-[28px] sm:text-[36px] lg:text-[44px] font-light leading-[1.05] tracking-[-0.02em]">
-                Dasvio Journal için yazmak ister misiniz?
+                {t.pitchTitle}
               </h2>
               <p className="mt-5 text-[15px] lg:text-[16px] leading-[1.6] text-fg-muted text-pretty">
-                Restoran operatörleri, şefler, mühendisler — sektörün gerçekte nasıl işlediği hakkında söyleyecek keskin bir şeyiniz varsa, okumak isteriz.
+                {t.pitchBody}
               </p>
               <div className="mt-7">
                 <Button
@@ -240,7 +248,7 @@ export default async function BlogPage({
                   href={`/${locale}/contact`}
                   withArrow
                 >
-                  Hikaye öner
+                  {t.pitchCta}
                 </Button>
               </div>
             </div>

@@ -9,12 +9,12 @@ import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { AnimatedStats } from "@/components/ui/AnimatedStats";
 import {
-  SOLUTIONS,
+  getSolutions,
   SOLUTION_SLUGS,
   isSolutionSlug,
   type SolutionData,
 } from "@/lib/solutions";
-import { PRODUCTS } from "@/lib/products";
+import { getProducts } from "@/lib/products";
 import { Trust } from "@/components/sections/Trust";
 
 export default async function SolutionPage({
@@ -28,10 +28,11 @@ export default async function SolutionPage({
   const locale = lang as Locale;
   const t = await getDictionary(locale);
 
-  const solution = SOLUTIONS[slug];
+  const solutions = getSolutions(locale);
+  const solution = solutions[slug];
   const others = SOLUTION_SLUGS.filter((s) => s !== slug)
     .slice(0, 3)
-    .map((s) => SOLUTIONS[s]);
+    .map((s) => solutions[s]);
 
   return (
     <>
@@ -45,15 +46,15 @@ export default async function SolutionPage({
         <HeroPanel solution={solution} locale={locale} t={t} />
       )}
 
-      <Challenges solution={solution} />
-      <Recommended solution={solution} locale={locale} />
+      <Challenges solution={solution} t={t} />
+      <Recommended solution={solution} locale={locale} t={t} />
 
       {solution.variant !== "centered-stat" && (
-        <StatBand solution={solution} locale={locale} />
+        <StatBand solution={solution} locale={locale} t={t} />
       )}
 
-      <FinalCTA solution={solution} locale={locale} />
-      <OtherSolutions others={others} locale={locale} />
+      <FinalCTA solution={solution} locale={locale} t={t} />
+      <OtherSolutions others={others} locale={locale} t={t} />
       <Trust t={t.trust} />
     </>
   );
@@ -86,7 +87,7 @@ function HeroSplitPhoto({
               href={`/${locale}/#sectors`}
               className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-accent hover:gap-3 transition-all"
             >
-              ← Çözümler / {solution.eyebrow}
+              ← {t.solutionPage.breadcrumb} / {solution.eyebrow}
             </Link>
             <h1 className="mt-6 text-balance text-[40px] sm:text-[56px] lg:text-[68px] xl:text-[80px] font-light leading-[0.98] tracking-[-0.025em]">
               {solution.title}
@@ -110,7 +111,7 @@ function HeroSplitPhoto({
                 href="#recommended"
                 withArrow
               >
-                Önerilen ürünleri gör
+                {t.solutionPage.seeRecommended}
               </Button>
             </div>
           </Reveal>
@@ -216,7 +217,7 @@ function HeroCenteredStat({
                 href="#recommended"
                 withArrow
               >
-                Önerilen ürünler
+                {t.solutionPage.seeRecommended}
               </Button>
             </div>
           </div>
@@ -306,7 +307,7 @@ function HeroPanel({
                   href="#recommended"
                   withArrow
                 >
-                  Ürünleri gör
+                  {t.solutionPage.seeProducts}
                 </Button>
               </div>
             </div>
@@ -318,17 +319,17 @@ function HeroPanel({
 }
 
 // ─── CHALLENGES ─────────────────────────────────────────────────────────────
-function Challenges({ solution }: { solution: SolutionData }) {
+function Challenges({ solution, t }: { solution: SolutionData; t: DictType }) {
   return (
     <section className="py-20 lg:py-28">
       <Container>
         <Reveal>
           <div className="max-w-2xl">
             <div className="text-[13px] font-semibold uppercase tracking-[0.18em] text-accent">
-              Zorluk
+              {t.solutionPage.challengeEyebrow}
             </div>
             <h2 className="mt-5 text-balance text-[32px] sm:text-[40px] lg:text-[52px] font-light leading-[1.04] tracking-[-0.02em]">
-              {solution.eyebrow.toLowerCase()} sektöründe gerçekte ne bozuluyor.
+              {t.solutionPage.challengeTitle.replace("{sector}", solution.eyebrow.toLowerCase())}
             </h2>
           </div>
         </Reveal>
@@ -366,11 +367,13 @@ function Challenges({ solution }: { solution: SolutionData }) {
 function Recommended({
   solution,
   locale,
+  t,
 }: {
   solution: SolutionData;
   locale: Locale;
+  t: DictType;
 }) {
-  const recProducts = solution.recommended.map((slug) => PRODUCTS[slug]);
+  const recProducts = solution.recommended.map((slug) => getProducts(locale)[slug]);
   return (
     <section
       id="recommended"
@@ -386,13 +389,13 @@ function Recommended({
         <Reveal>
           <div className="max-w-2xl">
             <div className="text-[13px] font-semibold uppercase tracking-[0.18em] text-accent">
-              Dasvio nasıl oturur
+              {t.solutionPage.fitEyebrow}
             </div>
             <h2 className="mt-5 text-balance text-[32px] sm:text-[40px] lg:text-[52px] font-light leading-[1.04] tracking-[-0.02em]">
-              {solution.eyebrow.toLowerCase()} için Dasvio modülleri.
+              {t.solutionPage.fitTitle.replace("{sector}", solution.eyebrow.toLowerCase())}
             </h2>
             <p className="mt-5 text-[15px] lg:text-[16px] leading-[1.6] text-fg-muted text-pretty">
-              Bu modüllerle başlayın. Büyüdükçe gerisini ekleyin — Dasvio tek entegre platform, yükseltmeler sıfır konfigürasyonla çalışır.
+              {t.solutionPage.fitBody}
             </p>
           </div>
         </Reveal>
@@ -422,7 +425,7 @@ function Recommended({
                   className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-semibold group-hover:gap-2.5 transition-all"
                   style={{ color: p.accentTint }}
                 >
-                  Ürünü gör{" "}
+                  {t.solutionPage.seeProduct}{" "}
                   <ArrowRight className="size-3.5" strokeWidth={2.5} />
                 </div>
               </Link>
@@ -438,9 +441,11 @@ function Recommended({
 function StatBand({
   solution,
   locale,
+  t,
 }: {
   solution: SolutionData;
   locale: Locale;
+  t: DictType;
 }) {
   return (
     <section className="py-16 lg:py-24">
@@ -455,10 +460,10 @@ function StatBand({
             />
             <div className="relative">
               <div className="text-[12px] font-semibold uppercase tracking-[0.18em] text-accent">
-                Rakamlarla
+                {t.solutionPage.numbersEyebrow}
               </div>
               <div className="mt-2 text-[20px] lg:text-[24px] font-light text-fg max-w-2xl">
-                Dasvio kullanan ekiplerin {solution.eyebrow.toLowerCase()} sektöründe gördükleri.
+                {t.solutionPage.numbersTitle.replace("{sector}", solution.eyebrow.toLowerCase())}
               </div>
               <AnimatedStats items={solution.stats} locale={locale} />
             </div>
@@ -473,9 +478,11 @@ function StatBand({
 function FinalCTA({
   solution,
   locale,
+  t,
 }: {
   solution: SolutionData;
   locale: Locale;
+  t: DictType;
 }) {
   return (
     <section className="py-20 lg:py-28 relative overflow-hidden">
@@ -489,14 +496,14 @@ function FinalCTA({
         <Reveal>
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-balance text-[36px] sm:text-[48px] lg:text-[64px] font-light leading-[1.04] tracking-[-0.025em]">
-              {solution.eyebrow.toLowerCase()} için tasarlandı. Günler içinde hazır.
+              {t.solutionPage.ctaTitle.replace("{sector}", solution.eyebrow.toLowerCase())}
             </h2>
             <p className="mt-6 text-[15px] lg:text-[17px] leading-[1.6] text-fg-muted text-pretty">
-              Mevcut kurulumunuzu birlikte inceleriz, menünüzü eşleştiririz ve iki hafta içinde ekibinizi Dasvio&apos;da çalıştırırız.
+              {t.solutionPage.ctaBody}
             </p>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
               <Button variant="primary" size="lg" href={`/${locale}/contact`}>
-                Kişiselleştirilmiş demo al
+                {t.solutionPage.ctaPrimary}
               </Button>
               <Button
                 variant="secondary"
@@ -504,7 +511,7 @@ function FinalCTA({
                 href={`/${locale}/pricing`}
                 withArrow
               >
-                Fiyatları gör
+                {t.solutionPage.ctaSecondary}
               </Button>
             </div>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[13px] text-fg-muted">
@@ -514,7 +521,7 @@ function FinalCTA({
                   style={{ color: solution.accentTint }}
                   strokeWidth={2.5}
                 />
-                Kart gerekmez
+                {t.solutionPage.trust1}
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Check
@@ -522,7 +529,7 @@ function FinalCTA({
                   style={{ color: solution.accentTint }}
                   strokeWidth={2.5}
                 />
-                Ortalama 14 gün kurulum
+                {t.solutionPage.trust2}
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Check
@@ -530,7 +537,7 @@ function FinalCTA({
                   style={{ color: solution.accentTint }}
                   strokeWidth={2.5}
                 />
-                Türkçe destek
+                {t.solutionPage.trust3}
               </span>
             </div>
           </div>
@@ -544,9 +551,11 @@ function FinalCTA({
 function OtherSolutions({
   others,
   locale,
+  t,
 }: {
   others: SolutionData[];
   locale: Locale;
+  t: DictType;
 }) {
   return (
     <section className="py-20 lg:py-28">
@@ -555,10 +564,10 @@ function OtherSolutions({
           <Reveal>
             <div className="max-w-xl">
               <div className="text-[13px] font-semibold uppercase tracking-[0.18em] text-accent">
-                Diğer çözümler
+                {t.solutionPage.otherEyebrow}
               </div>
               <h2 className="mt-5 text-balance text-[28px] sm:text-[36px] lg:text-[40px] font-light leading-[1.04] tracking-[-0.02em]">
-                Hizmet verdiğimiz diğer restoran formatları.
+                {t.solutionPage.otherTitle}
               </h2>
             </div>
           </Reveal>
@@ -566,7 +575,8 @@ function OtherSolutions({
             href={`/${locale}/#sectors`}
             className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-accent hover:gap-2.5 transition-all"
           >
-            Tüm çözümler <ArrowRight className="size-4" strokeWidth={2.5} />
+            {t.solutionPage.allSolutions}{" "}
+            <ArrowRight className="size-4" strokeWidth={2.5} />
           </Link>
         </div>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">

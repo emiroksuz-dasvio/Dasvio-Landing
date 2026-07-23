@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Mail } from "lucide-react";
 import { hasLocale, locales, type Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import {
@@ -124,6 +125,7 @@ export default async function PolicyDetailPage({
   if (!hasLocale(lang)) notFound();
   if (!isProvidedSlug(slug)) notFound();
   const locale = lang as Locale;
+  const t = (await getDictionary(locale)).policyPage;
   const policy = getPolicyBySlug(slug) as Policy;
 
   const tocItems = policy.sections.map((s) => ({
@@ -149,7 +151,7 @@ export default async function PolicyDetailPage({
             href={`/${locale}/policies`}
             className="inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-[0.16em] text-accent hover:gap-2.5 transition-all"
           >
-            <ArrowLeft className="size-3.5" strokeWidth={2.5} /> Tüm politikalar
+            <ArrowLeft className="size-3.5" strokeWidth={2.5} /> {t.allPolicies}
           </Link>
           <h1 className="mt-6 text-balance text-[36px] sm:text-[48px] lg:text-[64px] xl:text-[76px] font-light leading-[0.98] tracking-[-0.025em]">
             {policy.title}.
@@ -157,6 +159,11 @@ export default async function PolicyDetailPage({
           <p className="mt-5 max-w-2xl text-[15px] lg:text-[17px] leading-[1.6] text-fg-muted text-pretty">
             {policy.description}
           </p>
+          {locale === "en" && (
+            <p className="mt-5 max-w-2xl rounded-xl border border-border-default bg-bg-subtle px-4 py-3 text-[13.5px] leading-relaxed text-fg-muted">
+              {t.languageNote}
+            </p>
+          )}
           <div className="mt-7 flex flex-wrap items-center gap-3">
             <span className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/[0.03] px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-fg-muted">
               <span className="size-1.5 rounded-full bg-accent" />
@@ -200,10 +207,10 @@ export default async function PolicyDetailPage({
               <div className="mt-12 rounded-2xl border border-white/10 bg-bg-subtle p-6 lg:p-8 flex flex-col sm:flex-row sm:items-center gap-5 sm:justify-between">
                 <div>
                   <div className="text-[14px] font-medium text-fg">
-                    Sorularınız mı var?
+                    {t.questionsTitle}
                   </div>
                   <div className="text-[13px] text-fg-muted mt-1">
-                    Hukuk ekibimize doğrudan ulaşın.
+                    {t.questionsBody}
                   </div>
                 </div>
                 <a
@@ -224,10 +231,10 @@ export default async function PolicyDetailPage({
           <div className="flex items-end justify-between gap-6 flex-wrap mb-10">
             <div>
               <div className="text-[13px] font-semibold uppercase tracking-[0.18em] text-accent">
-                Diğer politikalar
+                {t.otherEyebrow}
               </div>
               <h2 className="mt-4 text-balance text-[28px] sm:text-[36px] lg:text-[40px] font-light leading-[1.04] tracking-[-0.02em]">
-                Tüm Dasvio yasal belgelerimiz.
+                {t.otherTitle}
               </h2>
             </div>
             <Button
@@ -236,7 +243,7 @@ export default async function PolicyDetailPage({
               href={`/${locale}/policies`}
               withArrow
             >
-              Hepsini gör
+              {t.seeAll}
             </Button>
           </div>
           <div className="grid sm:grid-cols-3 gap-3 lg:gap-4">

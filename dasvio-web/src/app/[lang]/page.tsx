@@ -27,7 +27,7 @@ export default async function HomePage({
     <div className="relative">
       <ParallaxGlow />
       <Hero t={t.hero} stats={t.stats} locale={locale} />
-      <FeatureGrid t={t.features} problem={t.problem} />
+      <FeatureGrid t={t.features} problem={t.problem} locale={locale} />
       <Sectors t={t.sectors} />
       <LogosBand t={t.logos} />
       <Personas t={t.personas} />

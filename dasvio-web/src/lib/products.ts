@@ -32,6 +32,8 @@ import {
   CustomerScreen,
   PushScreens,
 } from "@/components/mockups/FeatureSubVisuals";
+import type { Locale } from "@/i18n/config";
+import { PRODUCTS_EN } from "./products.en";
 
 export type ProductSlug =
   | "qr-menu"
@@ -51,10 +53,13 @@ export type ProductSlug =
 
 export type LayoutVariant = "split" | "stack" | "magazine";
 
+export type VisualProps = { locale: Locale };
+
 export type SubCard = {
   title: string;
   body: string;
-  Visual: () => React.ReactElement;
+  /** Mockups take the locale so the few UI labels inside them can follow it. */
+  Visual: (props: VisualProps) => React.ReactElement;
 };
 
 export type ProductData = {
@@ -65,10 +70,11 @@ export type ProductData = {
   tags: string[];
   variant: LayoutVariant;
   accentTint: string;
-  MainVisual: () => React.ReactElement;
+  MainVisual: (props: VisualProps) => React.ReactElement;
   subCards: SubCard[];
 };
 
+/** Turkish is the source of truth; `products.en.ts` mirrors it key for key. */
 export const PRODUCTS: Record<ProductSlug, ProductData> = {
   "qr-menu": {
     slug: "qr-menu",
@@ -538,4 +544,12 @@ export const PRODUCT_SLUGS = Object.keys(PRODUCTS) as ProductSlug[];
 
 export function isProductSlug(slug: string): slug is ProductSlug {
   return slug in PRODUCTS;
+}
+
+/**
+ * Prefer this over importing PRODUCTS directly — pages are rendered per locale
+ * and the Turkish map is only the `tr` half of the pair.
+ */
+export function getProducts(locale: Locale): Record<ProductSlug, ProductData> {
+  return locale === "en" ? PRODUCTS_EN : PRODUCTS;
 }

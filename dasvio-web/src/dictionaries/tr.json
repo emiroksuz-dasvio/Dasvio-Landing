@@ -19,6 +19,157 @@
       "analyticsDesc": "Satış, ürün, ödeme, heatmap dashboardları",
       "signage": "Digital Signage",
       "signageDesc": "Ekran, playlist, müşteri ekranı yönetimi"
+    },
+    "mega": {
+      "sections": {
+        "products": "Ürünler",
+        "solutions": "Çözümler",
+        "resources": "Kaynaklar",
+        "company": "Şirket"
+      },
+      "groups": {
+        "experience": "Müşteri deneyimi",
+        "operations": "Operasyon",
+        "multiBranch": "Çok şubeli",
+        "intelligence": "Zeka",
+        "byFormat": "Format bazında",
+        "byVenue": "Mekan bazında",
+        "byScale": "Ölçek bazında",
+        "learn": "Öğren",
+        "build": "Geliştir",
+        "aboutUs": "Hakkımızda",
+        "getInTouch": "İletişime geç"
+      },
+      "items": {
+        "qrMenu": {
+          "title": "QR Menü",
+          "desc": "Çok dilli dijital menü, AI çeviri"
+        },
+        "signage": {
+          "title": "Digital Signage",
+          "desc": "Restoran ekranları & playlist"
+        },
+        "pos": {
+          "title": "POS Yönetimi",
+          "desc": "Cihazlar, yazıcılar, gelir merkezleri"
+        },
+        "staffPermissions": {
+          "title": "Personel & Yetki",
+          "desc": "Roller, vardiyalar, POS PIN'leri"
+        },
+        "revenueCenters": {
+          "title": "Gelir Merkezleri",
+          "desc": "Kanal bazlı operasyon"
+        },
+        "multiBranch": {
+          "title": "Çok Şubeli Yönetim",
+          "desc": "Tek menü, her şube"
+        },
+        "branchOverrides": {
+          "title": "Şube Override",
+          "desc": "Yerel fiyat & uygunluk"
+        },
+        "regionalPricing": {
+          "title": "Bölgesel Fiyatlandırma",
+          "desc": "Tier bazlı fiyat grupları"
+        },
+        "analytics": {
+          "title": "Analitik",
+          "desc": "Satış, ürün, ödemeler"
+        },
+        "heatmaps": {
+          "title": "Heatmap",
+          "desc": "Pik saat görselleştirme"
+        },
+        "reports": {
+          "title": "Raporlar",
+          "desc": "Özel rapor oluşturucu"
+        },
+        "restaurants": {
+          "title": "Restoranlar",
+          "desc": "Fine dining & gurme mekanlar"
+        },
+        "cafes": {
+          "title": "Kafe & Pastane",
+          "desc": "Kahve dükkanları & patisserie"
+        },
+        "fastFood": {
+          "title": "Fast Food & QSR",
+          "desc": "Yüksek ciro, drive-thru"
+        },
+        "bars": {
+          "title": "Bar & Pub",
+          "desc": "Açık sekme, hesap bölme"
+        },
+        "hotels": {
+          "title": "Otel & Resort",
+          "desc": "Restoran + oda servisi"
+        },
+        "cloudKitchens": {
+          "title": "Cloud Kitchen",
+          "desc": "Tek mutfak, çok marka"
+        },
+        "singleLocation": {
+          "title": "Tek şube",
+          "desc": "Bağımsız işletmeler & bistrolar"
+        },
+        "chains": {
+          "title": "Zincir & Franchise",
+          "desc": "Çok lokasyonlu işletmeler"
+        },
+        "platforms": {
+          "title": "Platformlar",
+          "desc": "Getir, Trendyol, Yemeksepeti"
+        },
+        "blog": {
+          "title": "Blog",
+          "desc": "Ürün & sektör trendleri"
+        },
+        "stories": {
+          "title": "Müşteri Hikayeleri",
+          "desc": "Gerçek restoranlar nasıl çalışıyor"
+        },
+        "help": {
+          "title": "Yardım Merkezi",
+          "desc": "Adım adım kılavuzlar"
+        },
+        "api": {
+          "title": "API & Webhook",
+          "desc": "Dasvio üzerinde geliştir"
+        },
+        "status": {
+          "title": "Durum",
+          "desc": "Sistem uptime & geçmiş"
+        },
+        "academy": {
+          "title": "Akademi",
+          "desc": "Ekip eğitimi & sertifika"
+        },
+        "about": {
+          "title": "Dasvio Hakkında",
+          "desc": "Misyonumuz & ekibimiz"
+        },
+        "careers": {
+          "title": "Kariyer",
+          "desc": "Ekibe katıl"
+        },
+        "press": {
+          "title": "Basın",
+          "desc": "Medya & duyurular"
+        },
+        "demo": {
+          "title": "Demo Al",
+          "desc": "Kişiselleştirilmiş sunum"
+        },
+        "contact": {
+          "title": "Bize Ulaşın",
+          "desc": "E-posta, telefon, sohbet"
+        },
+        "partners": {
+          "title": "Ortaklık",
+          "desc": "Dasvio partneri ol"
+        }
+      }
     }
   },
   "hero": {
@@ -33,10 +184,22 @@
   "stats": {
     "title": "Sektörün öncüsü işletmelerin tercihi",
     "items": [
-      { "value": "2.000+", "label": "Aktif restoran" },
-      { "value": "12.000+", "label": "Yönetilen şube" },
-      { "value": "14", "label": "Desteklenen dil" },
-      { "value": "8+", "label": "Platform entegrasyonu" }
+      {
+        "value": "2.000+",
+        "label": "Aktif restoran"
+      },
+      {
+        "value": "12.000+",
+        "label": "Yönetilen şube"
+      },
+      {
+        "value": "14",
+        "label": "Desteklenen dil"
+      },
+      {
+        "value": "8+",
+        "label": "Platform entegrasyonu"
+      }
     ]
   },
   "problem": {
@@ -48,42 +211,67 @@
     "eyebrow": "ÖZELLİKLER",
     "title": "Restoranınız için ihtiyacınız olan her şey",
     "subtitle": "QR menüden POS'a, çok şubeden analitiğe — modüler ama bütünsel bir platform.",
+    "featuresLabel": "Özellikler",
     "items": [
       {
         "icon": "pos",
         "title": "POS Yönetimi",
         "description": "Cihaz yönetimi, fiş yazdırma, gelir merkezleri ve işletme saatleri — tamamı panelden.",
-        "tags": ["Çoklu cihaz", "Yazıcı yönetimi", "Gelir merkezi"]
+        "tags": [
+          "Çoklu cihaz",
+          "Yazıcı yönetimi",
+          "Gelir merkezi"
+        ]
       },
       {
         "icon": "branch",
         "title": "Çok Şubeli Yönetim",
         "description": "Merkezi master menü, şube bazlı override, bölgesel fiyat grupları ve toplu zam aracı.",
-        "tags": ["Master menü", "Store group", "Fiyat tier"]
+        "tags": [
+          "Master menü",
+          "Store group",
+          "Fiyat tier"
+        ]
       },
       {
         "icon": "qr",
         "title": "QR Menü",
         "description": "Çok dilli, AI çevirili dijital menü. Tema, spotlight, masa bazlı sipariş akışı dahil.",
-        "tags": ["AI çeviri", "Tema yönetimi", "Masa bazlı"]
+        "tags": [
+          "AI çeviri",
+          "Tema yönetimi",
+          "Masa bazlı"
+        ]
       },
       {
         "icon": "plug",
         "title": "Platform Entegrasyonları",
         "description": "Getir, Trendyol, Yemeksepeti, Qapera ve daha fazlası — tek panelden yönet, eşleştir, fiyatla.",
-        "tags": ["Getir", "Trendyol", "Yemeksepeti"]
+        "tags": [
+          "Getir",
+          "Trendyol",
+          "Yemeksepeti"
+        ]
       },
       {
         "icon": "chart",
         "title": "Gerçek Zamanlı Analitik",
         "description": "Satış, ürün performansı, saatlik heatmap, ödeme dağılımı ve iptal/ikram analizleri.",
-        "tags": ["Heatmap", "Ürün analizi", "Canlı dashboard"]
+        "tags": [
+          "Heatmap",
+          "Ürün analizi",
+          "Canlı dashboard"
+        ]
       },
       {
         "icon": "screen",
         "title": "Digital Signage",
         "description": "Restoran ekranları, müşteri ekranı, playlist ve zamanlama yönetimi tek noktadan.",
-        "tags": ["Playlist", "Cihaz yönetimi", "Müşteri ekranı"]
+        "tags": [
+          "Playlist",
+          "Cihaz yönetimi",
+          "Müşteri ekranı"
+        ]
       }
     ]
   },
@@ -178,10 +366,22 @@
     "title": "Her şeyi ölç, doğru kararı al",
     "subtitle": "Restoranınızı bir veri ürünü gibi yönetin. Hangi ürün, hangi saatte, hangi şubede, hangi kanaldan ne kadar kazanıyor — hepsi tek bakışta.",
     "metrics": [
-      { "label": "Saatlik satış heatmap", "value": "Pazartesi 12-14 arası %38 yoğunluk" },
-      { "label": "En çok satan ürün", "value": "Tavuk dürüm — günde 142 adet" },
-      { "label": "Ödeme dağılımı", "value": "Kart %62 • Nakit %23 • Online %15" },
-      { "label": "İkram oranı", "value": "Toplam satışın %2.1'i" }
+      {
+        "label": "Saatlik satış heatmap",
+        "value": "Pazartesi 12-14 arası %38 yoğunluk"
+      },
+      {
+        "label": "En çok satan ürün",
+        "value": "Tavuk dürüm — günde 142 adet"
+      },
+      {
+        "label": "Ödeme dağılımı",
+        "value": "Kart %62 • Nakit %23 • Online %15"
+      },
+      {
+        "label": "İkram oranı",
+        "value": "Toplam satışın %2.1'i"
+      }
     ],
     "cta": "Analitik demosu iste"
   },
@@ -335,6 +535,11 @@
     "eyebrow": "DEMO",
     "title": "15 dakikada Dasvio'yu canlı görün",
     "subtitle": "Restoranınızın ihtiyacına özel kişiselleştirilmiş bir demo planlayalım.",
+    "bullets": [
+      "15 dakika içinde canlı demo",
+      "Kişiselleştirilmiş ürün turu",
+      "Fiyatlandırma soru-cevap"
+    ],
     "fields": {
       "name": "Ad Soyad",
       "company": "Restoran / Şirket",
@@ -344,15 +549,70 @@
       "phone": "Telefon",
       "message": "Mesaj (opsiyonel)"
     },
-    "branchesOptions": ["1", "2-5", "6-20", "20+"],
+    "placeholders": {
+      "name": "Ayşe Demir",
+      "company": "Lokanta 1928",
+      "email": "ayse@lokanta.com",
+      "phone": "+90 5xx xxx xx xx",
+      "message": "Restoranınız hakkında kısa bilgi…"
+    },
+    "selectPlaceholder": "Seçiniz",
+    "countries": [
+      {
+        "code": "TR",
+        "label": "Türkiye"
+      },
+      {
+        "code": "DE",
+        "label": "Almanya"
+      },
+      {
+        "code": "GB",
+        "label": "Birleşik Krallık"
+      },
+      {
+        "code": "US",
+        "label": "Amerika Birleşik Devletleri"
+      },
+      {
+        "code": "FR",
+        "label": "Fransa"
+      },
+      {
+        "code": "other",
+        "label": "Diğer"
+      }
+    ],
+    "branchesOptions": [
+      "1",
+      "2-5",
+      "6-20",
+      "20+"
+    ],
     "submit": "Demo Talep Et",
-    "privacy": "Formu göndererek KVKK kapsamında verilerinizin işlenmesini kabul edersiniz."
+    "submitting": "Gönderiliyor…",
+    "error": "Formunuzu gönderemedik. Lütfen tekrar deneyin ya da hello@dasvio.com adresine yazın.",
+    "honeypot": "Bu alanı boş bırakın",
+    "privacy": "Formu göndererek KVKK kapsamında verilerinizin işlenmesini kabul edersiniz.",
+    "success": {
+      "title": "Teşekkürler!",
+      "body": "En kısa sürede demo planlamak için size dönüş yapacağız."
+    }
   },
   "trust": {
     "items": [
-      { "value": "7/24", "label": "Türkçe destek hattı" },
-      { "value": "14 gün", "label": "Ortalama kurulum süresi" },
-      { "value": "%99.9", "label": "Uptime garantisi" }
+      {
+        "value": "7/24",
+        "label": "Türkçe destek hattı"
+      },
+      {
+        "value": "14 gün",
+        "label": "Ortalama kurulum süresi"
+      },
+      {
+        "value": "%99.9",
+        "label": "Uptime garantisi"
+      }
     ]
   },
   "footer": {
@@ -363,9 +623,18 @@
       "primary": "Ücretsiz Demo Al",
       "secondary": "Fiyatları Keşfet",
       "stats": [
-        { "label": "7/24 Destek", "value": "Hemen yanınızda" },
-        { "label": "Binlerce işlem", "value": "Hızlı ödeme akışı" },
-        { "label": "Mobil uyumlu", "value": "Her cihazda sorunsuz" }
+        {
+          "label": "7/24 Destek",
+          "value": "Hemen yanınızda"
+        },
+        {
+          "label": "Binlerce işlem",
+          "value": "Hızlı ödeme akışı"
+        },
+        {
+          "label": "Mobil uyumlu",
+          "value": "Her cihazda sorunsuz"
+        }
       ]
     },
     "contact": {
@@ -421,8 +690,176 @@
     },
     "legal": {
       "rights": "Tüm hakları saklıdır.",
-      "links": ["KVKK", "Kullanım Şartları", "Gizlilik Politikası", "Çerezler"],
+      "links": [
+        "KVKK",
+        "Kullanım Şartları",
+        "Gizlilik Politikası",
+        "Çerezler"
+      ],
       "allPolicies": "Tüm politikalar"
     }
+  },
+  "resourcesPage": {
+    "eyebrow": "KAYNAKLAR",
+    "title": "Dasvio'dan daha fazlasını almak için ihtiyacınız olan her şey.",
+    "subtitle": "Kılavuzlar, vaka çalışmaları, API dokümanları ve ekip eğitimi — restoranınızın daha hızlı ilerlemesine yardımcı olacak tüm materyaller.",
+    "cards": {
+      "blog": {
+        "label": "Blog",
+        "title": "Ürün güncellemeleri & sektör trendleri",
+        "body": "Dasvio ekibinden son sürümler, restoran-teknoloji analizleri ve mühendislik yazıları.",
+        "cta": "Blogu oku"
+      },
+      "stories": {
+        "label": "Müşteri hikayeleri",
+        "title": "Gerçek restoranlar Dasvio ile nasıl çalışıyor",
+        "body": "Zincirlerden, fine dining mekanlardan ve cloud kitchen'lardan vaka çalışmaları — rakamlar, ekran görüntüleri ve çıkarılan dersler.",
+        "cta": "Hikayelere göz at"
+      },
+      "help": {
+        "label": "Yardım merkezi",
+        "title": "Adım adım ürün kılavuzları",
+        "body": "Her Dasvio özelliği için hızlı yanıtlar, video anlatımlar ve ayrıntılı nasıl yapılır kılavuzları — saniyeler içinde aranabilir.",
+        "cta": "Yardımda ara"
+      },
+      "docs": {
+        "label": "API & geliştiriciler",
+        "title": "Dasvio platformu üzerinde geliştirin",
+        "body": "REST API, webhook'lar ve entegrasyon tarifleri. Stack'inizi bağlayın, özel dashboard'lar oluşturun, iş akışlarını otomatikleştirin.",
+        "cta": "API dokümanını oku"
+      },
+      "templates": {
+        "label": "Şablonlar",
+        "title": "Menü, signage ve raporlama şablonları",
+        "body": "QR menüler, müşteri ekranları ve haftalık raporlar için ücretsiz başlangıç şablonları — doğrudan panelinize aktarın.",
+        "cta": "Şablonlara göz at"
+      },
+      "academy": {
+        "label": "Akademi",
+        "title": "Ekibinizi Dasvio'da eğitin",
+        "body": "Yöneticiler, mutfak personeli ve kasiyerler için kendi hızınızda eğitim programları. Sertifikasyon dahil.",
+        "cta": "Öğrenmeye başla"
+      }
+    }
+  },
+  "contactPage": {
+    "eyebrow": "İLETİŞİM",
+    "title": "Restoranınız hakkında konuşalım.",
+    "subtitle": "Kişiselleştirilmiş demo ayarlayın, ürün soruları sorun veya ekibe katılın. Her kanaldan ulaşabilirsiniz.",
+    "blocks": {
+      "email": {
+        "label": "E-posta",
+        "value": "hello@dasvio.com"
+      },
+      "phone": {
+        "label": "Telefon",
+        "value": "+90 850 000 00 00"
+      },
+      "address": {
+        "label": "Adres",
+        "value": "Levent, İstanbul, Türkiye"
+      },
+      "hours": {
+        "label": "Çalışma saatleri",
+        "value": "7/24 destek · 09–18 ofis"
+      }
+    }
+  },
+  "productPage": {
+    "whyEyebrow": "Neden geçiş yapıyorlar",
+    "whyTitle": "Ekibinizin zaten kullandığı aynı panele entegre.",
+    "whyPoints": [
+      "Vendor bağımlılığı yok — mevcut kurulumunuzla birlikte çalışır",
+      "Tek şubeler ve zincirlerde ortalama 14 günde canlıya geçiş",
+      "Her planda 7/24 Türkçe destek dahil",
+      "GDPR ve GİB uyumlu, ek modül gerektirmez"
+    ],
+    "demoCta": "Kişiselleştirilmiş demo al",
+    "quote": "Artık {product} ile ilgili her şey için tek bir panelimiz var. Ekibimiz bir haftada değil, sabahın birinde alıştı.",
+    "quoteAuthor": "Restoran operatörü, çok şubeli zincir · Türkiye",
+    "otherEyebrow": "Diğer ürünler",
+    "otherTitle": "Dasvio platformunun geri kalanı.",
+    "allProducts": "Tüm ürünler",
+    "capabilitiesEyebrow": "ÖZELLİKLER",
+    "capabilitiesTitle": "{product} ile gelen her şey, uçtan uca.",
+    "explore": "İncele"
+  },
+  "solutionPage": {
+    "breadcrumb": "Çözümler",
+    "seeRecommended": "Önerilen ürünler",
+    "seeProducts": "Ürünleri gör",
+    "challengeEyebrow": "Zorluk",
+    "challengeTitle": "{sector} sektöründe gerçekte ne bozuluyor.",
+    "fitEyebrow": "Dasvio nasıl oturur",
+    "fitBody": "Bu modüllerle başlayın. Büyüdükçe gerisini ekleyin — Dasvio tek entegre platform, yükseltmeler sıfır konfigürasyonla çalışır.",
+    "numbersEyebrow": "Rakamlarla",
+    "ctaTitle": "{sector} için tasarlandı. Günler içinde hazır.",
+    "ctaBody": "Mevcut kurulumunuzu birlikte inceleriz, menünüzü eşleştiririz ve iki hafta içinde ekibinizi Dasvio'da çalıştırırız.",
+    "ctaPrimary": "Kişiselleştirilmiş demo al",
+    "ctaSecondary": "Fiyatları gör",
+    "trust1": "Kart gerekmez",
+    "trust2": "Ortalama 14 gün kurulum",
+    "trust3": "Türkçe destek",
+    "otherEyebrow": "Diğer çözümler",
+    "otherTitle": "Hizmet verdiğimiz diğer restoran formatları.",
+    "fitTitle": "{sector} için Dasvio modülleri.",
+    "seeProduct": "Ürünü gör",
+    "numbersTitle": "Dasvio kullanan ekiplerin {sector} sektöründe gördükleri.",
+    "allSolutions": "Tüm çözümler"
+  },
+  "meta": {
+    "title": "Dasvio — Restoran Yönetiminin Yeni Standardı",
+    "description": "QR menü, POS, çok şube yönetimi, platform entegrasyonları ve analitik. Restoran operasyonunuzun tamamı tek panelden."
+  },
+  "blogPage": {
+    "badge": "Dasvio Journal",
+    "heroTitle": "Restoran teknolojisinden",
+    "heroTitleAccent": "saha notları.",
+    "heroBody": "Dasvio ekibinden ürün güncellemeleri, sektör analizleri, müşteri hikayeleri ve mühendislik derinlemeleri. Modern restoranı çalıştıran operatörler, kurucular ve şefler için yazıldı.",
+    "published": "{count} makale yayınlandı",
+    "cadence": "Haftalık güncelleme",
+    "newThisMonth": "Bu ay 3 yeni",
+    "featuredBadge": "★ Öne Çıkan",
+    "readFull": "Makalenin tamamını oku",
+    "allEyebrow": "Tüm makaleler",
+    "allTitle": "Tüm arşive göz atın.",
+    "emptyCategory": "Bu kategoride henüz makale yok.",
+    "newsletterBadge": "Haftalık özet",
+    "newsletterTitle": "Dasvio Journal'ın en iyisini alın,",
+    "newsletterTitleAccent": "her Cuma sabahı.",
+    "newsletterBody": "Elle seçilmiş makaleler, özel vaka çalışmaları, ürün önizlemeleri. Spam yok, tek tıkla abonelik iptali.",
+    "newsletterPlaceholder": "siz@restoran.com",
+    "newsletterCta": "Abone ol",
+    "newsletterStat1": "4.200+ abone",
+    "newsletterStat2": "Ort. 7 dk okuma",
+    "newsletterStat3": "50+ ülke",
+    "pitchTitle": "Dasvio Journal için yazmak ister misiniz?",
+    "pitchBody": "Restoran operatörleri, şefler, mühendisler — sektörün gerçekte nasıl işlediği hakkında söyleyecek keskin bir şeyiniz varsa, okumak isteriz.",
+    "pitchCta": "Hikaye öner",
+    "allArticles": "Tüm makaleler",
+    "readNext": "Sırada ne okumalı",
+    "ctaTitle": "Dasvio'yu restoranınızda görün.",
+    "ctaBody": "15 dakikalık kişiselleştirilmiş bir demo planlayalım — kendi menünüz, kendi rakamlarınız üzerinden.",
+    "ctaButton": "Demo Al"
+  },
+  "policyPage": {
+    "badge": "Yasal & Politikalar",
+    "titleLead": "Şeffaflık ve",
+    "titleAccent": "güven",
+    "titleTail": ", baştan sona.",
+    "body": "Verilerinizi nasıl koruduğumuz, hizmetlerimizi nasıl sunduğumuz ve haklarınızın tamamı tek bir yerde. Avukat onaylı, KVKK uyumlu, açıkça yazılmış.",
+    "badge1": "KVKK uyumlu",
+    "badge2": "PCI DSS sertifikalı",
+    "documents": "{count} belge",
+    "contactTitle": "Hukuki bir sorunuz mu var?",
+    "contactBody": "Veri talepleri, KVKK başvuruları veya sözleşme soruları için doğrudan hukuk ekibimizle iletişime geçebilirsiniz.",
+    "contactForm": "İletişim formu",
+    "allPolicies": "Tüm politikalar",
+    "questionsTitle": "Sorularınız mı var?",
+    "questionsBody": "Hukuk ekibimize doğrudan ulaşın.",
+    "otherEyebrow": "Diğer politikalar",
+    "otherTitle": "Tüm Dasvio yasal belgelerimiz.",
+    "seeAll": "Hepsini gör",
+    "languageNote": "Yasal belgelerimiz Türkiye hukukuna tabidir ve yalnızca Türkçe olarak yayımlanır."
   }
 }

@@ -33,6 +33,8 @@ type Props = {
   className?: string;
   withArrow?: boolean;
   type?: "button" | "submit";
+  /** Ignored when `href` is set — a link cannot be disabled. */
+  disabled?: boolean;
 };
 
 export function Button({
@@ -43,8 +45,15 @@ export function Button({
   className,
   withArrow,
   type = "button",
+  disabled,
 }: Props) {
-  const cls = clsx(base, variants[variant], sizes[size], className);
+  const cls = clsx(
+    base,
+    variants[variant],
+    sizes[size],
+    disabled && !href && "opacity-60 cursor-not-allowed active:scale-100",
+    className,
+  );
   const content = (
     <>
       {children}
@@ -72,7 +81,7 @@ export function Button({
     );
   }
   return (
-    <button type={type} className={cls}>
+    <button type={type} className={cls} disabled={disabled}>
       {content}
     </button>
   );

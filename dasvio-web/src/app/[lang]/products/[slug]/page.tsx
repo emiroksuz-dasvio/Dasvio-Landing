@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import {
-  PRODUCTS,
+  getProducts,
   PRODUCT_SLUGS,
   isProductSlug,
   type ProductData,
@@ -25,10 +25,11 @@ export default async function ProductPage({
   const locale = lang as Locale;
   const t = await getDictionary(locale);
 
-  const product = PRODUCTS[slug];
+  const products = getProducts(locale);
+  const product = products[slug];
   const others = PRODUCT_SLUGS.filter((s) => s !== slug)
     .slice(0, 3)
-    .map((s) => PRODUCTS[s]);
+    .map((s) => products[s]);
 
   return (
     <>
@@ -36,12 +37,14 @@ export default async function ProductPage({
       {product.variant === "stack" && <HeroStack product={product} locale={locale} t={t} />}
       {product.variant === "magazine" && <HeroMagazine product={product} locale={locale} t={t} />}
 
-      <Capabilities product={product} />
+      <Capabilities product={product} locale={locale} t={t} />
 
-      {product.variant !== "magazine" && <WhyBlock product={product} locale={locale} />}
-      {product.variant === "magazine" && <QuoteBlock product={product} />}
+      {product.variant !== "magazine" && (
+        <WhyBlock product={product} locale={locale} t={t} />
+      )}
+      {product.variant === "magazine" && <QuoteBlock product={product} t={t} />}
 
-      <OtherProducts others={others} locale={locale} />
+      <OtherProducts others={others} locale={locale} t={t} />
 
       <Trust t={t.trust} />
     </>
@@ -118,7 +121,7 @@ function HeroSplit({
                 boxShadow: `0 30px 80px ${product.accentTint}1f`,
               }}
             >
-              <product.MainVisual />
+              <product.MainVisual locale={locale} />
             </div>
           </Reveal>
         </div>
@@ -188,7 +191,7 @@ function HeroStack({
             }}
           >
             <div className="w-full max-w-[800px]">
-              <product.MainVisual />
+              <product.MainVisual locale={locale} />
             </div>
           </div>
         </Reveal>
@@ -242,7 +245,7 @@ function HeroMagazine({
               <div className="relative h-full min-h-[480px] rounded-2xl border border-white/10 bg-zinc-950 overflow-hidden flex items-center justify-center p-8">
                 <div className="absolute inset-0 bg-grid opacity-[0.6]" />
                 <div className="relative w-full max-w-[440px]">
-                  <product.MainVisual />
+                  <product.MainVisual locale={locale} />
                 </div>
               </div>
             </div>
@@ -313,17 +316,25 @@ function HeroMagazine({
 }
 
 // ─── CAPABILITIES (varies subtly by variant) ────────────────────────────────
-function Capabilities({ product }: { product: ProductData }) {
+function Capabilities({
+  product,
+  locale,
+  t,
+}: {
+  product: ProductData;
+  locale: Locale;
+  t: DictType;
+}) {
   return (
     <section className="py-20 lg:py-28">
       <Container>
         <Reveal>
           <div className="max-w-2xl">
             <div className="text-[13px] font-semibold uppercase tracking-[0.18em] text-accent">
-              ÖZELLİKLER
+              {t.productPage.capabilitiesEyebrow}
             </div>
             <h2 className="mt-5 text-balance text-[32px] sm:text-[40px] lg:text-[48px] font-light leading-[1.04] tracking-[-0.02em]">
-              {product.title} ile gelen her şey, uçtan uca.
+              {t.productPage.capabilitiesTitle.replace("{product}", product.title)}
             </h2>
           </div>
         </Reveal>
@@ -338,7 +349,7 @@ function Capabilities({ product }: { product: ProductData }) {
                 onMouseEnter={undefined}
               >
                 <div className="rounded-2xl bg-zinc-950 border border-white/5 p-4 min-h-[160px] flex items-center justify-center">
-                  <sc.Visual />
+                  <sc.Visual locale={locale} />
                 </div>
                 <h3 className="mt-6 text-[17px] lg:text-[18px] font-medium tracking-tight text-pretty">
                   {sc.title}
@@ -359,9 +370,11 @@ function Capabilities({ product }: { product: ProductData }) {
 function WhyBlock({
   product,
   locale,
+  t,
 }: {
   product: ProductData;
   locale: Locale;
+  t: DictType;
 }) {
   return (
     <section className="py-20 lg:py-28 bg-bg-subtle">
@@ -370,21 +383,16 @@ function WhyBlock({
           <Reveal>
             <div>
               <div className="text-[13px] font-semibold uppercase tracking-[0.18em] text-accent">
-                Neden geçiş yapıyorlar
+                {t.productPage.whyEyebrow}
               </div>
               <h2 className="mt-5 text-balance text-[32px] sm:text-[40px] lg:text-[48px] font-light leading-[1.04] tracking-[-0.02em]">
-                Ekibinizin zaten kullandığı aynı panele entegre.
+                {t.productPage.whyTitle}
               </h2>
             </div>
           </Reveal>
           <Reveal delay={150}>
             <ul className="space-y-4">
-              {[
-                "Vendor bağımlılığı yok — mevcut kurulumunuzla birlikte çalışır",
-                "Tek şubeler ve zincirlerde ortalama 14 günde canlıya geçiş",
-                "Her planda 7/24 Türkçe destek dahil",
-                "GDPR ve GİB uyumlu, ek modül gerektirmez",
-              ].map((p) => (
+              {t.productPage.whyPoints.map((p) => (
                 <li key={p} className="flex gap-3 text-[15px] text-fg">
                   <Check
                     className="size-5 mt-0.5 flex-none"
@@ -402,7 +410,7 @@ function WhyBlock({
                 href={`/${locale}/contact`}
                 withArrow
               >
-                Kişiselleştirilmiş demo al
+                {t.productPage.demoCta}
               </Button>
             </div>
           </Reveal>
@@ -413,7 +421,7 @@ function WhyBlock({
 }
 
 // ─── QUOTE BLOCK (for magazine) ─────────────────────────────────────────────
-function QuoteBlock({ product }: { product: ProductData }) {
+function QuoteBlock({ product, t }: { product: ProductData; t: DictType }) {
   return (
     <section className="py-20 lg:py-32 relative overflow-hidden">
       <div
@@ -443,10 +451,10 @@ function QuoteBlock({ product }: { product: ProductData }) {
               </svg>
             </div>
             <blockquote className="text-balance text-[24px] sm:text-[32px] lg:text-[40px] font-light leading-[1.2] tracking-[-0.02em] text-pretty">
-              Artık {product.title.toLowerCase()} ile ilgili her şey için tek bir panelimiz var. Ekibimiz bir haftada değil, sabahın birinde alıştı.
+              {t.productPage.quote.replace("{product}", product.title.toLowerCase())}
             </blockquote>
             <figcaption className="mt-8 text-[14px] text-fg-muted">
-              Restoran operatörü, çok şubeli zincir · Türkiye
+              {t.productPage.quoteAuthor}
             </figcaption>
           </figure>
         </Reveal>
@@ -459,9 +467,11 @@ function QuoteBlock({ product }: { product: ProductData }) {
 function OtherProducts({
   others,
   locale,
+  t,
 }: {
   others: ProductData[];
   locale: Locale;
+  t: DictType;
 }) {
   return (
     <section className="py-20 lg:py-28">
@@ -470,10 +480,10 @@ function OtherProducts({
           <Reveal>
             <div className="max-w-xl">
               <div className="text-[13px] font-semibold uppercase tracking-[0.18em] text-accent">
-                Diğer ürünler
+                {t.productPage.otherEyebrow}
               </div>
               <h2 className="mt-5 text-balance text-[28px] sm:text-[36px] lg:text-[40px] font-light leading-[1.04] tracking-[-0.02em]">
-                Dasvio platformunun geri kalanı.
+                {t.productPage.otherTitle}
               </h2>
             </div>
           </Reveal>
@@ -481,7 +491,8 @@ function OtherProducts({
             href={`/${locale}/#features`}
             className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-accent hover:gap-2.5 transition-all"
           >
-            Tüm ürünler <ArrowRight className="size-4" strokeWidth={2.5} />
+            {t.productPage.allProducts}{" "}
+            <ArrowRight className="size-4" strokeWidth={2.5} />
           </Link>
         </div>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -513,7 +524,8 @@ function OtherProducts({
                   className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold group-hover:gap-2.5 transition-all"
                   style={{ color: p.accentTint }}
                 >
-                  İncele <ArrowRight className="size-3.5" strokeWidth={2.5} />
+                  {t.productPage.explore}{" "}
+                  <ArrowRight className="size-3.5" strokeWidth={2.5} />
                 </div>
               </Link>
             </Reveal>
