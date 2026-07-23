@@ -7,7 +7,10 @@ export function Container({
 }: {
   children: React.ReactNode;
   className?: string;
-  as?: React.ElementType;
+  /** HTML tags only — React.ElementType would also admit the three.js JSX
+      elements that @react-three/fiber adds globally, collapsing `children`
+      to `never`. */
+  as?: keyof HTMLElementTagNameMap;
 }) {
   return <As className={clsx("container-page", className)}>{children}</As>;
 }

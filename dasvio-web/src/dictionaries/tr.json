@@ -6,6 +6,7 @@
     "resources": "Kaynaklar",
     "login": "Giriş Yap",
     "demo": "Demo Al",
+    "backToTop": "Başa dön",
     "menu": {
       "qrMenu": "QR Menü",
       "qrMenuDesc": "Çok dilli dijital menü, AI çeviri, masa bazlı sipariş",
@@ -179,7 +180,58 @@
     "subtitle": "QR menü, POS, çok şube yönetimi, platform entegrasyonları ve analitik — restoran operasyonunuzun tamamı Dasvio ile tek yerde.",
     "ctaPrimary": "Ücretsiz Demo Al",
     "ctaSecondary": "Özellikleri Keşfet",
-    "trustBadge": "Türkiye'nin önde gelen 2.000+ restoranı tarafından kullanılıyor"
+    "trustBadge": "Türkiye'nin önde gelen 2.000+ restoranı tarafından kullanılıyor",
+    "ctaNote": "Kurulum 1 günde · 30 dakikalık demo · Taahhüt yok",
+    "journey": {
+      "hint": "Keşfetmek için kaydırın",
+      "explore": "Yakından incele",
+      "stages": [
+        {
+          "label": "Panel",
+          "device": "Web Paneli",
+          "title": "Tüm şubeleriniz tek ekranda",
+          "desc": "Ciro, siparişler ve raporlar tüm şubelerden tek panele canlı akar. Karar vermek için gün sonunu beklemezsiniz.",
+          "chip": "Canlı veri",
+          "points": [
+            "Tüm şubelerden canlı ciro akışı",
+            "Platform siparişleri tek listede"
+          ]
+        },
+        {
+          "label": "QR Menü",
+          "device": "Mobil · QR Menü",
+          "title": "Menünüz misafirin cebinde",
+          "desc": "Misafir QR kodu okutur, menüyü kendi dilinde görür ve garson beklemeden siparişini verir.",
+          "chip": "14 dil · AI çeviri",
+          "points": [
+            "Garsonsuz self sipariş",
+            "Menü güncellemeleri anında yayında"
+          ]
+        },
+        {
+          "label": "POS",
+          "device": "POS Terminali",
+          "title": "Kasada hız, operasyonda kontrol",
+          "desc": "Adisyon, ödeme ve mutfak yazıcıları tek akışta birleşir. Tüm büyük donanım markalarıyla uyumlu çalışır.",
+          "chip": "Tüm donanımlarla uyumlu",
+          "points": [
+            "Adisyondan ödemeye tek akış",
+            "Mutfak yazıcısına otomatik iletim"
+          ]
+        },
+        {
+          "label": "Kiosk",
+          "device": "Self Servis Kiosk",
+          "title": "Sıra beklemeyen sipariş",
+          "desc": "Misafir siparişini kioskta kendisi oluşturur; yoğun saatlerde kuyruk erir, sepet ortalaması yükselir.",
+          "chip": "Temassız ödeme",
+          "points": [
+            "Yoğun saatte kuyruk yok",
+            "Akıllı upsell önerileri"
+          ]
+        }
+      ]
+    }
   },
   "stats": {
     "title": "Sektörün öncüsü işletmelerin tercihi",

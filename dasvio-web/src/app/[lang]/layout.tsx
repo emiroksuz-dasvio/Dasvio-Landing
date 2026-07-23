@@ -6,6 +6,7 @@ import { hasLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { themeInitScript } from "@/context/ThemeContext";
 
 const inter = Inter({
@@ -47,9 +48,14 @@ export default async function LangLayout({
   const t = await getDictionary(locale);
 
   return (
+    // suppressHydrationWarning: themeInitScript stamps `data-theme` onto
+    // <html> before hydration, so the attribute is expected to differ from
+    // the server-rendered markup. Only attribute diffs on THIS element are
+    // suppressed — children still hydrate strictly.
     <html
       lang={locale}
       className={`${inter.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-bg text-fg">
         {/* Must stay the first child of <body> — it applies the stored theme
@@ -58,6 +64,7 @@ export default async function LangLayout({
         <Navbar t={t.nav} locale={locale} />
         <main className="flex-1">{children}</main>
         <Footer t={t.footer} locale={locale} />
+        <ScrollToTop label={t.nav.backToTop} />
       </body>
     </html>
   );

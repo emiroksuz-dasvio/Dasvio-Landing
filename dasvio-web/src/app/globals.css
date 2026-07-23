@@ -61,6 +61,7 @@
     color: var(--color-fg);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
   }
 
   img,
@@ -68,6 +69,14 @@
   video,
   svg {
     filter: none !important;
+  }
+
+  /* The wordmark PNG is white — invert it on light surfaces. Lives in this
+     layer on purpose: with cascade layers, !important in an EARLIER layer
+     beats later layers, so a utilities-layer override would silently lose
+     to the reset above. */
+  html[data-theme="light"] img.logo-img {
+    filter: invert(1) !important;
   }
 
   body {
@@ -140,15 +149,45 @@
 
   /* ── iOS 26 Liquid Glass ── */
 
-  /* Nav glass: always frosted over page content */
+  /* Nav glass: true frosted liquid glass over page content (both themes).
+     Paired with .nav-glass-clear — the transparent at-top state the header
+     transitions from once the page scrolls. */
   .nav-glass {
-    background: #000000;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(4, 4, 8, 0.62);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
     box-shadow:
-      inset 0 -0.5px 0 rgba(255, 255, 255, 0.06),
-      0 1px 0 rgba(0, 0, 0, 0.3);
+      inset 0 1px 0 rgba(255, 255, 255, 0.07),
+      0 12px 40px rgba(0, 0, 0, 0.35);
+  }
+  .nav-glass-clear {
+    background: transparent;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+  }
+
+  /* Dropdown / mobile-menu glass: heavier tint than cards so menu text
+     stays readable over any page content. */
+  .menu-glass {
+    background: rgba(10, 10, 16, 0.78);
+    backdrop-filter: blur(40px) saturate(170%);
+    -webkit-backdrop-filter: blur(40px) saturate(170%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+      0 24px 64px rgba(0, 0, 0, 0.55),
+      inset 0 1.5px 0 rgba(255, 255, 255, 0.12);
+  }
+
+  @keyframes menu-in {
+    from { opacity: 0; transform: translateY(-6px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .animate-menu-in {
+    animation: menu-in 200ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    transform-origin: top center;
   }
 
   /* Standard card glass */
@@ -353,11 +392,23 @@
 
   /* ── Light mode overrides ── */
   html[data-theme="light"] .nav-glass {
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(52px) saturate(180%);
-    -webkit-backdrop-filter: blur(52px) saturate(180%);
+    background: rgba(255, 255, 255, 0.68);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      0 8px 32px rgba(0, 0, 0, 0.06);
+  }
+
+  html[data-theme="light"] .menu-glass {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow:
+      0 24px 64px rgba(0, 0, 0, 0.16),
+      inset 0 1.5px 0 rgba(255, 255, 255, 0.95);
   }
 
   html[data-theme="light"] .liquid-glass {

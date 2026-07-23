@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useMemo } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   ChevronDown,
   Menu,
@@ -284,7 +285,15 @@ const panelCols: Record<Section["width"], string> = {
   xl: "grid-cols-4",
 };
 
-function NavDropdown({ sec, navLink }: { sec: Section; navLink: string }) {
+function NavDropdown({
+  sec,
+  navLink,
+  active,
+}: {
+  sec: Section;
+  navLink: string;
+  active: boolean;
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const triggerRef = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState({ top: 0, left: 0 });
@@ -292,6 +301,16 @@ function NavDropdown({ sec, navLink }: { sec: Section; navLink: string }) {
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => () => { if (closeTimer.current) clearTimeout(closeTimer.current); }, []);
+
+  // Escape closes the open panel — hover-only menus lock out keyboards.
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [isOpen]);
 
   const cancelClose = () => {
     if (closeTimer.current) { clearTimeout(closeTimer.current); closeTimer.current = null; }
@@ -320,15 +339,9 @@ function NavDropdown({ sec, navLink }: { sec: Section; navLink: string }) {
     >
       <div
         className={clsx(
-          "rounded-2xl p-5 shadow-[0_24px_64px_rgba(0,0,0,0.7),inset_0_1.5px_0_rgba(255,255,255,0.12)]",
+          "menu-glass animate-menu-in rounded-2xl p-5",
           panelWidth[sec.width],
         )}
-        style={{
-          background: "var(--color-bg)",
-          backdropFilter: "none",
-          WebkitBackdropFilter: "none",
-          border: "1px solid var(--color-border-subtle)",
-        }}
       >
         <div className={clsx("grid gap-x-6 gap-y-5", panelCols[sec.width])}>
           {sec.groups.map((group) => (
@@ -341,7 +354,8 @@ function NavDropdown({ sec, navLink }: { sec: Section; navLink: string }) {
                   <Link
                     key={item.title}
                     href={item.href}
-                    className="flex gap-3 p-2 rounded-xl hover:bg-bg-subtle transition group/item"
+                    onClick={() => setIsOpen(false)}
+                    className="flex gap-3 p-2 rounded-xl hover:bg-fg/6 transition group/item"
                   >
                     <div
                       className="flex-none size-9 rounded-lg text-white flex items-center justify-center group-hover/item:scale-105 transition-transform"
@@ -375,12 +389,24 @@ function NavDropdown({ sec, navLink }: { sec: Section; navLink: string }) {
       onMouseEnter={open}
       onMouseLeave={scheduleClose}
     >
-      <button type="button" className={navLink}>
+      <button
+        type="button"
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+        onClick={() => (isOpen ? setIsOpen(false) : open())}
+        className={clsx(navLink, active && "text-fg")}
+      >
         {sec.label}
         <ChevronDown
-          className={clsx("size-3.5 opacity-60 transition-transform", isOpen && "rotate-180")}
+          className={clsx("size-3.5 opacity-60 transition-transform duration-200", isOpen && "rotate-180")}
           strokeWidth={2.5}
         />
+        {active && (
+          <span
+            className="absolute inset-x-3.5 bottom-0 h-[2px] rounded-full bg-accent"
+            aria-hidden
+          />
+        )}
       </button>
       {panel}
     </div>
@@ -389,22 +415,72 @@ function NavDropdown({ sec, navLink }: { sec: Section; navLink: string }) {
 
 export function Navbar({ t, locale }: { t: NavDict; locale: Locale }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname() ?? "";
   const sections = useMemo(() => buildSections(locale, t.mega), [locale, t.mega]);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Lock page scroll behind the full-screen mobile menu.
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [mobileOpen]);
+
+  // Which top-level entry the current page belongs to (accent underline).
+  const activeKey = pathname.includes("/products")
+    ? "products"
+    : pathname.includes("/solutions")
+      ? "solutions"
+      : pathname.includes("/blog") || pathname.includes("/resources")
+        ? "resources"
+        : pathname.includes("/about") || pathname.includes("/contact")
+          ? "company"
+          : pathname.includes("/pricing")
+            ? "pricing"
+            : "";
+
   const navLink =
-    "inline-flex items-center gap-1 h-9 px-3 rounded-lg text-[14.5px] font-medium text-fg/80 hover:text-fg hover:bg-bg-muted transition whitespace-nowrap";
+    "relative inline-flex items-center gap-1 h-9 px-3 rounded-lg text-[14.5px] font-medium text-fg/80 hover:text-fg hover:bg-fg/6 transition whitespace-nowrap";
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 nav-glass">
+    <header
+      className={clsx(
+        "fixed top-0 inset-x-0 z-50 transition-[background-color,border-color,box-shadow] duration-300",
+        scrolled || mobileOpen ? "nav-glass" : "nav-glass-clear",
+      )}
+    >
       <div className="container-page flex h-16 lg:h-18 items-center gap-2 lg:gap-4">
         <Logo href={`/${locale}`} />
 
         <nav className="hidden sm:flex items-center gap-0.5 ml-2 lg:ml-6">
           {sections.map((sec) => (
-            <NavDropdown key={sec.key} sec={sec} navLink={navLink} />
+            <NavDropdown
+              key={sec.key}
+              sec={sec}
+              navLink={navLink}
+              active={activeKey === sec.key}
+            />
           ))}
-          <Link href={`/${locale}/pricing`} className={navLink}>
+          <Link
+            href={`/${locale}/pricing`}
+            className={clsx(navLink, activeKey === "pricing" && "text-fg")}
+          >
             {t.pricing}
+            {activeKey === "pricing" && (
+              <span
+                className="absolute inset-x-3.5 bottom-0 h-[2px] rounded-full bg-accent"
+                aria-hidden
+              />
+            )}
           </Link>
         </nav>
 
@@ -427,8 +503,9 @@ export function Navbar({ t, locale }: { t: NavDict; locale: Locale }) {
           <button
             type="button"
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
-            className="inline-flex sm:hidden size-9 items-center justify-center rounded-full border border-border-default text-fg hover:bg-bg-muted"
+            className="inline-flex sm:hidden size-11 items-center justify-center rounded-full border border-border-default text-fg hover:bg-fg/6 transition"
           >
             {mobileOpen ? <X className="size-4" /> : <Menu className="size-4" />}
           </button>
@@ -436,7 +513,7 @@ export function Navbar({ t, locale }: { t: NavDict; locale: Locale }) {
       </div>
 
       {mobileOpen && (
-        <div className="sm:hidden fixed inset-x-0 top-16 bottom-0 overflow-y-auto nav-glass border-t border-border-subtle">
+        <div className="sm:hidden fixed inset-x-0 top-16 bottom-0 overflow-y-auto bg-bg/95 backdrop-blur-2xl animate-menu-in border-t border-border-subtle">
           <div className="w-full px-5 py-6 flex flex-col gap-8">
             {sections.map((sec) => (
               <div key={sec.key}>
@@ -449,7 +526,7 @@ export function Navbar({ t, locale }: { t: NavDict; locale: Locale }) {
                       key={item.title}
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="flex gap-3 p-2 rounded-xl hover:bg-bg-muted"
+                      className="flex gap-3 p-2 rounded-xl hover:bg-fg/6"
                     >
                       <div className="flex-none size-9 rounded-lg text-white flex items-center justify-center" style={{ background: color }}>
                         <item.Icon className="size-4" strokeWidth={2} />
@@ -471,20 +548,26 @@ export function Navbar({ t, locale }: { t: NavDict; locale: Locale }) {
             <Link
               href={`/${locale}/pricing`}
               onClick={() => setMobileOpen(false)}
-              className="px-3 py-3 text-[15px] font-medium text-white"
+              className="px-3 py-3 text-[15px] font-medium text-fg"
             >
               {t.pricing}
             </Link>
-            <div className="flex items-center gap-2">
-              <Button
-                variant="primary"
-                size="lg"
-                href={`/${locale}/contact`}
-                className="flex-1"
-              >
+            <div className="flex flex-col gap-2.5">
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  href="https://app.dasvio.com"
+                  className="flex-1"
+                  withArrow
+                >
+                  {t.login}
+                </Button>
+                <LocaleSwitcher locale={locale} />
+              </div>
+              <Button variant="primary" size="lg" href={`/${locale}/contact`}>
                 {t.demo}
               </Button>
-              <LocaleSwitcher locale={locale} />
             </div>
           </div>
         </div>

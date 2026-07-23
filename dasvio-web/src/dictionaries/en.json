@@ -6,6 +6,7 @@
     "resources": "Resources",
     "login": "Log in",
     "demo": "Get a demo",
+    "backToTop": "Back to top",
     "menu": {
       "qrMenu": "QR Menu",
       "qrMenuDesc": "Multilingual digital menu, AI translation, table-based ordering",
@@ -179,7 +180,58 @@
     "subtitle": "QR menu, POS, multi-branch management, platform integrations and analytics — all of your restaurant operations in one place with Dasvio.",
     "ctaPrimary": "Get a free demo",
     "ctaSecondary": "Explore features",
-    "trustBadge": "Trusted by 2,000+ leading restaurants"
+    "trustBadge": "Trusted by 2,000+ leading restaurants",
+    "ctaNote": "Setup in a day · 30-minute demo · No commitment",
+    "journey": {
+      "hint": "Scroll to explore",
+      "explore": "Take a closer look",
+      "stages": [
+        {
+          "label": "Dashboard",
+          "device": "Web Dashboard",
+          "title": "Every branch on a single screen",
+          "desc": "Revenue, orders and reports stream live from every branch into one panel. No waiting for end-of-day to make a decision.",
+          "chip": "Live data",
+          "points": [
+            "Live revenue stream from every branch",
+            "Platform orders in a single list"
+          ]
+        },
+        {
+          "label": "QR Menu",
+          "device": "Mobile · QR Menu",
+          "title": "Your menu in the guest's pocket",
+          "desc": "Guests scan the QR code, browse the menu in their own language and order without waiting for a waiter.",
+          "chip": "14 languages · AI translation",
+          "points": [
+            "Waiterless self-ordering",
+            "Menu updates go live instantly"
+          ]
+        },
+        {
+          "label": "POS",
+          "device": "POS Terminal",
+          "title": "Speed at the register, control everywhere",
+          "desc": "Tickets, payments and kitchen printers merge into a single flow. Works with all major hardware brands.",
+          "chip": "Works with all hardware",
+          "points": [
+            "One flow from ticket to payment",
+            "Kitchen tickets routed automatically"
+          ]
+        },
+        {
+          "label": "Kiosk",
+          "device": "Self-Service Kiosk",
+          "title": "Ordering without the queue",
+          "desc": "Guests build their own order at the kiosk; queues melt away at peak hours and the average basket grows.",
+          "chip": "Contactless payment",
+          "points": [
+            "No queues at peak hours",
+            "Smart upsell suggestions"
+          ]
+        }
+      ]
+    }
   },
   "stats": {
     "title": "The choice of industry-leading businesses",
